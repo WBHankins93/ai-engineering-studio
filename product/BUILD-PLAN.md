@@ -170,50 +170,55 @@ temporarily remove the link) so the build is green at each commit.
 
 ---
 
-## 7. Phased build plan (PR-per-deliverable; squash; dead-link CI gate)
+## 7. Build plan — per-deliverable branches & PRs (dead-link CI gate)
 
-Each deliverable = one branch = one (eventual) squashed PR. Commit frequently
-within a branch with plain imperative messages. Branch naming: `phase-N/slug`,
-e.g. `phase-1/poc-playbook-first`. Keep `main` green after every merge.
+**Workflow (current, see `CONTRIBUTING.md`):** PR **per deliverable**. A **lab is
+always its own branch + PR**; signature artifacts are too, unless a few are small
+and tightly related (the Phase 1 spine was the one allowed grouping). "Phase" is a
+roadmap label/wave, **not** a PR unit. Branch naming: `phase-N/<deliverable-slug>`
+(e.g. `phase-2/lab-01-first-llm-app`). Commit often inside the branch; preserve
+commits on merge (no squashing a deliverable); keep `main` green after every merge.
+Phase 0 landed directly on `main` (scaffold exception only).
 
-### Phase 0 — Scaffold + standards + on-ramp  (mostly DONE)
-Done: VitePress config, violet theme + classes, Node-20 dead-link CI, `.gitignore`,
-home `index.md`, git + commit-msg hook, `AGENTS.md`, this file.
-Remaining: `START-HERE.md`, `DEPTH-STANDARD.md`, `CANONICAL-CAST.md`,
-`CONTRIBUTING.md`, and the 4 `foundations/` pages incl. `langgraph-how-to.md`.
-Exit: a non-AI reader can orient; build green.
+Each row below is one branch → one PR. Check off as merged.
 
-### Phase 1 — The SE/SA spine  (~2 wk)
-The differentiators, front-loaded (most work-usable, proves positioning fastest):
-first POC playbook (`poc-playbooks/scoping-an-ai-poc.md`), 2–3 decision frames
-(start `decision-frames/managed-vs-self-host.md`; add RAG TCO, "do we even need an
-agent?"), first talk-track (`talk-tracks/explaining-a-hallucination.md`), the
-four-layer translation visual (`visuals/four-layer-map.md`), ADR 001
-(`decisions/001-langgraph-orchestration.md`). Exit: usable at work day one.
+### Phase 0 — Scaffold + standards + on-ramp  ✅ DONE (on `main`)
+Scaffold, violet theme, Node-20 dead-link CI, home, git hooks, `AGENTS.md`,
+`START-HERE.md`, `DEPTH-STANDARD.md`, `CANONICAL-CAST.md`, `CONTRIBUTING.md`, and
+the 4 `foundations/` pages incl. `langgraph-how-to.md`.
 
-### Phase 2 — Apps & agents, hands-on & anchored  (~2–3 wk)
-Labs 01–03 on the three-layer reading model + apps-agents lessons. Lab 01: first
-LLM app (streaming CLI, function calling, Ollama). Lab 02: production RAG (hybrid
-search + rerank + RAGAS evals). Lab 03: agent system (hub-and-spoke
-orchestrator-worker with LangGraph + one MCP tool). Each lab's `.ai-explain`
-close links to a talk track. Exit: credible hands-on proof, legible to a generalist.
+### Phase 1 — The SE/SA spine  ✅ DONE (PR #3, one grouped PR — the allowed exception)
+POC playbook, 3 decision frames (`managed-vs-self-host`, `rag-tco`,
+`do-we-need-an-agent`), talk track (`explaining-a-hallucination`), four-layer
+visual, ADR 001. Plus the visuals system + mermaid fix (PR #4).
+
+### Phase 2 — Apps & agents, hands-on & anchored  (~2–3 wk) — IN PROGRESS
+One branch/PR each:
+- [ ] `phase-2/lab-01-first-llm-app` — streaming CLI, function calling, Ollama. (Include the `labs/` index/overview here or as its own small PR.)
+- [ ] `phase-2/lab-02-production-rag` — hybrid search (BM25+dense, RRF) → rerank → top-5, RAGAS evals.
+- [ ] `phase-2/lab-03-agent-system` — hub-and-spoke orchestrator-worker (LangGraph) + one MCP tool.
+- [ ] `phase-2/apps-agents-lessons` — apps-agents lessons (small, related → may be one PR, or split if any grows large).
+
+Each lab uses the three-layer reading model; `.ai-explain` close links to a talk track.
 
 ### Phase 3 — Evals + cost made legible  (~1–2 wk)
-Lab 04 (eval harness: LLM-as-judge + regression gate in CI) paired with a
-"how do we know it's good enough?" decision frame. Lab 05 (serving + cost:
-Ollama/quantization tradeoffs, measured latency/cost) paired with a "what will
-this cost at scale?" frame. The two questions every customer asks.
+- [ ] `phase-3/lab-04-eval-harness` — LLM-as-judge + regression gate in CI.
+- [ ] `phase-3/frame-good-enough` — "how do we know it's good enough?" decision frame.
+- [ ] `phase-3/lab-05-serving-and-cost` — Ollama/quantization tradeoffs, measured latency/cost.
+- [ ] `phase-3/frame-cost-at-scale` — "what will this cost at scale?" decision frame.
 
 ### Phase 4 — Architecture, governance & the MLOps bridge  (~1–2 wk)
-Mostly lessons + visuals. L4: reference architectures, guardrails, the
-NIST / EU AI Act / ISO 42001 stack in plain English. L3: MLOps↔LLMOps bridge
-lesson that cross-links to `devops-studio`. Author's DevOps depth carries this fast.
+Mostly lessons + visuals; group small related lessons, split large ones:
+- [ ] `phase-4/lesson-reference-architectures`
+- [ ] `phase-4/lesson-guardrails-and-governance` — NIST / EU AI Act / ISO 42001 in plain English.
+- [ ] `phase-4/lesson-mlops-llmops-bridge` — cross-links to `devops-studio`.
+- [ ] `phase-4/visuals-governance` — `governance-stack` (+ any L4 visuals).
 
 ### Phase 5 — Capstone, observability & trilogy polish  (~1–2 wk)
-Lab 06 (Langfuse observability). Lab 07 (capstone, end-to-end RAG-agent app) with
-**two tracks: strictly-$0 local AND optional rented-GPU cloud deploy** — never
-force spend. Role-based learning paths page, cross-links into the other two repos,
-full depth-standard QA pass. Exit: portfolio-ready, link-clean, trilogy complete.
+- [ ] `phase-5/lab-06-observability` — Langfuse tracing + cost.
+- [ ] `phase-5/lab-07-capstone` — end-to-end RAG-agent app; **two tracks: strictly-$0 local AND optional rented-GPU cloud** (never force spend).
+- [ ] `phase-5/learning-paths` — role-based paths + trilogy cross-links.
+- [ ] `phase-5/qa-pass` — full depth-standard QA + link check. Exit: portfolio-ready, trilogy complete.
 
 ---
 
