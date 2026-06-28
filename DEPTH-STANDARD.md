@@ -62,7 +62,16 @@ tags:
 ## 🔗 Links                    ← standard closer: related pages (markdown links)
 ```
 
-Rules:
+> **Labs are the exception.** Labs follow the `devops-studio` lab anatomy, not the
+> emoji skeleton above: an H1 `# Lab NN · Title`, a breadcrumb blockquote with time
+> + difficulty, then plain headings — *What you build · Architecture · Prerequisites
+> · Quick Start · Detailed Setup (### Step N) · Project Structure · Troubleshooting
+> · Cleanup · Cost · Next steps*. Keep frontmatter `tags:` (repo tag system) and add
+> this repo's **three-layer reading model** on top: `.ai-context` boxes inline,
+> `.ai-deeper` anchors for opt-in depth, and an `.ai-explain` "explain it to a
+> customer" close. See `product/BUILD-PLAN.md` §3.
+
+Rules (concept pages):
 - **Emoji-prefixed section headings, from this fixed palette only** (reuse the
   trilogy's set, do not invent): `📝 🎯 🧭 🧩 📊 🏗️ 🛡️ 🚨 👁️ 🗣️ ✅ 📋 🔁 ⚠️ 🔗`.
 - **No VitePress `:::` containers** (`::: tip/warning/info`). The siblings don't use
