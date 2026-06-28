@@ -20,6 +20,8 @@ const foundations = [
 const standards = [
   { text: 'Depth Standard', link: '/DEPTH-STANDARD' },
   { text: 'Canonical Cast', link: '/CANONICAL-CAST' },
+  { text: 'Visual Prompt Standard', link: '/VISUAL-PROMPT-STANDARD' },
+  { text: 'Imagery Plan', link: '/IMAGERY-PLAN' },
   { text: 'Contributing', link: '/CONTRIBUTING' },
 ]
 
