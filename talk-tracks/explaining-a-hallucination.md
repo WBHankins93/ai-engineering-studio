@@ -71,5 +71,5 @@ expected, point at the fix.** Honesty here builds more trust than a save attempt
   <span class="ai-label">Related</span>
   The technical fix lives in <code>labs/02-production-rag</code> (grounding +
   retrieval, Phase 2). De-risking the demo itself is in the
-  <code>poc-playbooks/scoping-an-ai-poc</code> playbook.
+  <a href="/poc-playbooks/scoping-an-ai-poc">Scoping an AI POC</a> playbook.
 </div>

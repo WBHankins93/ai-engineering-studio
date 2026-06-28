@@ -111,7 +111,7 @@ Q1 box; ask it first.
 <div class="ai-deeper">
   <span class="ai-label">Go deeper</span>
   Total cost of a RAG system specifically (not just the model call) is worked in
-  the <code>decision-frames/rag-tco</code> frame. The hosted-data-handling
+  the <a href="/decision-frames/rag-tco">RAG TCO</a> frame. The hosted-data-handling
   question maps to the governance terms in
   <a href="/foundations/ai-vocabulary-for-sas">AI Vocabulary for SAs</a>.
 </div>
