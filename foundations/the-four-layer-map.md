@@ -15,14 +15,17 @@ of, and the **architecture & governance** concerns that wrap all of it.
 
 ```mermaid
 flowchart TB
-  L4["L4 · AI architecture & governance<br/>reference archs, build-vs-buy, guardrails, NIST / EU AI Act / ISO 42001"]
-  L1["L1 · LLM apps & agents<br/>RAG, agents, prompt/context engineering, evals, MCP/A2A"]
-  L2["L2 · LLMOps & inference infra<br/>serving (vLLM/SGLang), quantization, vector DBs, gateways, tracing"]
-  L3["L3 · Classic MLOps & data<br/>training pipelines, feature stores, registries, drift, CI/CD for ML"]
+  L4["L4 · AI architecture and governance"]
+  L1["L1 · LLM apps and agents"]
+  L2["L2 · LLMOps and inference infra"]
+  L3["L3 · Classic MLOps and data"]
   L4 --> L1
   L1 --> L2
   L2 --> L3
 ```
+
+*What lives in each layer is in the table below; the diagram stays to the layer
+names so it reads at a glance.*
 
 | Layer | Name | What lives here | Who owns it |
 | --- | --- | --- | --- |

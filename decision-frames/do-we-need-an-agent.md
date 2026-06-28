@@ -24,12 +24,12 @@ next steps across multiple turns.** If the steps are known in advance, you want 
 ```mermaid
 flowchart TD
   Q1{"Is one retrieval + answer enough?"}
-  Q1 -->|yes| RAG["Use RAG<br/>no agent"]
-  Q1 -->|no| Q2{"Are the steps known and fixed<br/>in advance?"}
-  Q2 -->|yes| WF["Use a workflow<br/>(predictable, cheaper, debuggable)"]
-  Q2 -->|no| Q3{"Does the task need the model to<br/>choose tools/steps dynamically?"}
+  Q1 -->|yes| RAG["Use RAG no agent"]
+  Q1 -->|no| Q2{"Are the steps known and fixed in advance?"}
+  Q2 -->|yes| WF["Use a workflow (predictable, cheaper, debuggable)"]
+  Q2 -->|no| Q3{"Does the task need the model to choose tools/steps dynamically?"}
   Q3 -->|no| WF
-  Q3 -->|yes| AG["Use an agent<br/>hub-and-spoke, earn the cost"]
+  Q3 -->|yes| AG["Use an agent hub-and-spoke, earn the cost"]
 ```
 
 <div class="ai-context">

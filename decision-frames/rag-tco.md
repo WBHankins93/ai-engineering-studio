@@ -16,11 +16,11 @@ Quote those, or your estimate is wrong by an order of magnitude.
 ```mermaid
 flowchart TD
   TCO["RAG total cost of ownership"]
-  TCO --> R["Run cost (per query)<br/>embeddings + generation tokens"]
-  TCO --> I["Index cost<br/>embed the corpus + re-embed changes"]
-  TCO --> S["Storage / infra<br/>vector DB + serving"]
-  TCO --> E["Build & eval<br/>engineering time + eval harness"]
-  TCO --> M["Maintenance<br/>retrieval tuning, reindexing, drift"]
+  TCO --> R["Run cost (per query) embeddings + generation tokens"]
+  TCO --> I["Index cost embed the corpus + re-embed changes"]
+  TCO --> S["Storage / infra vector DB + serving"]
+  TCO --> E["Build and eval: engineering time, eval harness"]
+  TCO --> M["Maintenance retrieval tuning, reindexing, drift"]
 ```
 
 People price the top branch and forget the bottom three — where most of the money
