@@ -1,18 +1,23 @@
-# Decision Frame · Managed API vs Self-Host
+---
+tags:
+  - decision-frame
+  - llmops-infra
+  - customer-facing
+---
+# Managed API vs Self-Host
 
-> The first build-vs-buy question in almost every AI deal: do we call a hosted
-> model over an API, or run an open model on our own infrastructure? Here's the
-> frame that gets a customer to the right answer — and the numbers conversation
-> that goes with it.
+## 📝 Context
 
-::: tip The short version
-For **most** teams starting out, **managed API wins** — you're buying speed and
-zero ops. Self-hosting earns its keep at **high, steady volume**, under **hard
-data-residency rules**, or when you need **deep customization**. The crossover is
-about economics and constraints, not ideology.
-:::
+The first build-vs-buy question in almost every AI deal: do we call a hosted model
+over an API, or run an open model on our own infrastructure? This frame gets a
+customer to the right answer — and sets up the numbers conversation that follows.
 
-## The two options
+> **Recommendation:** for most teams starting out, **managed API wins** — you're
+> buying speed and zero ops. Self-hosting earns its keep at **high, steady volume**,
+> under **hard data-residency rules**, or when you need **deep customization**. The
+> crossover is about economics and constraints, not ideology.
+
+## 🎯 The Two Options
 
 | | Managed API | Self-host (open model) |
 | --- | --- | --- |
@@ -23,7 +28,7 @@ about economics and constraints, not ideology.
 | **Data boundary** | Leaves your environment (mitigable by enterprise terms) | Stays in your environment |
 | **Time to first value** | Hours | Days to weeks |
 
-## The decision flow
+## 🧭 Decision Flow
 
 ```mermaid
 flowchart TD
@@ -38,14 +43,11 @@ flowchart TD
   Q4 -->|no| API
 ```
 
-<div class="ai-context">
-  <div class="ai-label">What an SE watches for</div>
-  <p>The order matters: a hard data rule (L4 governance) ends the conversation
-  before economics ever come up. Don't model TCO for a customer who legally can't
-  send data to a hosted model — confirm the constraint first, then talk numbers.</p>
-</div>
+The order matters: a hard data rule (L4 governance) ends the conversation before
+economics ever come up. Don't model cost for a customer who legally can't send data
+to a hosted model — confirm the constraint first, then talk numbers.
 
-## State the numbers (illustrative — verify against their volume)
+## 📊 The Numbers (illustrative — verify against their volume)
 
 The economics hinge on **utilization**. A managed API costs you only when you use
 it; a GPU costs you whether it's busy or not. So self-hosting wins when you'd keep
@@ -56,39 +58,35 @@ the hardware busy.
 | Pilot / spiky traffic | pennies–low \$\$ per day, pay-as-you-go | a GPU billed 24/7, mostly idle | **Managed** |
 | High, steady traffic | per-token cost adds up linearly | fixed GPU cost amortized across heavy use | **Self-host** |
 
-::: warning Accuracy note
-The "~1M calls/year" crossover is a **directional, workload-dependent** figure
-from 2026 enterprise sources — not a constant. Real crossover depends on model
-size, token lengths, GPU price, and utilization. Use it to frame the *shape* of
-the decision; compute the actual break-even against the customer's real numbers
-before putting a figure in writing.
-:::
+> **Accuracy note:** the "~1M calls/year" crossover is a *directional,
+> workload-dependent* figure from 2026 enterprise sources — not a constant. Real
+> crossover depends on model size, token lengths, GPU price, and utilization. Use it
+> to frame the *shape* of the decision; compute the actual break-even against the
+> customer's real numbers before putting a figure in writing.
 
-## The failure path
+## 🚨 Failure Path
 
 The classic mistake is **self-hosting too early** — a team stands up GPU
 infrastructure for a pilot doing a few thousand calls a day, then spends months on
 serving and on-call while paying for idle hardware.
 
-<div class="sp-band">
-  <div class="sp-step"><div class="sp-h">Symptom</div><div class="sp-d">"We're running our own model" — for a workload a managed API would serve for a few dollars a day.</div></div>
-  <div class="sp-step"><div class="sp-h">Root cause</div><div class="sp-d">Treated self-hosting as the "serious" choice rather than an economics/constraints decision.</div></div>
-  <div class="sp-step"><div class="sp-h">Cost</div><div class="sp-d">Idle GPU spend + ops time that should have gone into the product. The model was never the bottleneck.</div></div>
-  <div class="sp-step"><div class="sp-h">Fix</div><div class="sp-d">Start managed, instrument usage, revisit self-host when real volume and a constraint justify it.</div></div>
-</div>
+- **Symptom** — "We're running our own model," for a workload a managed API would serve for a few dollars a day.
+- **Root cause** — treated self-hosting as the "serious" choice rather than an economics/constraints decision.
+- **Cost** — idle GPU spend plus ops time that should have gone into the product. The model was never the bottleneck.
+- **Fix** — start managed, instrument usage, revisit self-host when real volume and a constraint justify it.
 
 The mirror-image failure is **ignoring a data constraint** until late — building on
-a managed API, then discovering in security review the data can't leave. That's the
-Q1 box; ask it first.
+a managed API, then discovering in security review that the data can't leave. That's
+the first box in the flow; ask it first.
 
-## Audience lens
+## 👁️ Audience Lens — Who Hears What
 
-| | Engineer hears | Exec hears | Security/legal hears |
+| | Engineer hears | Exec hears | Security / legal hears |
 | --- | --- | --- | --- |
 | **Managed** | no infra to run, fast iteration | variable cost, scales with use | data leaves our boundary — need enterprise terms |
 | **Self-host** | we own the serving stack | capex-like fixed cost, ops headcount | data stays in our environment |
 
-## Talk track
+## 🗣️ Talk Track
 
 <div class="sp-say">
   <div class="sp-label">Say it like this — to an exec</div>
@@ -108,10 +106,15 @@ Q1 box; ask it first.
   whole architecture."</p>
 </div>
 
-<div class="ai-deeper">
-  <span class="ai-label">Go deeper</span>
-  Total cost of a RAG system specifically (not just the model call) is worked in
-  the <a href="/decision-frames/rag-tco">RAG TCO</a> frame. The hosted-data-handling
-  question maps to the governance terms in
-  <a href="/foundations/ai-vocabulary-for-sas">AI Vocabulary for SAs</a>.
-</div>
+## ⚠️ Gotchas
+
+- Quoting a cost before confirming the data-residency rule — the constraint can make the cost question moot.
+- Treating "self-host" as automatically cheaper — it only wins at high, steady utilization.
+- Forgetting the ops headcount in the self-host column — the GPU bill is rarely the biggest line.
+- Assuming managed = data is unsafe — enterprise terms usually keep your data out of training; get it in writing.
+
+## 🔗 Links
+
+- [The Real Cost of a RAG System](/decision-frames/rag-tco) — total cost beyond the model call
+- [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — the governance/data-handling terms
+- [The Four-Layer Map](/visuals/four-layer-map) — where this sits (L2 infra, L4 governance)
