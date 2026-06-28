@@ -117,9 +117,20 @@ START-HERE.md — all building green. Then Phase 2 (labs 01–03), Phase 3
   `custom.css`.
 - Do not add co-authoring/generation trailers to commits.
 
+## CI/CD
+- **CI** (`.github/workflows/ci.yml`) — `Build docs` job runs on every PR and push
+  to `main`; the dead-link build is the gate.
+- **CD** (`.github/workflows/deploy.yml`) — on push to `main`, rebuilds and
+  publishes to GitHub Pages (Actions build source). Live:
+  https://wbhankins93.github.io/ai-engineering-studio/ (matches `base`).
+- **`main` is protected**: required status check `Build docs` (strict/up-to-date),
+  no force-push/delete. Reviews are *not* required (solo maintainer can't
+  self-approve) — agent may self-review and merge once CI is green (user-authorized
+  2026-06-27). `enforce_admins` off so the owner is never locked out.
+- Non-fatal annotation: GitHub is deprecating Node-20 action *wrappers* (runs on
+  Node 24 anyway) — unrelated to our pinned build Node 20; no action needed.
+
 ## Open questions
-- GitHub Pages deploy workflow not yet added (only the build-gate CI exists) —
-  add a Pages deploy job when ready to publish.
 - Cloud-capstone-vs-strictly-$0 for Lab 07 still open (per BUILD-PLAN §7) — decide
   before Phase 5.
 
