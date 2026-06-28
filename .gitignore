@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# VitePress build output + cache
+.vitepress/dist/
+.vitepress/cache/
+
+# OS / editor noise
+.DS_Store
+*.log
+.idea/
+.vscode/
+
+# Local env
+.env
+.env.local
