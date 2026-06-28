@@ -62,16 +62,27 @@ export default defineConfig({
   // Served under a repo subpath on GitHub Pages.
   base: '/ai-engineering-studio/',
 
-  // Render ```mermaid fences into <div class="mermaid"> so the client-side
+  // Render ```mermaid fences into <pre class="mermaid"> so the client-side
   // renderer in theme/index.ts picks them up. Lets authors fence with
-  // ```mermaid (per AGENTS.md) instead of hand-writing the wrapper div.
+  // ```mermaid (per AGENTS.md) instead of hand-writing the wrapper.
+  //
+  // Critical: must be a <pre> with `v-pre`, and the content HTML-escaped.
+  // VitePress compiles rendered markdown as a Vue template — without v-pre,
+  // Vue (a) condenses the diagram's newlines into single spaces, which mermaid
+  // then rejects as a syntax error, and (b) treats `{{ }}` as interpolation.
+  // `v-pre` skips compilation; `<pre>` preserves whitespace; escaping keeps
+  // any `<`/`>`/`&` in labels from being parsed as HTML.
   markdown: {
     config: (md) => {
       const defaultFence = md.renderer.rules.fence!.bind(md.renderer.rules)
       md.renderer.rules.fence = (tokens, idx, options, env, self) => {
         const token = tokens[idx]
         if (token.info.trim() === 'mermaid') {
-          return `<div class="mermaid">${token.content}</div>`
+          const esc = token.content
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+          return `<pre class="mermaid" v-pre>${esc}</pre>`
         }
         return defaultFence(tokens, idx, options, env, self)
       }
