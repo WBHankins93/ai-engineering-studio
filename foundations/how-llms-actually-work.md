@@ -15,10 +15,10 @@ time, feeding each prediction back in to predict the next.
 
 ```mermaid
 flowchart LR
-  P["Your prompt<br/>'The capital of France is'"] --> M["Model predicts<br/>next token"]
-  M --> T["'Paris'"]
-  T --> M2["feed it back,<br/>predict again"]
-  M2 --> D["'.' → done"]
+  P["Your prompt: the capital of France is"] --> M["Model predicts next token"]
+  M --> T["Paris"]
+  T --> M2["feed it back, predict again"]
+  M2 --> D["end of sentence: done"]
 ```
 
 ::: tip A "token" is just a piece of a word

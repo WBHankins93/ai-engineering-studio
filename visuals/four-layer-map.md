@@ -16,23 +16,23 @@ memory on their whiteboard — the redraw is the flex.
 
 ```mermaid
 flowchart TB
-  subgraph L4G["L4 · Architecture & governance — 'what are we allowed to build, and how do we prove it's safe'"]
-    L4["Reference archs · build-vs-buy · guardrails · NIST / EU AI Act / ISO 42001"]
-  end
-  subgraph L1G["L1 · Apps & agents — 'the thing the user actually touches'"]
-    L1["RAG · agents · prompts · evals · MCP / A2A"]
-  end
-  subgraph L2G["L2 · LLMOps & infra — 'the engine room that makes it fast and affordable'"]
-    L2["Serving (vLLM/SGLang) · quantization · vector DBs · gateways · tracing"]
-  end
-  subgraph L3G["L3 · MLOps & data — 'the discipline for anything we train ourselves'"]
-    L3["Training pipelines · feature stores · registries · drift · CI/CD for ML"]
-  end
-  L4G --> L1G --> L2G --> L3G
+  L4["L4 · Architecture and governance — what we are allowed to build"]
+  L1["L1 · Apps and agents — the thing the user touches"]
+  L2["L2 · LLMOps and infra — the engine room: fast and affordable"]
+  L3["L3 · MLOps and data — the discipline for what we train ourselves"]
+  L4 --> L1 --> L2 --> L3
 ```
 
-The top label of each box is what an **engineer** calls it; the quote is what you
-say to an **exec**. Drawing both, in the same frame, *is* the translation move.
+::: warning Placeholder diagram
+This mermaid is a working stand-in. The signature, dual-labeled version
+(engineer term **and** the exec one-liner, in the flat-vector house style) is a
+polished image slated to replace it — see `IMAGERY-PLAN.md`, visual
+`four-layer-map`. Each layer's engineer-vs-exec phrasing lives in the table below
+until then.
+:::
+
+Each layer carries two labels: what an **engineer** calls it, and what you say to
+an **exec**. Holding both in one frame *is* the translation move.
 
 ## Audience lens — one system, three views
 

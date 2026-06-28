@@ -63,8 +63,8 @@ That graph looks like this:
 
 ```mermaid
 flowchart LR
-  START(["start"]) --> R["retrieve<br/>fill docs"]
-  R --> G["generate<br/>answer from docs"]
+  START(["start"]) --> R["retrieve fill docs"]
+  R --> G["generate answer from docs"]
   G --> E(["end"])
 ```
 
@@ -80,7 +80,7 @@ assembles the result. LangGraph's conditional edges express exactly this.
 
 ```mermaid
 flowchart TB
-  O["Orchestrator<br/>decompose & route"]
+  O["Orchestrator: decompose and route"]
   O -->|"needs a lookup"| W1["Worker: search"]
   O -->|"needs a calculation"| W2["Worker: compute"]
   O -->|"needs a draft"| W3["Worker: write"]

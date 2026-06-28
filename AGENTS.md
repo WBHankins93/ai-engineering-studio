@@ -45,8 +45,17 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
 - **Component classes** (in `custom.css`, never hardcode hex): `.sp-say` (talk
   track), `.sp-band`/`.sp-step` (scenario steps), `.sp-pill` (status tags,
   `ok`/`warn`/`bad`); `.ai-context`, `.ai-deeper`, `.ai-explain`.
-- **Mermaid** runs in `strict` mode: no HTML in node labels, no `<br>`, no click
-  handlers, short single-line labels. Fence with ` ```mermaid `.
+- **Mermaid** runs in `strict` mode: no HTML in node labels, no `<br>`, no HTML
+  entities (`&amp;`/`&gt;`), no bare `&`, short single-line labels. Fence with
+  ` ```mermaid `. **Renderer gotcha:** the `config.mts` fence rule must emit
+  `<pre class="mermaid" v-pre>` with HTML-escaped content — a plain `<div>` lets
+  Vue's template compiler condense the diagram's newlines to spaces, which mermaid
+  rejects as a syntax error. Don't "simplify" that rule.
+- **Showcase visuals** are polished PNGs (flat-vector, violet brand) in
+  `assets/diagrams/`, promoted from mermaid only when flagship — see
+  `IMAGERY-PLAN.md` (what + priority), `VISUAL-PROMPT-STANDARD.md` (how), and
+  `visual-specs/showcase-prompts.md` (ready-to-paste specs). Spec first, image
+  second. Decision trees / simple flows stay mermaid.
 - **Tables** in markdown by default (dark-mode safe). Custom HTML only for the
   `.sp-*`/`.ai-*` classes above.
 - **Canonical cast** (reuse so it reads authored): local serving `Ollama` +
@@ -103,8 +112,15 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   (`managed-vs-self-host`, `rag-tco`, `do-we-need-an-agent`), talk track
   (`explaining-a-hallucination`), signature visual (`visuals/four-layer-map`), ADR
   001 (`decisions/001-langgraph-orchestration`). All wired into nav/sidebar; home +
-  START-HERE updated to surface them; build green per commit. Opening one PR for the
-  phase. Next: Phase 2 (labs 01–03 + apps-agents lessons).
+  START-HERE updated to surface them; build green per commit. Merged via PR #3.
+- **Visuals system + mermaid fix on `visuals/diagram-system`** (2026-06-28): found
+  mermaid diagrams rendered as syntax errors — root cause was the `<div>` fence
+  rule letting Vue collapse newlines (now `<pre v-pre>` + escaped); also stripped
+  `<br>`/entities from all diagram labels. Added the visual prompt system
+  (`VISUAL-PROMPT-STANDARD.md`, `IMAGERY-PLAN.md`, `visual-specs/showcase-prompts.md`)
+  modeled on the sibling repos, violet-adapted, with Wave 1 specs ready
+  (four-layer-map, rag-two-loops, hub-and-spoke). Next: Phase 2 (labs 01–03 +
+  apps-agents lessons).
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:

@@ -27,13 +27,13 @@ about economics and constraints, not ideology.
 
 ```mermaid
 flowchart TD
-  Q1{"Hard data-residency rule?<br/>(data cannot leave your environment)"}
-  Q1 -->|yes| SH["Self-host<br/>the constraint decides it"]
-  Q1 -->|no| Q2{"High, steady volume?<br/>(roughly &gt;~1M calls/yr, illustrative)"}
-  Q2 -->|no| API["Managed API<br/>speed &amp; zero ops win"]
-  Q2 -->|yes| Q3{"Do you have ops capacity<br/>to run GPU serving?"}
+  Q1{"Hard data-residency rule? (data cannot leave your environment)"}
+  Q1 -->|yes| SH["Self-host the constraint decides it"]
+  Q1 -->|no| Q2{"High steady volume? (over ~1M calls/yr, illustrative)"}
+  Q2 -->|no| API["Managed API: speed and zero ops"]
+  Q2 -->|yes| Q3{"Do you have ops capacity to run GPU serving?"}
   Q3 -->|no| API
-  Q3 -->|yes| Q4{"Need deep customization<br/>or fixed-cost economics?"}
+  Q3 -->|yes| Q4{"Need deep customization or fixed-cost economics?"}
   Q4 -->|yes| SH
   Q4 -->|no| API
 ```
