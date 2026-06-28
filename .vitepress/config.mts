@@ -23,22 +23,32 @@ const standards = [
   { text: 'Contributing', link: '/CONTRIBUTING' },
 ]
 
-// --- Phase 1+ sections (uncomment links as pages are built) ----------------
-// const decisionFrames = [
-//   { text: 'Managed API vs Self-Host', link: '/decision-frames/managed-vs-self-host' },
-// ]
-// const pocPlaybooks = [
-//   { text: 'Scoping an AI POC', link: '/poc-playbooks/scoping-an-ai-poc' },
-// ]
-// const talkTracks = [
-//   { text: 'Explaining a Hallucination', link: '/talk-tracks/explaining-a-hallucination' },
-// ]
+// --- Phase 1 — the SE/SA spine ---------------------------------------------
+const pocPlaybooks = [
+  { text: 'Scoping an AI POC', link: '/poc-playbooks/scoping-an-ai-poc' },
+]
+
+const decisionFrames = [
+  { text: 'Managed API vs Self-Host', link: '/decision-frames/managed-vs-self-host' },
+  { text: 'The Real Cost of a RAG System', link: '/decision-frames/rag-tco' },
+  { text: 'Do We Even Need an Agent?', link: '/decision-frames/do-we-need-an-agent' },
+]
+
+const talkTracks = [
+  { text: 'Explaining a Hallucination', link: '/talk-tracks/explaining-a-hallucination' },
+]
+
+const visuals = [
+  { text: 'The Four-Layer Map', link: '/visuals/four-layer-map' },
+]
+
+const decisions = [
+  { text: 'ADR 001 — LangGraph as orchestration standard', link: '/decisions/001-langgraph-orchestration' },
+]
+
+// --- Phase 2+ sections (uncomment links as pages are built) ----------------
 // const lessons = [{ text: 'Overview', link: '/lessons/' }]
 // const labs = [{ text: 'Overview', link: '/labs/' }]
-// const visuals = [{ text: 'The Four-Layer Map', link: '/visuals/four-layer-map' }]
-// const decisions = [
-//   { text: 'ADR 001 — LangGraph as orchestration standard', link: '/decisions/001-langgraph-orchestration' },
-// ]
 
 export default defineConfig({
   title: 'AI Engineering Studio',
@@ -72,20 +82,23 @@ export default defineConfig({
     nav: [
       { text: 'Start Here', link: '/START-HERE' },
       { text: 'Foundations', link: '/foundations/how-llms-actually-work' },
-      // Phase 1+: POC Playbooks, Labs, Decisions return here as pages are built.
+      { text: 'POC Playbooks', link: '/poc-playbooks/scoping-an-ai-poc' },
+      { text: 'Decision Frames', link: '/decision-frames/managed-vs-self-host' },
+      { text: 'Decisions', link: '/decisions/001-langgraph-orchestration' },
+      // Phase 2+: Labs return here as pages are built.
     ],
 
     sidebar: [
       { text: 'Foundations', collapsed: false, items: foundations },
+      { text: 'POC Playbooks', collapsed: false, items: pocPlaybooks },
+      { text: 'Decision Frames', collapsed: false, items: decisionFrames },
+      { text: 'Talk Tracks', collapsed: false, items: talkTracks },
+      { text: 'Visuals', collapsed: false, items: visuals },
+      { text: 'Decisions (ADRs)', collapsed: true, items: decisions },
       { text: 'Standards', collapsed: true, items: standards },
-      // --- Phase 1+ (uncomment as built) ---
-      // { text: 'Decision Frames', collapsed: false, items: decisionFrames },
-      // { text: 'POC Playbooks', collapsed: false, items: pocPlaybooks },
-      // { text: 'Talk Tracks', collapsed: false, items: talkTracks },
+      // --- Phase 2+ (uncomment as built) ---
       // { text: 'Lessons', collapsed: true, items: lessons },
       // { text: 'Labs', collapsed: true, items: labs },
-      // { text: 'Visuals', collapsed: true, items: visuals },
-      // { text: 'Decisions (ADRs)', collapsed: true, items: decisions },
     ],
 
     socialLinks: [

@@ -24,10 +24,11 @@ The translation layer is *added on top* of rigor, never *substituted* for it.
 
 Jump straight to what you need:
 
-- **Need to place a vague customer ask?** → [The Four-Layer Map](/foundations/the-four-layer-map) — locate the problem in ten seconds.
-- **About to get asked "why did it make that up?"** → [How LLMs Actually Work](/foundations/how-llms-actually-work) — the honest, calm answer.
+- **The model hallucinated / "won't it make things up?"** → [Explaining a Hallucination](/talk-tracks/explaining-a-hallucination) — the lines that hold the room.
+- **Scoping a POC or a demo?** → [Scoping an AI POC](/poc-playbooks/scoping-an-ai-poc) — criteria and recovery that survive a live model.
+- **"Should we build or buy / what'll it cost / do we need an agent?"** → the [Decision Frames](/decision-frames/managed-vs-self-host) — [managed vs self-host](/decision-frames/managed-vs-self-host), [RAG cost](/decision-frames/rag-tco), [agent or not](/decision-frames/do-we-need-an-agent).
+- **Need to place a vague customer ask?** → [The Four-Layer Map](/visuals/four-layer-map) — the whiteboard you draw in a kickoff.
 - **Blanking on a term mid-call?** → [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — `Ctrl+F` it before you dial in.
-- **Reading an agent-system diagram?** → [LangGraph in 10 Minutes](/foundations/langgraph-how-to) — what the boxes and arrows mean.
 
 ## If you're orienting for the first time
 
@@ -47,13 +48,13 @@ content types that each do one job well:
 
 | Type | Teaches by | Status |
 | --- | --- | --- |
-| **Foundations** | orienting | ✅ available now |
-| **Decision frames** | deciding (build-vs-buy, cost, "when X vs Y") | 🔜 Phase 1 |
-| **POC playbooks** | scoping & de-risking an engagement | 🔜 Phase 1 |
-| **Talk tracks** | the customer-safe "say it like this" card | 🔜 Phase 1 |
+| **[Foundations](/foundations/how-llms-actually-work)** | orienting | ✅ available now |
+| **[Decision frames](/decision-frames/managed-vs-self-host)** | deciding (build-vs-buy, cost, "when X vs Y") | ✅ available now |
+| **[POC playbooks](/poc-playbooks/scoping-an-ai-poc)** | scoping & de-risking an engagement | ✅ available now |
+| **[Talk tracks](/talk-tracks/explaining-a-hallucination)** | the customer-safe "say it like this" card | ✅ available now |
+| **[Visuals](/visuals/four-layer-map)** | seeing — translation diagrams | ✅ available now |
 | **Labs** | doing — hands-on, local-first, mostly $0 | 🔜 Phase 2 |
 | **Lessons** | the concept + the decision behind it | 🔜 Phase 2+ |
-| **Visuals** | seeing — translation diagrams | 🔜 Phase 1+ |
 
 The build is phased so the SE/SA spine — the differentiators — comes first. See
 `product/BUILD-PLAN.md` for the full plan and `AGENTS.md` for the project's

@@ -97,7 +97,14 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
 - **Phase 0 committed and pushed to `main`** (2026-06-27): 7 plain commits
   (scaffold → docs → one per foundations page → START-HERE). `origin` connected
   via authenticated `gh` (WBHankins93); https://github.com/WBHankins93/ai-engineering-studio
-  is now populated. Phase 1 onward: `phase-N/<slug>` branch + PR.
+  is now populated.
+- **Phase 1 (SE/SA spine) built on `phase-1/se-sa-spine`** (2026-06-27): POC
+  playbook (`poc-playbooks/scoping-an-ai-poc`), three decision frames
+  (`managed-vs-self-host`, `rag-tco`, `do-we-need-an-agent`), talk track
+  (`explaining-a-hallucination`), signature visual (`visuals/four-layer-map`), ADR
+  001 (`decisions/001-langgraph-orchestration`). All wired into nav/sidebar; home +
+  START-HERE updated to surface them; build green per commit. Opening one PR for the
+  phase. Next: Phase 2 (labs 01–03 + apps-agents lessons).
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:
