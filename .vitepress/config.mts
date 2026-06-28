@@ -48,9 +48,13 @@ const decisions = [
   { text: 'ADR 001 — LangGraph as orchestration standard', link: '/decisions/001-langgraph-orchestration' },
 ]
 
+const labs = [
+  { text: 'Overview', link: '/labs/' },
+  { text: '01 · First LLM App', link: '/labs/01-first-llm-app/' },
+]
+
 // --- Phase 2+ sections (uncomment links as pages are built) ----------------
 // const lessons = [{ text: 'Overview', link: '/lessons/' }]
-// const labs = [{ text: 'Overview', link: '/labs/' }]
 
 export default defineConfig({
   title: 'AI Engineering Studio',
@@ -63,6 +67,13 @@ export default defineConfig({
 
   // Served under a repo subpath on GitHub Pages.
   base: '/ai-engineering-studio/',
+
+  // Labs keep a GitHub-friendly README.md as the file, but VitePress (this
+  // version) doesn't auto-map README -> directory index. Rewrite each lab's
+  // README.md to its directory index so `/labs/<lab>/` links resolve.
+  rewrites: {
+    'labs/:lab/README.md': 'labs/:lab/index.md',
+  },
 
   // Render ```mermaid fences into <pre class="mermaid"> so the client-side
   // renderer in theme/index.ts picks them up. Lets authors fence with
@@ -97,8 +108,8 @@ export default defineConfig({
       { text: 'Foundations', link: '/foundations/how-llms-actually-work' },
       { text: 'POC Playbooks', link: '/poc-playbooks/scoping-an-ai-poc' },
       { text: 'Decision Frames', link: '/decision-frames/managed-vs-self-host' },
+      { text: 'Labs', link: '/labs/' },
       { text: 'Decisions', link: '/decisions/001-langgraph-orchestration' },
-      // Phase 2+: Labs return here as pages are built.
     ],
 
     sidebar: [
@@ -106,12 +117,12 @@ export default defineConfig({
       { text: 'POC Playbooks', collapsed: false, items: pocPlaybooks },
       { text: 'Decision Frames', collapsed: false, items: decisionFrames },
       { text: 'Talk Tracks', collapsed: false, items: talkTracks },
+      { text: 'Labs', collapsed: false, items: labs },
       { text: 'Visuals', collapsed: false, items: visuals },
       { text: 'Decisions (ADRs)', collapsed: true, items: decisions },
       { text: 'Standards', collapsed: true, items: standards },
       // --- Phase 2+ (uncomment as built) ---
       // { text: 'Lessons', collapsed: true, items: lessons },
-      // { text: 'Labs', collapsed: true, items: labs },
     ],
 
     socialLinks: [

@@ -21,7 +21,8 @@ features:
     details: Scope an AI POC that survives a live demo. Frame build-vs-buy in dollars. The SE/SA spine.
     link: /poc-playbooks/scoping-an-ai-poc
   - title: Hands-on labs
-    details: 'Build real RAG, agents, and evals locally — deep where it matters, with context boxes so no reader is stranded. (Building in Phase 2.)'
+    details: Build real RAG, agents, and evals locally — deep where it matters, with context boxes so no reader is stranded. Lab 01 is live.
+    link: /labs/
 ---
 
 > This repo is under active build. Structure and conventions are set; content is filling in phase by phase. See `AGENTS.md` and `product/BUILD-PLAN.md` for the implementation plan.
