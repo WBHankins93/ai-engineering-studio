@@ -1,15 +1,20 @@
 # Contributing
 
 ## Workflow
-- **PR per deliverable** — one lab, lesson, decision frame, talk track, or
-  signature artifact per branch. Not one PR per phase.
-- **Branch naming:** `phase-N/slug` (e.g. `phase-1/poc-playbook-first`).
-- **Squash-merge** to `main`. Your in-branch commits can be frequent and messy;
-  only the PR title becomes the permanent `main` commit — so polish PR titles
-  (e.g. `Lab 02 · Production RAG`).
+- **Branch + PR per phase.** Each phase (Phase 1 onward) gets its own branch; all
+  that phase's deliverables land there, then one PR is opened, reviewed, and
+  merged. Phase 0 (scaffold + on-ramp) landed directly on `main` — allowed for the
+  initial scaffold only.
+- **Branch naming:** `phase-N/<short-slug>` (e.g. `phase-1/se-sa-spine`).
+- **Commit often inside the branch** — one logical unit per commit (a page, a fix),
+  committed the moment it builds green. The branch accumulates many meaningful
+  commits; the PR is the phase.
+- **Merge after review.** Keep the per-deliverable commits in history (merge
+  commit or rebase) so the frequent-commit trail survives — don't squash a whole
+  phase into one commit.
 - **Dead-link CI is the gate.** `npm run docs:build` compiles every page and
   fails on broken internal links (`ignoreDeadLinks: false`). Run it locally
-  before opening a PR. It's a required check on `main`.
+  before opening a PR, and keep every commit green. It's a required check on `main`.
 
 ## Commits
 - Plain, single-author. **No co-authoring or generation trailers** — a

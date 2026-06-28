@@ -72,9 +72,13 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   instructions.
 - 2026-06 — Own violet brand (siblings are teal) so the trilogy is visually
   distinct but structurally identical.
-- 2026-06 — PR-per-deliverable (one lab/lesson/artifact), squash-merge to keep
-  `main` clean, dead-link CI as required check. Build PR-per-deliverable groupings
-  even while local-only, so they replay as real PRs once GitHub auth is connected.
+- 2026-06 — Branch + PR per phase (revised per user 2026-06-27, supersedes the
+  earlier PR-per-deliverable decision): each phase from Phase 1 on gets a
+  `phase-N/<slug>` branch holding all its deliverables, opened as one PR, reviewed,
+  then merged. Commit often inside the branch (one logical unit each) and preserve
+  those commits on merge — do not squash a phase to one commit. Dead-link CI is the
+  required check; keep every commit green. Phase 0 landed directly on `main`
+  (scaffold exception).
 
 ## State
 - Scaffold complete: VitePress config, violet theme with `.sp-*` + `.ai-*`
@@ -90,10 +94,10 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   them). `config.mts` sidebar/nav trimmed to live pages; Phase 1+ links are kept
   commented as the roadmap — uncomment each as its page lands. Home `index.md`
   feature links to unbuilt pages dropped (re-add in Phase 1/2).
-- Working tree is **uncommitted** — repo has no commits yet. Awaiting user before
-  committing/pushing.
-- Repo created on GitHub (empty): https://github.com/WBHankins93/ai-engineering-studio
-  Remote not yet pushed — needs authenticated GitHub connection (see Open questions).
+- **Phase 0 committed and pushed to `main`** (2026-06-27): 7 plain commits
+  (scaffold → docs → one per foundations page → START-HERE). `origin` connected
+  via authenticated `gh` (WBHankins93); https://github.com/WBHankins93/ai-engineering-studio
+  is now populated. Phase 1 onward: `phase-N/<slug>` branch + PR.
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:
@@ -114,10 +118,10 @@ START-HERE.md — all building green. Then Phase 2 (labs 01–03), Phase 3
 - Do not add co-authoring/generation trailers to commits.
 
 ## Open questions
-- GitHub auth for push/PR: connect the `engineering` plugin's GitHub MCP, or the
-  author runs an authenticated push? Remote is empty and waiting.
 - GitHub Pages deploy workflow not yet added (only the build-gate CI exists) —
   add a Pages deploy job when ready to publish.
+- Cloud-capstone-vs-strictly-$0 for Lab 07 still open (per BUILD-PLAN §7) — decide
+  before Phase 5.
 
 ## Maintaining this file
 You (the agent) update this file when state changes: decisions made, milestones
