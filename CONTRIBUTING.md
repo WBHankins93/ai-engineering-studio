@@ -1,17 +1,18 @@
 # Contributing
 
 ## Workflow
-- **Branch + PR per phase.** Each phase (Phase 1 onward) gets its own branch; all
-  that phase's deliverables land there, then one PR is opened, reviewed, and
-  merged. Phase 0 (scaffold + on-ramp) landed directly on `main` — allowed for the
-  initial scaffold only.
-- **Branch naming:** `phase-N/<short-slug>` (e.g. `phase-1/se-sa-spine`).
+- **PR per deliverable.** A **lab is always its own branch + PR.** A signature
+  artifact (decision frame, POC playbook, visual, ADR) is its own PR too, unless a
+  few are small and tightly related — then they may share one PR (as the Phase 1
+  spine did). "Phase" is a roadmap label, **not** a PR unit.
+- **Branch naming:** `phase-N/<deliverable-slug>` (e.g. `phase-2/lab-01-first-llm-app`,
+  `phase-2/apps-agents-lessons`). Phase 0 (scaffold) landed directly on `main` —
+  the only direct-to-`main` exception.
 - **Commit often inside the branch** — one logical unit per commit (a page, a fix),
-  committed the moment it builds green. The branch accumulates many meaningful
-  commits; the PR is the phase.
-- **Merge after review.** Keep the per-deliverable commits in history (merge
-  commit or rebase) so the frequent-commit trail survives — don't squash a whole
-  phase into one commit.
+  committed the moment it builds green. The branch accumulates meaningful commits;
+  the PR is the deliverable.
+- **Merge after review.** Keep the per-commit trail in history (merge commit or
+  rebase) — don't squash a deliverable into one commit.
 - **Dead-link CI is the gate.** `npm run docs:build` compiles every page and
   fails on broken internal links (`ignoreDeadLinks: false`). Run it locally
   before opening a PR, and keep every commit green. It's a required check on `main`.
