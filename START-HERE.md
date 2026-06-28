@@ -1,10 +1,14 @@
+---
+tags:
+  - start-here
+---
 # Start Here
 
 Welcome. This is a working reference for **making AI engineering legible** — built
 by and for Solutions Engineers and Architects who have to stand between a CTO and
 an engineer and make sure they're solving the same problem.
 
-## What this is (and what it isn't)
+## 📝 What This Is (and What It Isn't)
 
 This is **not** another deep-RAG tutorial competing on tooling mastery. The
 internet has a glut of those. The scarce skill in 2026 is translation: scoping an
@@ -20,7 +24,7 @@ The defense against this being shallow is non-negotiable: **the labs still build
 the real thing.** You run the RAG pipeline, write the eval, measure the latency.
 The translation layer is *added on top* of rigor, never *substituted* for it.
 
-## If you're in a live AI deal right now
+## 🔥 If You're in a Live AI Deal Right Now
 
 Jump straight to what you need:
 
@@ -30,7 +34,7 @@ Jump straight to what you need:
 - **Need to place a vague customer ask?** → [The Four-Layer Map](/visuals/four-layer-map) — the whiteboard you draw in a kickoff.
 - **Blanking on a term mid-call?** → [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — `Ctrl+F` it before you dial in.
 
-## If you're orienting for the first time
+## 🧭 If You're Orienting for the First Time
 
 Read the foundations on-ramp in order — it assumes no prior AI knowledge and gets
 you fluent fast:
@@ -40,7 +44,7 @@ you fluent fast:
 3. [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — the glossary you wish you'd had.
 4. [LangGraph in 10 Minutes](/foundations/langgraph-how-to) — how agent workflows are wired.
 
-## How the site is built
+## 🗺️ How the Site Is Built
 
 Everything here is organized under the four-layer map (L1 apps & agents → L2
 LLMOps & infra → L3 MLOps & data → L4 architecture & governance) and split into
@@ -60,13 +64,13 @@ The build is phased so the SE/SA spine — the differentiators — comes first. 
 `product/BUILD-PLAN.md` for the full plan and `AGENTS.md` for the project's
 source of truth.
 
-## The conventions that keep it consistent
+## 📋 The Conventions That Keep It Consistent
 
 - **Depth Standard** — how a generic page becomes a worked, talk-track-equipped one. See [DEPTH-STANDARD.md](/DEPTH-STANDARD).
 - **Canonical Cast** — the reused tool examples (Ollama, Qdrant, Langfuse, LangGraph…) that make the site read authored, not assembled. See [CANONICAL-CAST.md](/CANONICAL-CAST).
 - **Contributing** — git workflow and the dead-link CI gate. See [CONTRIBUTING.md](/CONTRIBUTING).
 
-## The trilogy
+## 🔗 The Trilogy
 
 This is the third repo in a set with one through-line — *a Solutions Architect who
 makes hard technical domains understandable.* `solutions-playbook` (how I run

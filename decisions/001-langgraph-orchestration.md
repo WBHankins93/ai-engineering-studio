@@ -1,3 +1,9 @@
+---
+tags:
+  - adr
+  - apps-agents
+  - agents
+---
 # ADR 001 — LangGraph as the orchestration standard
 
 - **Status:** Accepted
@@ -52,9 +58,7 @@ knowledge survives a tool swap.
 - **Revisit if:** mindshare shifts materially, or a lab's needs are served far
   better by a different tool (record a superseding ADR rather than editing this).
 
-<div class="ai-deeper">
-  <span class="ai-label">Related</span>
-  Beginner intro: <a href="/foundations/langgraph-how-to">LangGraph in 10 Minutes</a>.
-  The "do we even need an agent at all?" question is a separate decision — see the
-  <code>decision-frames/do-we-need-an-agent</code> frame.
-</div>
+## 🔗 Links
+
+- [LangGraph in 10 Minutes](/foundations/langgraph-how-to) — the beginner intro
+- [Do We Even Need an Agent?](/decision-frames/do-we-need-an-agent) — the separate "do we need one at all?" decision

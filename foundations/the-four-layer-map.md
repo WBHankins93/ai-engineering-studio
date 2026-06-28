@@ -1,17 +1,24 @@
+---
+tags:
+  - foundations
+  - architecture-governance
+---
 # The Four-Layer Map
 
-> The one mental model the rest of this site hangs on. When a customer describes
-> an "AI problem," your first job is to locate *which layer* they're actually
-> talking about — because the layer determines who's in the room, what it costs,
-> and how you explain it.
+## 📝 Context
+
+The one mental model the rest of this site hangs on. When a customer describes an
+"AI problem," your first job is to locate *which layer* they're actually talking
+about — because the layer determines who's in the room, what it costs, and how you
+explain it.
 
 "AI engineering" is not one field. The most useful framing in 2026 — the one
 enterprise reference architectures and engineer roadmaps both converge on —
-separates the **application layer** (where most engineering jobs now sit) from
-the **infrastructure** beneath it, the **classic ML/data** discipline it grew out
-of, and the **architecture & governance** concerns that wrap all of it.
+separates the **application layer** (where most engineering jobs now sit) from the
+**infrastructure** beneath it, the **classic ML/data** discipline it grew out of,
+and the **architecture & governance** concerns that wrap all of it.
 
-## The four layers
+## 🗺️ The Four Layers
 
 ```mermaid
 flowchart TB
@@ -24,9 +31,6 @@ flowchart TB
   L2 --> L3
 ```
 
-*What lives in each layer is in the table below; the diagram stays to the layer
-names so it reads at a glance.*
-
 | Layer | Name | What lives here | Who owns it |
 | --- | --- | --- | --- |
 | **L1** | LLM apps & agents | RAG, agents, prompt/context engineering, evals, orchestration, MCP/A2A, multi-agent | App / product engineers |
@@ -34,66 +38,58 @@ names so it reads at a glance.*
 | **L3** | Classic MLOps & data | Training pipelines, feature stores, registries, experiment tracking, CI/CD for ML, drift | ML / data engineers |
 | **L4** | AI architecture & governance | Reference architectures, build-vs-buy, guardrails, evaluation strategy, NIST / EU AI Act / ISO 42001 | Architects, security, legal, exec |
 
-::: tip Read the arrows as "depends on"
-An **L1** chatbot depends on **L2** serving it a model fast and cheaply, which
-depends on **L3** disciplines for anything you train yourself, all bounded by
-**L4** decisions about what you're allowed to build and how you'll prove it's
-safe. Most *new* engineering work sits in L1; most *cost and risk* sits in L2 and
-L4. That gap is exactly where an SE earns their keep.
-:::
+> **Read the arrows as "depends on."** An L1 chatbot depends on L2 serving a model
+> fast and cheaply, which depends on L3 disciplines for anything you train yourself,
+> all bounded by L4 decisions about what you're allowed to build and how you prove
+> it's safe. Most *new* engineering work sits in L1; most *cost and risk* sit in L2
+> and L4 — exactly where an SE earns their keep.
 
-## Why this matters in the room
+## 🎯 Why This Matters in the Room
 
 Most online "AI engineer roadmaps" collapse L1–L4 into a single 12-month linear
 path. That's fine for a learner and useless in a meeting. The map's real value is
-**triage**: a customer says "we want an AI assistant for our support docs," and
-in ten seconds you can place it — L1 (it's a RAG app), with L2 questions coming
-fast (what will it cost to serve?), and an L4 flag waving (is their data going to
-a third-party model?). You've turned a vague ask into three concrete workstreams
+**triage**: a customer says "we want an AI assistant for our support docs," and in
+ten seconds you can place it — L1 (it's a RAG app), with L2 questions coming fast
+(what will it cost to serve?) and an L4 flag waving (is their data going to a
+third-party model?). You've turned a vague ask into three concrete workstreams
 before anyone's opened a laptop.
 
-### Worked scenario — placing a real ask
+## 🧩 Worked Scenario: Placing a Real Ask
 
-A prospect says: *"We want to put a chatbot on our internal wiki so employees
-stop pinging the ops team."* Here's the map doing its job:
+A prospect says: *"We want to put a chatbot on our internal wiki so employees stop
+pinging the ops team."* The map doing its job:
 
-<div class="sp-band">
-  <div class="sp-step"><div class="sp-h">L1 · the ask itself</div><div class="sp-d">This is RAG over the wiki. The visible product. Retrieval quality decides whether it's trusted.</div></div>
-  <div class="sp-step"><div class="sp-h">L2 · the cost question</div><div class="sp-d">Which model serves it, hosted or self-run, what's per-query cost and latency at their volume.</div></div>
-  <div class="sp-step"><div class="sp-h">L3 · usually skipped</div><div class="sp-d">No model training here. L3 only enters if they later fine-tune on their own data.</div></div>
-  <div class="sp-step"><div class="sp-h">L4 · the quiet blocker</div><div class="sp-d">Does the wiki contain HR or customer PII? Where does it go? This can stop the deal — surface it early.</div></div>
-</div>
+- **L1 · the ask itself** — this is RAG over the wiki, the visible product; retrieval quality decides whether it's trusted.
+- **L2 · the cost question** — which model serves it, hosted or self-run, and per-query cost and latency at their volume.
+- **L3 · usually skipped** — no model training here; L3 only enters if they later fine-tune on their own data.
+- **L4 · the quiet blocker** — does the wiki contain HR or customer PII, and where does it go? This can stop the deal — surface it early.
 
 <div class="sp-say">
   <div class="sp-label">Say it like this</div>
-  <p>"What you're describing is a retrieval system — the AI reads your wiki before it answers, so it's grounded in your docs, not making things up. The build is straightforward. The two questions I'd want to nail down early are what it costs to run at your volume, and whether anything in that wiki can't leave your environment — because that changes the architecture, not just the price."</p>
+  <p>"What you're describing is a retrieval system — the AI reads your wiki before it
+  answers, so it's grounded in your docs, not making things up. The build is
+  straightforward. The two questions I'd nail down early are what it costs to run at
+  your volume, and whether anything in that wiki can't leave your environment —
+  because that changes the architecture, not just the price."</p>
 </div>
 
-## The failure mode this map prevents
+## 🚨 Failure Path
 
-The classic SE mistake is **answering at the wrong layer**. The customer asks an
-L4 governance question ("is our data training their model?") and the engineer
-answers with L1 implementation detail ("we use RAG with hybrid search"). Both are
-true; only one is responsive. The map keeps you honest about which question you're
-actually being asked — and lets you say "good question, that's a different layer,
-let me come back to it" instead of bluffing.
+The classic SE mistake is **answering at the wrong layer**. The customer asks an L4
+governance question ("is our data training their model?") and the engineer answers
+with L1 implementation detail ("we use RAG with hybrid search"). Both true; only one
+is responsive. The map keeps you honest about which question you're actually being
+asked — so you can say "good question, that's a different layer, let me come back to
+it" instead of bluffing.
 
-## How the rest of this site uses the map
+## ⚠️ Gotchas
 
-Every lesson, lab, and decision frame is tagged to a layer. If you only ever
-internalize one thing here, make it this: **before you solve an AI problem, place
-it.** The layer tells you who needs to be in the room and what they'll each care
-about.
+- Treating the layers as rigid — real systems blur them; the map is a thinking tool, not a standard.
+- Jumping to L1 build talk before the L4 data question — the governance answer can change the whole architecture.
+- Assuming every AI project touches L3 — most app work never trains a model.
 
-<div class="ai-deeper">
-  <span class="ai-label">Go deeper</span>
-  The signature, fully-drawn version of this diagram — dual-labeled for technical
-  and non-technical audiences — lives in <code>visuals/four-layer-map</code> (built
-  in Phase 1). This page is the on-ramp; that one is the whiteboard you actually draw.
-</div>
+## 🔗 Links
 
----
-
-*The four-layer framing is synthesized from 2026 enterprise reference
-architectures and practitioner roadmaps. Layer boundaries are a thinking tool,
-not a standard — real systems blur them, and that's fine.*
+- [Visual · The Four-Layer Map](/visuals/four-layer-map) — the dual-labeled whiteboard version you actually draw
+- [How LLMs Actually Work](/foundations/how-llms-actually-work) — what sits inside L1
+- [Managed API vs Self-Host](/decision-frames/managed-vs-self-host) — the L2/L4 decision in practice

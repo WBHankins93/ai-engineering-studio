@@ -1,17 +1,22 @@
+---
+tags:
+  - foundations
+  - reference
+---
 # AI Vocabulary for SAs
 
-> The glossary you wish you'd had in your first AI deal. Each term gets a plain
-> definition and, where it helps, a "say it like this" line for a non-technical
-> stakeholder. Organized by the [four-layer map](/foundations/the-four-layer-map)
-> so you can see where each piece lives.
+## 📝 Context
 
-::: tip How to use this page
-You don't read a glossary front to back — you `Ctrl+F` it before a call. The terms
-most likely to come up in a live deal are in **L1** and **L4**. If you only skim
-two sections, skim those.
-:::
+The glossary you wish you'd had in your first AI deal. Each term gets a plain
+definition and, where it helps, a "say it like this" line for a non-technical
+stakeholder. It's organized by the [four-layer map](/foundations/the-four-layer-map)
+so you can see where each piece lives.
 
-## L1 — LLM apps & agents
+> **How to use this page:** you don't read a glossary front to back — you `Ctrl+F`
+> it before a call. The terms most likely to come up in a live deal are in **L1**
+> and **L4**; if you only skim two sections, skim those.
+
+## 🎯 L1 · LLM Apps & Agents
 
 | Term | Plain definition | Say it like this |
 | --- | --- | --- |
@@ -32,7 +37,7 @@ two sections, skim those.
 | **Eval** | A repeatable test of output quality — the thing that separates production from a demo. | "Our scorecard for whether it's actually good enough." |
 | **LLM-as-judge** | Using a model to grade another model's output against criteria. | "Having one AI grade the other's homework, on rules we set." |
 
-## L2 — LLMOps & inference infra
+## 🎯 L2 · LLMOps & Inference Infra
 
 | Term | Plain definition | Say it like this |
 | --- | --- | --- |
@@ -46,7 +51,7 @@ two sections, skim those.
 | **Latency** | Time to get an answer back. | "How long the user waits." |
 | **Token cost** | What you pay per million tokens in/out — the main variable cost of an LLM app. | "The metered bill for using the AI." |
 
-## L3 — Classic MLOps & data
+## 🎯 L3 · Classic MLOps & Data
 
 | Term | Plain definition | Say it like this |
 | --- | --- | --- |
@@ -57,7 +62,7 @@ two sections, skim those.
 | **Model registry** | The catalog tracing every deployed model back to the run that produced it. | "The paper trail for what's running and why." |
 | **Drift** | When live data or model behavior shifts away from what you tested. | "The world changed and the model didn't — so quality quietly slips." |
 
-## L4 — AI architecture & governance
+## 🎯 L4 · AI Architecture & Governance
 
 | Term | Plain definition | Say it like this |
 | --- | --- | --- |
@@ -68,25 +73,25 @@ two sections, skim those.
 | **EU AI Act** | EU law setting obligations by risk tier, with high-risk requirements phasing in through 2026 and beyond. | "The EU's legal rulebook for AI, tiered by how risky the use is." |
 | **ISO/IEC 42001** | A certifiable management-system standard — auditable evidence of AI governance. | "The certification that proves we govern AI properly." |
 
+## 🗣️ Talk Track
+
 <div class="sp-say">
-  <div class="sp-label">Say it like this — when someone asks "is our data training their model?"</div>
-  <p>"With the setup we're proposing, your documents stay in your environment.
-  When you ask a question, only the relevant snippet plus your question go to the
-  model to generate an answer — and with an enterprise agreement that data isn't
-  used for training. I'll get you the specific data-handling terms in writing so
-  legal can sign off on the exact wording, not my paraphrase."</p>
+  <div class="sp-label">Say it like this — "is our data training their model?"</div>
+  <p>"With the setup we're proposing, your documents stay in your environment. When
+  you ask a question, only the relevant snippet plus your question go to the model to
+  generate an answer — and with an enterprise agreement that data isn't used for
+  training. I'll get you the specific data-handling terms in writing so legal can
+  sign off on the exact wording, not my paraphrase."</p>
 </div>
 
-::: warning Accuracy note
-The "say it like this" lines are deliberately simplified for a non-technical
-listener — they trade precision for clarity *on purpose*. For anything that goes
-in a contract (data handling, compliance claims), point to the official terms, not
-this glossary. Numbers marked *illustrative* vary by provider and workload.
-:::
+## ⚠️ Gotchas
 
-<div class="ai-deeper">
-  <span class="ai-label">Go deeper</span>
-  Tool-specific choices (which vector DB, which serving engine, which
-  orchestrator) live in <code>CANONICAL-CAST.md</code> and the ADRs under
-  <code>decisions/</code>. This glossary stays vendor-neutral on purpose.
-</div>
+- The "say it like this" lines trade precision for clarity *on purpose* — don't paste them into a contract; point to official terms for data-handling and compliance claims.
+- Numbers marked *illustrative* vary by provider and workload — re-verify before quoting.
+- This glossary stays vendor-neutral by design; specific tool choices live elsewhere (see Links).
+
+## 🔗 Links
+
+- [Canonical Cast](/CANONICAL-CAST) — the specific tools these categories map to
+- [The Four-Layer Map](/foundations/the-four-layer-map) — the structure this glossary follows
+- [How LLMs Actually Work](/foundations/how-llms-actually-work) — the L1 terms in motion
