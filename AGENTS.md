@@ -81,13 +81,13 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   instructions.
 - 2026-06 — Own violet brand (siblings are teal) so the trilogy is visually
   distinct but structurally identical.
-- 2026-06 — Branch + PR per phase (revised per user 2026-06-27, supersedes the
-  earlier PR-per-deliverable decision): each phase from Phase 1 on gets a
-  `phase-N/<slug>` branch holding all its deliverables, opened as one PR, reviewed,
-  then merged. Commit often inside the branch (one logical unit each) and preserve
-  those commits on merge — do not squash a phase to one commit. Dead-link CI is the
-  required check; keep every commit green. Phase 0 landed directly on `main`
-  (scaffold exception).
+- 2026-06 — PR **per deliverable** (revised per user 2026-06-28): a lab is always
+  its own `phase-N/<slug>` branch + PR; signature artifacts are too, unless a few
+  are small and tightly related (then they may share one PR, as the Phase 1 spine
+  did). "Phase" is a roadmap label, not a PR unit. Commit often inside the branch
+  (one logical unit each), preserve commits on merge (no squashing a deliverable),
+  dead-link CI required, keep every commit green. Phase 0 → `main` (scaffold
+  exception). Supersedes the earlier per-phase and per-deliverable-only decisions.
 
 ## State
 - Scaffold complete: VitePress config, violet theme with `.sp-*` + `.ai-*`
