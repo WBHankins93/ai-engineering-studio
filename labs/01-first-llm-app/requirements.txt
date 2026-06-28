@@ -1,0 +1,4 @@
+# Lab 01 · First LLM App — Python deps
+# The official Ollama Python client. Pin loosely; the tool-calling API used in
+# tools.py needs a reasonably recent version.
+ollama>=0.3.0
