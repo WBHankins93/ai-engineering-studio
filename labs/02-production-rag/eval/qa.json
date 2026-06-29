@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is hybrid retrieval and how are the results combined?",
+    "reference": "Hybrid retrieval runs both dense (vector) and sparse (BM25) search and combines them, typically with Reciprocal Rank Fusion (RRF)."
+  },
+  {
+    "question": "Why does chunk size matter in RAG?",
+    "reference": "Too-big chunks bury the relevant sentence in noise and waste prompt space; too-small chunks sever the context that makes a sentence meaningful. There is no universal best size."
+  },
+  {
+    "question": "Does grounding eliminate hallucination?",
+    "reference": "No. Grounding reduces hallucination by making the model answer from supplied text, but a model can still misread good context, which is why evaluation matters."
+  },
+  {
+    "question": "What is a reranker and why only rerank the top candidates?",
+    "reference": "A reranker is a second, more careful model (usually a cross-encoder) that re-scores fused candidates for true relevance. You rerank only the top candidates because cross-encoders are slower per pair than embedding search."
+  },
+  {
+    "question": "What is the capital of France?",
+    "reference": "I don't know based on the provided documents. (The corpus is about RAG, not geography — a correct answer must decline.)"
+  }
+]
