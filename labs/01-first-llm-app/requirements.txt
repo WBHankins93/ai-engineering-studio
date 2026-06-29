@@ -1,4 +1,5 @@
 # Lab 01 · First LLM App — Python deps
-# The official Ollama Python client. Pin loosely; the tool-calling API used in
-# tools.py needs a reasonably recent version.
-ollama>=0.3.0
+# One OpenAI-compatible client covers every backend (local Ollama or hosted Groq/
+# OpenAI/etc.) — see provider.py. python-dotenv loads a local .env for API keys.
+openai>=1.40
+python-dotenv>=1.0

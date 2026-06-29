@@ -1,20 +1,21 @@
-"""Lab 01 · Step 2 — function calling (a.k.a. tools).
+"""Lab 01 · Step 2 — function calling (tools), provider-agnostic.
 
 A model on its own can only produce text. "Function calling" lets it ask *your*
-code to do something — look up the weather, query a database, hit an API — and
-then answer using the result. The model decides *when* to call; your code decides
-*what the call actually does*.
+code to do something — look up the weather, query a database, hit an API — and then
+answer using the result. The model decides *when* to call; your code decides *what
+the call actually does*.
 
 The flow: send the question + a tool spec → the model replies with a tool call →
 you run the real function → you send the result back → the model writes the final
-answer. Run with `make tools` (or `python tools.py`).
+answer. Run with `make tools`. Works on any backend that supports tool calling
+(Ollama with a tool-capable model, Groq, OpenAI).
 """
 
-import os
+import json
 
-from ollama import chat
+from provider import get_client_and_model
 
-MODEL = os.environ.get("MODEL", "llama3.1:8b")
+client, MODEL = get_client_and_model()
 
 
 # --- The actual tool: ordinary Python the model is allowed to invoke. ----------
@@ -46,7 +47,6 @@ TOOLS = [
     }
 ]
 
-# Map tool names to the real functions so we can dispatch a call.
 AVAILABLE = {"get_weather": get_weather}
 
 
@@ -55,26 +55,27 @@ def main() -> None:
     print(f"you ▸ {question}\n")
 
     messages = [{"role": "user", "content": question}]
-    first = chat(model=MODEL, messages=messages, tools=TOOLS)
-    msg = first["message"]
+    first = client.chat.completions.create(model=MODEL, messages=messages, tools=TOOLS)
+    msg = first.choices[0].message
 
-    tool_calls = msg.get("tool_calls") or []
-    if not tool_calls:
+    if not msg.tool_calls:
         # The model chose to answer directly without a tool.
-        print("ai  ▸", msg.get("content", ""))
+        print("ai  ▸", msg.content)
         return
 
     # The model asked us to run one or more tools. Run them and feed results back.
-    messages.append(msg)
-    for call in tool_calls:
-        name = call["function"]["name"]
-        args = call["function"]["arguments"] or {}
+    messages.append(msg)  # the assistant turn that contains the tool call(s)
+    for call in msg.tool_calls:
+        name = call.function.name
+        args = json.loads(call.function.arguments or "{}")
         print(f"... model requested {name}({args})")
         result = AVAILABLE[name](**args) if name in AVAILABLE else "unknown tool"
-        messages.append({"role": "tool", "content": str(result), "name": name})
+        messages.append(
+            {"role": "tool", "tool_call_id": call.id, "content": str(result)}
+        )
 
-    final = chat(model=MODEL, messages=messages)
-    print("ai  ▸", final["message"]["content"])
+    final = client.chat.completions.create(model=MODEL, messages=messages)
+    print("ai  ▸", final.choices[0].message.content)
 
 
 if __name__ == "__main__":
