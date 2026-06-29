@@ -70,6 +70,12 @@ tags:
 > this repo's **three-layer reading model** on top: `.ai-context` boxes inline,
 > `.ai-deeper` anchors for opt-in depth, and an `.ai-explain` "explain it to a
 > customer" close. See `product/BUILD-PLAN.md` §3.
+>
+> **Labs are provider-agnostic.** Code talks to an OpenAI-compatible API and selects
+> a backend via `.env` (`provider.py`): default local **Ollama**, first-class hosted
+> fallback (**Groq** free tier / OpenAI) for Intel/older/locked-down machines. Don't
+> hard-code Ollama. Link the shared `labs/model-backends.md` instead of repeating
+> setup, and keep the cost note honest ("$0 local, or $0–pennies hosted").
 
 Rules (concept pages):
 - **Emoji-prefixed section headings, from this fixed palette only** (reuse the

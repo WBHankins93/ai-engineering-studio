@@ -193,8 +193,9 @@ POC playbook, 3 decision frames (`managed-vs-self-host`, `rag-tco`,
 visual, ADR 001. Plus the visuals system + mermaid fix (PR #4).
 
 ### Phase 2 — Apps & agents, hands-on & anchored  (~2–3 wk) — IN PROGRESS
-One branch/PR each:
-- [ ] `phase-2/lab-01-first-llm-app` — streaming CLI, function calling, Ollama. (Include the `labs/` index/overview here or as its own small PR.)
+All labs are **provider-agnostic** (Ollama default + hosted free-tier fallback; see
+`labs/model-backends.md` and the §3 lab note). One branch/PR each:
+- [x] `phase-2/lab-01-first-llm-app` — streaming CLI + function calling. Done (PR #8), then made provider-agnostic. Includes `labs/index.md` + `labs/model-backends.md`.
 - [ ] `phase-2/lab-02-production-rag` — hybrid search (BM25+dense, RRF) → rerank → top-5, RAGAS evals.
 - [ ] `phase-2/lab-03-agent-system` — hub-and-spoke orchestrator-worker (LangGraph) + one MCP tool.
 - [ ] `phase-2/apps-agents-lessons` — apps-agents lessons (small, related → may be one PR, or split if any grows large).
