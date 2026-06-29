@@ -196,7 +196,7 @@ visual, ADR 001. Plus the visuals system + mermaid fix (PR #4).
 All labs are **provider-agnostic** (Ollama default + hosted free-tier fallback; see
 `labs/model-backends.md` and the §3 lab note). One branch/PR each:
 - [x] `phase-2/lab-01-first-llm-app` — streaming CLI + function calling. Done (PR #8), then made provider-agnostic. Includes `labs/index.md` + `labs/model-backends.md`.
-- [ ] `phase-2/lab-02-production-rag` — hybrid search (BM25+dense, RRF) → rerank → top-5, RAGAS evals.
+- [x] `phase-2/lab-02-production-rag` — hybrid (BM25+dense, RRF) → fastembed rerank → grounded answer + a lightweight eval gate. Embedded Qdrant. Done; smoke-tested. (Full RAGAS-style eval deferred to Lab 04.)
 - [ ] `phase-2/lab-03-agent-system` — hub-and-spoke orchestrator-worker (LangGraph) + one MCP tool.
 - [ ] `phase-2/apps-agents-lessons` — apps-agents lessons (small, related → may be one PR, or split if any grows large).
 

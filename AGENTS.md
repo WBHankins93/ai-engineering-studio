@@ -125,12 +125,14 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   (`VISUAL-PROMPT-STANDARD.md`, `IMAGERY-PLAN.md`, `visual-specs/showcase-prompts.md`)
   modeled on the sibling repos, violet-adapted, with Wave 1 specs ready
   (four-layer-map, rag-two-loops, hub-and-spoke).
-- **Phase 2 started:** Lab 01 (First LLM App — streaming chat + function calling)
-  shipped via PR #8, then made **provider-agnostic** (`provider.py`, `.env`,
-  `labs/model-backends.md`) so it runs on local Ollama OR a free hosted tier — works
-  on the author's 2019 Intel i9. Labs use the devops lab anatomy + three-layer
-  reading model. Next: Lab 02 (Production RAG). **Lab code is not runtime-verified in
-  the authoring env (no Ollama/keys) — author should smoke-test `make chat`/`tools`.**
+- **Phase 2 in progress:** Lab 01 (First LLM App, PR #8) + Lab 02 (Production RAG)
+  built. Both **provider-agnostic** (`provider.py`, `.env`, `labs/model-backends.md`)
+  — local Ollama OR hosted free tier; embeddings default to Ollama (Groq is chat-only).
+  Labs use the devops lab anatomy + three-layer reading model. **Both labs
+  smoke-tested end-to-end against real local Ollama** (chat+tools; ingest → hybrid
+  retrieve + RRF + fastembed rerank + grounded answer + eval loop). Note: a 3B model
+  makes a noisy LLM-judge — Lab 04 covers judge calibration. Lab 02 uses embedded
+  Qdrant (no Docker). Next: Lab 03 (Agent System).
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:
