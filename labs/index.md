@@ -4,11 +4,14 @@ tags:
 ---
 # Labs
 
-Hands-on, **local-first, mostly $0** labs that build the real thing — RAG, agents,
-evals — on your own machine via [Ollama](https://ollama.com). Each lab uses the
-three-layer reading model: a main track any technically-literate reader can
-complete, inline context boxes for SE relevance, go-deeper anchors for the
-engineering detail, and an "explain it to a customer" close.
+Hands-on, **mostly $0** labs that build the real thing — RAG, agents, evals. They're
+**provider-agnostic**: run them on a local model via [Ollama](https://ollama.com) (the
+default — private, $0, great on Apple Silicon) or a free hosted tier (ideal on an
+Intel/older Mac or a locked-down laptop). Set this up once in
+[Choosing a Model Backend](/labs/model-backends). Each lab uses the three-layer
+reading model: a main track any technically-literate reader can complete, inline
+context boxes for SE relevance, go-deeper anchors for the engineering detail, and an
+"explain it to a customer" close.
 
 > The labs are where this site earns its credibility: the translation layer is
 > *added on top* of real work, never substituted for it.
@@ -24,6 +27,12 @@ engineering detail, and an "explain it to a customer" close.
 | 05 · Serving & Cost *(Phase 3)* | Quantization tradeoffs, measured latency/cost | Ollama, vLLM | ~2 h | Advanced |
 | 06 · Observability *(Phase 5)* | Tracing + cost dashboards | Langfuse | ~1–2 h | Intermediate |
 | 07 · Capstone *(Phase 5)* | End-to-end RAG-agent app; $0 local **or** optional cloud | full stack | ~4 h | Advanced |
+
+## Before you start
+
+[**Choosing a Model Backend**](/labs/model-backends) — a one-time, ~2-minute setup
+that decides whether the labs run locally (Ollama) or on a free hosted tier. Do this
+once; every lab uses it.
 
 ## Suggested order
 
