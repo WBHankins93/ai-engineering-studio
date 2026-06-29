@@ -50,6 +50,7 @@ const decisions = [
 
 const labs = [
   { text: 'Overview', link: '/labs/' },
+  { text: 'Choosing a Model Backend', link: '/labs/model-backends' },
   { text: '01 · First LLM App', link: '/labs/01-first-llm-app/' },
 ]
 

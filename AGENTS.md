@@ -81,6 +81,11 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   instructions.
 - 2026-06 — Own violet brand (siblings are teal) so the trilogy is visually
   distinct but structurally identical.
+- 2026-06 — Labs are **provider-agnostic** (decided w/ user 2026-06-28): OpenAI-
+  compatible code, backend chosen in `.env` via `provider.py` — default local Ollama,
+  first-class hosted fallback (Groq free tier / OpenAI) for Intel/older/locked-down
+  machines. Audience assumes Apple Silicon, but no one is excluded. Shared setup in
+  `labs/model-backends.md`. Aligns with the RAG reference doc's API-first stance.
 - 2026-06 — PR **per deliverable** (revised per user 2026-06-28): a lab is always
   its own `phase-N/<slug>` branch + PR; signature artifacts are too, unless a few
   are small and tightly related (then they may share one PR, as the Phase 1 spine
@@ -119,8 +124,13 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   `<br>`/entities from all diagram labels. Added the visual prompt system
   (`VISUAL-PROMPT-STANDARD.md`, `IMAGERY-PLAN.md`, `visual-specs/showcase-prompts.md`)
   modeled on the sibling repos, violet-adapted, with Wave 1 specs ready
-  (four-layer-map, rag-two-loops, hub-and-spoke). Next: Phase 2 (labs 01–03 +
-  apps-agents lessons).
+  (four-layer-map, rag-two-loops, hub-and-spoke).
+- **Phase 2 started:** Lab 01 (First LLM App — streaming chat + function calling)
+  shipped via PR #8, then made **provider-agnostic** (`provider.py`, `.env`,
+  `labs/model-backends.md`) so it runs on local Ollama OR a free hosted tier — works
+  on the author's 2019 Intel i9. Labs use the devops lab anatomy + three-layer
+  reading model. Next: Lab 02 (Production RAG). **Lab code is not runtime-verified in
+  the authoring env (no Ollama/keys) — author should smoke-test `make chat`/`tools`.**
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:
