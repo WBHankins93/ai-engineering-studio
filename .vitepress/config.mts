@@ -52,6 +52,7 @@ const labs = [
   { text: 'Overview', link: '/labs/' },
   { text: 'Choosing a Model Backend', link: '/labs/model-backends' },
   { text: '01 · First LLM App', link: '/labs/01-first-llm-app/' },
+  { text: '02 · Production RAG', link: '/labs/02-production-rag/' },
 ]
 
 // --- Phase 2+ sections (uncomment links as pages are built) ----------------

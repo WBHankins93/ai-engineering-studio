@@ -1,0 +1,6 @@
+# Lab 02 · Production RAG — Python deps
+openai>=1.40          # chat + embeddings (any OpenAI-compatible backend)
+python-dotenv>=1.0    # load .env
+qdrant-client>=1.9    # vector store (embedded/local mode — no server)
+rank-bm25>=0.2        # sparse keyword retrieval for the hybrid step
+fastembed>=0.3        # cross-encoder reranker (ONNX/CPU — no PyTorch)

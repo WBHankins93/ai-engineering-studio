@@ -14,3 +14,12 @@ node_modules/
 # Local env
 .env
 .env.local
+
+# Python (labs)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Lab local data (embedded Qdrant index, etc.)
+**/.qdrant/
