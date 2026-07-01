@@ -137,7 +137,12 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   (orchestrator + ToolNode, conditional edges) with a real **MCP** tool
   (`mcp_server.py` via `langchain-mcp-adapters`). Verified end-to-end on local Ollama
   — the orchestrator routed to the MCP `lookup_order` tool and answered. All
-  pure-Python deps. Only apps-agents lessons remain in Phase 2; then Phase 3.
+  pure-Python deps.
+- **Phase 2 complete:** apps-agents lessons shipped (`lessons/index.md` +
+  `lessons/apps-agents/`: rag-patterns, agent-architectures, context-engineering,
+  mcp-and-a2a — Tier A, emoji skeleton). Phase 2 = Labs 01–03 + backends page + these
+  lessons, all live. Next: Phase 3 (Lab 04 eval harness + "good enough?" frame; Lab 05
+  serving/cost + "cost at scale?" frame).
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:
