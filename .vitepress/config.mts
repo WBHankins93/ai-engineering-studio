@@ -56,8 +56,13 @@ const labs = [
   { text: '03 · Agent System', link: '/labs/03-agent-system/' },
 ]
 
-// --- Phase 2+ sections (uncomment links as pages are built) ----------------
-// const lessons = [{ text: 'Overview', link: '/lessons/' }]
+const lessons = [
+  { text: 'Overview', link: '/lessons/' },
+  { text: 'RAG Patterns', link: '/lessons/apps-agents/rag-patterns' },
+  { text: 'Agent Architectures', link: '/lessons/apps-agents/agent-architectures' },
+  { text: 'Context Engineering', link: '/lessons/apps-agents/context-engineering' },
+  { text: 'MCP and A2A', link: '/lessons/apps-agents/mcp-and-a2a' },
+]
 
 export default defineConfig({
   title: 'AI Engineering Studio',
@@ -121,6 +126,7 @@ export default defineConfig({
       { text: 'Decision Frames', collapsed: false, items: decisionFrames },
       { text: 'Talk Tracks', collapsed: false, items: talkTracks },
       { text: 'Labs', collapsed: false, items: labs },
+      { text: 'Lessons', collapsed: false, items: lessons },
       { text: 'Visuals', collapsed: false, items: visuals },
       { text: 'Decisions (ADRs)', collapsed: true, items: decisions },
       { text: 'Standards', collapsed: true, items: standards },

@@ -198,7 +198,7 @@ All labs are **provider-agnostic** (Ollama default + hosted free-tier fallback; 
 - [x] `phase-2/lab-01-first-llm-app` — streaming CLI + function calling. Done (PR #8), then made provider-agnostic. Includes `labs/index.md` + `labs/model-backends.md`.
 - [x] `phase-2/lab-02-production-rag` — hybrid (BM25+dense, RRF) → fastembed rerank → grounded answer + a lightweight eval gate. Embedded Qdrant. Done; smoke-tested. (Full RAGAS-style eval deferred to Lab 04.)
 - [x] `phase-2/lab-03-agent-system` — hub-and-spoke orchestrator-worker (LangGraph) + one real MCP tool. Done; smoke-tested (agent routed to the MCP tool end-to-end).
-- [ ] `phase-2/apps-agents-lessons` — apps-agents lessons (small, related → may be one PR, or split if any grows large).
+- [x] `phase-2/apps-agents-lessons` — RAG patterns, agent architectures, context engineering, MCP/A2A, + lessons index. Done. **Phase 2 complete.**
 
 Each lab uses the three-layer reading model; `.ai-explain` close links to a talk track.
 

@@ -57,8 +57,8 @@ content types that each do one job well:
 | **[POC playbooks](/poc-playbooks/scoping-an-ai-poc)** | scoping & de-risking an engagement | ✅ available now |
 | **[Talk tracks](/talk-tracks/explaining-a-hallucination)** | the customer-safe "say it like this" card | ✅ available now |
 | **[Visuals](/visuals/four-layer-map)** | seeing — translation diagrams | ✅ available now |
-| **[Labs](/labs/)** | doing — hands-on, local-first, mostly $0 | 🚧 Lab 01 live |
-| **Lessons** | the concept + the decision behind it | 🔜 Phase 2+ |
+| **[Labs](/labs/)** | doing — hands-on, local-first, mostly $0 | ✅ Labs 01–03 live |
+| **[Lessons](/lessons/)** | the concept + the decision behind it | 🚧 apps-agents live |
 
 The build is phased so the SE/SA spine — the differentiators — comes first. See
 `product/BUILD-PLAN.md` for the full plan and `AGENTS.md` for the project's
