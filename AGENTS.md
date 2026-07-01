@@ -132,7 +132,12 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   smoke-tested end-to-end against real local Ollama** (chat+tools; ingest → hybrid
   retrieve + RRF + fastembed rerank + grounded answer + eval loop). Note: a 3B model
   makes a noisy LLM-judge — Lab 04 covers judge calibration. Lab 02 uses embedded
-  Qdrant (no Docker). Next: Lab 03 (Agent System).
+  Qdrant (no Docker).
+- **Lab 03 (Agent System) done + smoke-tested:** hub-and-spoke LangGraph
+  (orchestrator + ToolNode, conditional edges) with a real **MCP** tool
+  (`mcp_server.py` via `langchain-mcp-adapters`). Verified end-to-end on local Ollama
+  — the orchestrator routed to the MCP `lookup_order` tool and answered. All
+  pure-Python deps. Only apps-agents lessons remain in Phase 2; then Phase 3.
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:
