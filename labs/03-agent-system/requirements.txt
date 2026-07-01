@@ -1,0 +1,6 @@
+# Lab 03 · Agent System — Python deps (all pure-Python, no PyTorch)
+langgraph>=0.2            # the orchestration graph
+langchain-openai>=0.2     # provider-agnostic chat model (OpenAI-compatible)
+langchain-mcp-adapters>=0.1  # expose MCP tools as LangChain tools
+mcp>=1.0                  # the MCP server/client SDK
+python-dotenv>=1.0        # load .env
