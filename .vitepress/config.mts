@@ -118,6 +118,15 @@ export default defineConfig({
       { text: 'Decision Frames', link: '/decision-frames/managed-vs-self-host' },
       { text: 'Labs', link: '/labs/' },
       { text: 'Decisions', link: '/decisions/001-langgraph-orchestration' },
+      {
+        text: 'The Series',
+        items: [
+          { text: 'Solutions Playbook', link: 'https://wbhankins93.github.io/solutions-playbook/' },
+          { text: 'AI Engineering Studio', link: 'https://wbhankins93.github.io/ai-engineering-studio/' },
+          { text: 'DevOps Studio', link: 'https://wbhankins93.github.io/devops-studio/' },
+          { text: 'Implementation Studio', link: 'https://wbhankins93.github.io/implementation-studio/' },
+        ],
+      },
     ],
 
     sidebar: [
