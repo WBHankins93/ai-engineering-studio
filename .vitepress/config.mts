@@ -57,6 +57,7 @@ const labs = [
   { text: '02 · Production RAG', link: '/labs/02-production-rag/' },
   { text: '03 · Agent System', link: '/labs/03-agent-system/' },
   { text: '04 · Eval Harness', link: '/labs/04-eval-harness/' },
+  { text: '05 · Serving & Cost', link: '/labs/05-serving-and-cost/' },
 ]
 
 const lessons = [
