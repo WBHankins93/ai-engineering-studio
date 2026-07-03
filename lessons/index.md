@@ -17,11 +17,15 @@ The application layer — where most engineering work sits. These pair with Labs
 - [Context Engineering](/lessons/apps-agents/context-engineering) — the bigger lever than prompt wording
 - [MCP and A2A](/lessons/apps-agents/mcp-and-a2a) — the protocols that connect agents to tools and each other
 
+## 🏛️ L4 · Architecture & Governance
+
+- [Reference Architectures](/lessons/architecture-governance/reference-architectures) — pilot, agentic, and platform tiers, and which one matches a customer's stage
+
 ## 🔜 Later layers
 
 - **L2 · LLMOps & infra** — serving, quantization, vector DBs, gateways, observability *(Phase 3+)*
 - **L3 · Classic MLOps & data** — the MLOps↔LLMOps bridge *(Phase 4)*
-- **L4 · Architecture & governance** — reference architectures, guardrails, NIST / EU AI Act / ISO 42001 *(Phase 4)*
+- **L4 · Architecture & governance** — guardrails, NIST / EU AI Act / ISO 42001 *(Phase 4, in progress)*
 
 ## 🔗 Links
 

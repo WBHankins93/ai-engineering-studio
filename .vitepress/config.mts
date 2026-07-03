@@ -66,6 +66,7 @@ const lessons = [
   { text: 'Agent Architectures', link: '/lessons/apps-agents/agent-architectures' },
   { text: 'Context Engineering', link: '/lessons/apps-agents/context-engineering' },
   { text: 'MCP and A2A', link: '/lessons/apps-agents/mcp-and-a2a' },
+  { text: 'Reference Architectures', link: '/lessons/architecture-governance/reference-architectures' },
 ]
 
 export default defineConfig({
