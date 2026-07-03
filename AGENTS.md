@@ -141,8 +141,13 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
 - **Phase 2 complete:** apps-agents lessons shipped (`lessons/index.md` +
   `lessons/apps-agents/`: rag-patterns, agent-architectures, context-engineering,
   mcp-and-a2a — Tier A, emoji skeleton). Phase 2 = Labs 01–03 + backends page + these
-  lessons, all live. Next: Phase 3 (Lab 04 eval harness + "good enough?" frame; Lab 05
-  serving/cost + "cost at scale?" frame).
+  lessons, all live.
+- **Phase 3 started (Lab 04 only, per user):** Lab 04 (Eval Harness) done +
+  smoke-tested — LLM-as-judge (rubric + structured verdict, optional stronger judge
+  model), pass-rate gate that exits non-zero, sample CI workflow (`eval-ci.example.yml`).
+  The real run caught a prompt injection + an incomplete answer and failed the gate as
+  designed. **Paused here per user.** Remaining Phase 3: "good enough?" frame, Lab 05
+  (serving/cost) + "cost at scale?" frame.
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:

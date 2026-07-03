@@ -1,0 +1,3 @@
+# Lab 04 · Eval Harness — Python deps
+openai>=1.40          # SUT + judge (any OpenAI-compatible backend)
+python-dotenv>=1.0    # load .env

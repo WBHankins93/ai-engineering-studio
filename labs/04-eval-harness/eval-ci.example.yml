@@ -1,0 +1,33 @@
+# Example GitHub Actions workflow — the eval as a merge gate.
+#
+# This is a TEMPLATE (note the .example.yml name), not an active workflow. To use it:
+# copy to .github/workflows/eval.yml in your project, add a GROQ_API_KEY (or other)
+# repo secret, and make it a required check.
+#
+# Note: gate on a HOSTED model (secrets), not local Ollama — CI runners have no GPU
+# and no local model. Run on pull_request (and/or a schedule), not every push, to
+# control cost.
+
+name: Eval gate
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4  # not needed for eval; shown if your repo also builds
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r labs/04-eval-harness/requirements.txt
+      - name: Run eval gate
+        working-directory: labs/04-eval-harness
+        env:
+          MODEL_BACKEND: groq
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          # JUDGE_MODEL: llama-3.1-70b-versatile   # stronger judge, optional
+        run: python run_eval.py   # non-zero exit fails the check and blocks merge
