@@ -39,14 +39,17 @@ do one job:
 | [POC playbooks](./poc-playbooks/scoping-an-ai-poc.md) | scoping & de-risking an engagement | ✅ available |
 | [Talk tracks](./talk-tracks/explaining-a-hallucination.md) | the customer-safe "say it like this" card | ✅ available |
 | [Visuals](./visuals/four-layer-map.md) | seeing — translation diagrams | ✅ available |
-| Labs | doing — hands-on, local-first, mostly $0 | 🔜 Phase 2 |
-| Lessons | the concept + the decision behind it | 🔜 Phase 2+ |
+| [Labs](./labs/) | doing — hands-on, local-first, mostly $0 | ✅ Labs 01–04 live, 05 in progress |
+| [Lessons](./lessons/) | the concept + the decision behind it | ✅ apps-agents live |
 
 ## Status
 
 - ✅ **Phase 0** — scaffold, standards, foundations on-ramp.
 - ✅ **Phase 1** — the SE/SA spine (POC playbook, decision frames, talk track, four-layer visual, ADR 001).
-- 🔜 **Phase 2** — hands-on labs (first LLM app, production RAG, agent system) + apps-agents lessons.
+- ✅ **Phase 2** — hands-on labs (first LLM app, production RAG, agent system) + apps-agents lessons.
+- 🚧 **Phase 3** — evals + cost made legible. Done: Lab 04 (eval harness), the "good enough?" decision frame. In progress: Lab 05 (serving & cost), the "cost at scale?" decision frame.
+- 🔜 **Phase 4** — architecture, governance & the MLOps bridge.
+- 🔜 **Phase 5** — capstone, observability & trilogy polish.
 
 Full sequence and per-deliverable breakdown: [`product/BUILD-PLAN.md`](./product/BUILD-PLAN.md).
 
