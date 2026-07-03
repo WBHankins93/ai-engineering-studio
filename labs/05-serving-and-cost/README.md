@@ -53,6 +53,15 @@ flowchart LR
 - Python 3.9+ and `pip`. See [Before you start](/labs/#before-you-start) for the
   one-time venv setup.
 
+> ⚠️ **This lab assumes Apple Silicon.** Every other lab in this series falls back
+> to a free hosted backend on Intel/older hardware, but Lab 05 is deliberately
+> local-only — it's measuring *your* serving hardware, not a hosted number. On an
+> Intel Mac (no GPU, CPU-only inference), expect the fp16 variant to be **painfully
+> slow** — tens of seconds per response, not the sub-second feel of a hosted model.
+> That's not a bug: it's the tradeoff this lab exists to make visible. If it feels
+> unusable, cut `RUNS` to `1` in `.env`, or read the [real run below](#what-a-real-run-shows)
+> (measured on an Intel i9, CPU-only) instead of running it yourself.
+
 ## Quick Start
 
 ```bash
@@ -131,8 +140,10 @@ so you can see where the crossover actually sits.
 
 ## What a real run shows
 
-A real run on Apple Silicon CPU-only inference (no GPU) — your numbers will differ
-with a GPU or different hardware, but the *shape* holds:
+A real run on an **Intel i9 Mac, CPU-only (no GPU)** — the worst case this lab
+warns about above. Apple Silicon or a real GPU will be meaningfully faster; the
+*shape* of the result (quantization wins on speed, single-stream self-host loses
+on cost) holds regardless of hardware:
 
 | Model | tok/s | Time-to-first-token |
 | --- | --- | --- |
@@ -185,7 +196,8 @@ labs/05-serving-and-cost/
 | `connection refused` | Ollama not running | `ollama serve`, or open the Ollama app |
 | `model not found` | Haven't pulled it yet | `make pull` |
 | Numbers look identical between models | Ollama still has the other model loaded/cached oddly | Re-run `make bench`; check `ollama ps` shows the model you expect |
-| `tok/s` seems low vs. what you've seen elsewhere | CPU-only inference, or another heavy process running | Close other apps; on Apple Silicon confirm you're not on a low-power mode |
+| `tok/s` seems low vs. what you've seen elsewhere | CPU-only inference (no GPU — common on Intel Macs), or another heavy process running | Expected on Intel/CPU-only hardware, see the prerequisites note above; on Apple Silicon, close other apps and confirm you're not on a low-power mode |
+| fp16 model feels stuck / takes 10s+ per response | Full-precision inference on CPU-only hardware — this is real, not a hang | Expected on Intel; let it finish, lower `RUNS` to `1`, or just read the real-run numbers below instead |
 
 ## Cleanup
 
