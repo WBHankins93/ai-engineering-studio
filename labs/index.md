@@ -30,9 +30,32 @@ context boxes for SE relevance, go-deeper anchors for the engineering detail, an
 
 ## Before you start
 
-[**Choosing a Model Backend**](/labs/model-backends) — a one-time, ~2-minute setup
-that decides whether the labs run locally (Ollama) or on a free hosted tier. Do this
-once; every lab uses it.
+Two one-time steps, then every lab is just `make` commands.
+
+**1 · A Python virtual environment** (keeps lab deps off your system Python and
+avoids "externally-managed-environment" errors).
+
+Requires **Python 3.10+** (Lab 03's MCP adapter needs it). Check first:
+
+```bash
+python3 --version
+```
+
+⚠️ macOS ships an older `python3` (often 3.9). If yours is below 3.10, install a
+newer one — `brew install python@3.12`, or use [pyenv](https://github.com/pyenv/pyenv) —
+and substitute it (e.g. `python3.12`) in the command below.
+
+```bash
+python3 -m venv .venv        # from the repo root, once (use python3.12 if needed)
+source .venv/bin/activate    # macOS/Linux — each new terminal
+# .venv\Scripts\activate     # Windows PowerShell
+```
+
+You'll know it's active when your prompt shows `(.venv)`. The labs call `python3`
+throughout, so the venv's `python3` is all you need.
+
+**2 · [Choose a model backend](/labs/model-backends)** — a ~2-minute decision:
+run locally (Ollama) or on a free hosted tier. Every lab uses it.
 
 ## Suggested order
 

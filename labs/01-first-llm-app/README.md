@@ -59,6 +59,8 @@ code doesn't care, because both speak the OpenAI API.
 
 ## Quick Start
 
+> First time in the labs? Do the [one-time setup](/labs/#before-you-start) — a Python virtualenv, and picking a model backend — then come back here.
+
 ```bash
 cd labs/01-first-llm-app
 make setup        # install deps (openai client + dotenv)
