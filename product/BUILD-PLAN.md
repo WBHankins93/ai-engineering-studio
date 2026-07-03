@@ -203,7 +203,7 @@ All labs are **provider-agnostic** (Ollama default + hosted free-tier fallback; 
 Each lab uses the three-layer reading model; `.ai-explain` close links to a talk track.
 
 ### Phase 3 — Evals + cost made legible  (~1–2 wk)
-- [ ] `phase-3/lab-04-eval-harness` — LLM-as-judge + regression gate in CI.
+- [x] `phase-3/lab-04-eval-harness` — LLM-as-judge (rubric + structured verdict) + pass-rate gate that exits non-zero, plus a sample CI workflow. Done; smoke-tested (caught a prompt injection + an incomplete answer, gate failed as designed).
 - [ ] `phase-3/frame-good-enough` — "how do we know it's good enough?" decision frame.
 - [ ] `phase-3/lab-05-serving-and-cost` — Ollama/quantization tradeoffs, measured latency/cost.
 - [ ] `phase-3/frame-cost-at-scale` — "what will this cost at scale?" decision frame.

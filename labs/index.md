@@ -23,7 +23,7 @@ context boxes for SE relevance, go-deeper anchors for the engineering detail, an
 | [01 · First LLM App](/labs/01-first-llm-app/) | The core app loop + function calling | Ollama/hosted, Python | ~1 h | Beginner |
 | [02 · Production RAG](/labs/02-production-rag/) | Hybrid retrieval + RRF + rerank + grounding + eval | Qdrant, BM25, fastembed | ~2–3 h | Intermediate |
 | [03 · Agent System](/labs/03-agent-system/) | Hub-and-spoke orchestrator-worker + one MCP tool | LangGraph, MCP | ~2–3 h | Intermediate |
-| 04 · Eval Harness *(Phase 3)* | LLM-as-judge + a regression gate in CI | promptfoo / DeepEval | ~2 h | Intermediate |
+| [04 · Eval Harness](/labs/04-eval-harness/) | LLM-as-judge + a regression gate in CI | openai-compatible | ~2 h | Intermediate |
 | 05 · Serving & Cost *(Phase 3)* | Quantization tradeoffs, measured latency/cost | Ollama, vLLM | ~2 h | Advanced |
 | 06 · Observability *(Phase 5)* | Tracing + cost dashboards | Langfuse | ~1–2 h | Intermediate |
 | 07 · Capstone *(Phase 5)* | End-to-end RAG-agent app; $0 local **or** optional cloud | full stack | ~4 h | Advanced |

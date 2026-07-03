@@ -54,6 +54,7 @@ const labs = [
   { text: '01 · First LLM App', link: '/labs/01-first-llm-app/' },
   { text: '02 · Production RAG', link: '/labs/02-production-rag/' },
   { text: '03 · Agent System', link: '/labs/03-agent-system/' },
+  { text: '04 · Eval Harness', link: '/labs/04-eval-harness/' },
 ]
 
 const lessons = [
