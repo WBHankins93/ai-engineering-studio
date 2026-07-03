@@ -35,6 +35,7 @@ const decisionFrames = [
   { text: 'The Real Cost of a RAG System', link: '/decision-frames/rag-tco' },
   { text: 'Do We Even Need an Agent?', link: '/decision-frames/do-we-need-an-agent' },
   { text: 'How Do We Know It Is Good Enough?', link: '/decision-frames/frame-good-enough' },
+  { text: 'What Will This Cost at Scale?', link: '/decision-frames/frame-cost-at-scale' },
 ]
 
 const talkTracks = [
