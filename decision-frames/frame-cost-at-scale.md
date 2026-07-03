@@ -14,7 +14,7 @@ per-query price, multiply by production volume, done. That math is wrong in a
 specific, predictable way — **a hosted API's cost is a smooth line; a self-hosted
 model's cost is a staircase.** This frame gives you the shape of both curves so you
 can tell a customer where they actually sit, not where a linear guess puts them.
-**Lab 05 · Serving & Cost** (Phase 3) is where you measure the real numbers this
+[Lab 05 · Serving & Cost](/labs/05-serving-and-cost/) is where you measure the real numbers this
 frame turns into a volume conversation.
 
 > **Recommendation:** don't quote a single \$/query number and extrapolate it
@@ -51,7 +51,7 @@ capacity busy.
 
 ## 📊 The Numbers (illustrative — anchor to Lab 05's real measurement)
 
-**Lab 05** measures real tokens/sec for a local model as
+[Lab 05](/labs/05-serving-and-cost/) measures real tokens/sec for a local model as
 a **single, unbatched stream** — the worst case for self-host economics. Production
 serving (vLLM/SGLang, this site's canonical cast for production serving) batches
 many concurrent requests onto the same GPU, which is what actually makes self-host
@@ -77,7 +77,7 @@ would be cheaper.
   (e.g. business hours only)? Steady 50k/day is a real candidate; the same volume
   crammed into a 2-hour burst mostly isn't — capacity would sit idle 22 hours a day.
 - **Price the hosted line** — 50k queries/day at a hosted per-token rate
-  (Lab 05's `cost.py` prints current published
+  ([Lab 05](/labs/05-serving-and-cost/)'s `cost.py` prints current published
   examples) gives a real \$/day figure — usually single-to-low-double digits at this
   volume for a small model.
 - **Price the self-host staircase** — one GPU/instance at Lab 05's measured
@@ -135,6 +135,6 @@ The common mistake is **linear extrapolation in either direction**:
 
 ## 🔗 Links
 
-- **Lab 05 · Serving & Cost** (Phase 3) — measure the real numbers this frame extrapolates
+- [Lab 05 · Serving & Cost](/labs/05-serving-and-cost/) — measure the real numbers this frame extrapolates
 - [Managed API vs Self-Host](/decision-frames/managed-vs-self-host) — the build-vs-buy call this frame sizes
 - [The Real Cost of a RAG System](/decision-frames/rag-tco) — the other cost lines beyond serving (build, eval, maintenance)
