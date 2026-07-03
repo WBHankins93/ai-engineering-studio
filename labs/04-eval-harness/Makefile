@@ -11,10 +11,10 @@ env:  ## Create .env from the template
 	cp -n .env.example .env && echo "wrote .env — edit it to choose backends"
 
 setup:  ## Install Python dependencies
-	pip install -r requirements.txt
+	python3 -m pip install -r requirements.txt
 
 eval:  ## Run the eval + gate (exits non-zero on failure — this is the CI gate)
-	python run_eval.py
+	python3 run_eval.py
 
 clean:  ## Remove Python caches
 	rm -rf __pycache__

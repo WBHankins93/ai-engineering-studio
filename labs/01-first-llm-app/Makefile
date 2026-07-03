@@ -13,16 +13,16 @@ env:  ## Create .env from the template (then edit to pick a backend)
 	cp -n .env.example .env && echo "wrote .env — edit it to choose a backend"
 
 setup:  ## Install Python dependencies
-	pip install -r requirements.txt
+	python3 -m pip install -r requirements.txt
 
 pull:  ## (Ollama backend only) download the local model, one-time
 	ollama pull $(MODEL)
 
 chat:  ## Run the streaming chat CLI (Step 1)
-	python chat.py
+	python3 chat.py
 
 tools:  ## Run the function-calling example (Step 2)
-	python tools.py
+	python3 tools.py
 
 clean:  ## Remove Python caches
 	rm -rf __pycache__ .pytest_cache

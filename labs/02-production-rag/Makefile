@@ -11,16 +11,16 @@ env:  ## Create .env from the template
 	cp -n .env.example .env && echo "wrote .env — edit it to choose backends"
 
 setup:  ## Install Python dependencies
-	pip install -r requirements.txt
+	python3 -m pip install -r requirements.txt
 
 ingest:  ## Build the index from corpus/ (run once, and when docs change)
-	python ingest.py
+	python3 ingest.py
 
 ask:  ## Ask a question, e.g. make ask Q="what is reranking?"
-	python rag.py "$(Q)"
+	python3 rag.py "$(Q)"
 
 eval:  ## Run the groundedness eval over eval/qa.json
-	python evaluate.py
+	python3 evaluate.py
 
 clean:  ## Remove the local index and Python caches
 	rm -rf .qdrant __pycache__

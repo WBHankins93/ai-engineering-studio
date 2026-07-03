@@ -11,13 +11,13 @@ env:  ## Create .env from the template
 	cp -n .env.example .env && echo "wrote .env — edit it to choose a backend"
 
 setup:  ## Install Python dependencies
-	pip install -r requirements.txt
+	python3 -m pip install -r requirements.txt
 
 run:  ## Run the agent, e.g. make run Q="status of order C300?"
-	python agent.py "$(Q)"
+	python3 agent.py "$(Q)"
 
 mcp-check:  ## List the tools the MCP server exposes (no LLM needed)
-	python mcp_check.py
+	python3 mcp_check.py
 
 clean:  ## Remove Python caches
 	rm -rf __pycache__
