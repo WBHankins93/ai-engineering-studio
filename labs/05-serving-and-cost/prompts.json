@@ -1,0 +1,14 @@
+[
+  {
+    "id": "short-factual",
+    "prompt": "In one sentence, what is retrieval-augmented generation?"
+  },
+  {
+    "id": "medium-reasoning",
+    "prompt": "A customer asks whether to self-host an open model or call a hosted API. List the three factors that matter most, in one short paragraph."
+  },
+  {
+    "id": "longer-summary",
+    "prompt": "Summarize, in about 150 words, why LLM-as-judge evaluation needs a strict rubric and a stronger judge model to be reliable."
+  }
+]
