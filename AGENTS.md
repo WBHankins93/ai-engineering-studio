@@ -95,59 +95,32 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   exception). Supersedes the earlier per-phase and per-deliverable-only decisions.
 
 ## State
-- Scaffold complete: VitePress config, violet theme with `.sp-*` + `.ai-*`
-  classes, Node-20 dead-link CI, home page, git + commit-msg hook.
-- **Phase 0 content closeout done (2026-06-27):** `START-HERE.md` + all four
-  `foundations/` pages (`how-llms-actually-work`, `the-four-layer-map`,
-  `ai-vocabulary-for-sas`, `langgraph-how-to`) written. `DEPTH-STANDARD.md`,
-  `CANONICAL-CAST.md`, `CONTRIBUTING.md` already present.
-- **Build runs green** (`npm ci && npm run docs:build`, no dead links). Required a
-  clean `npm ci` first (shipped node_modules was incomplete). Added a `markdown.config`
-  fence rule in `config.mts` so ` ```mermaid ` blocks render as `.mermaid` divs the
-  theme picks up (the scaffolded theme rendered `.mermaid` divs but nothing produced
-  them). `config.mts` sidebar/nav trimmed to live pages; Phase 1+ links are kept
-  commented as the roadmap — uncomment each as its page lands. Home `index.md`
-  feature links to unbuilt pages dropped (re-add in Phase 1/2).
-- **Phase 0 committed and pushed to `main`** (2026-06-27): 7 plain commits
-  (scaffold → docs → one per foundations page → START-HERE). `origin` connected
-  via authenticated `gh` (WBHankins93); https://github.com/WBHankins93/ai-engineering-studio
-  is now populated.
-- **Phase 1 (SE/SA spine) built on `phase-1/se-sa-spine`** (2026-06-27): POC
-  playbook (`poc-playbooks/scoping-an-ai-poc`), three decision frames
-  (`managed-vs-self-host`, `rag-tco`, `do-we-need-an-agent`), talk track
-  (`explaining-a-hallucination`), signature visual (`visuals/four-layer-map`), ADR
-  001 (`decisions/001-langgraph-orchestration`). All wired into nav/sidebar; home +
-  START-HERE updated to surface them; build green per commit. Merged via PR #3.
-- **Visuals system + mermaid fix on `visuals/diagram-system`** (2026-06-28): found
-  mermaid diagrams rendered as syntax errors — root cause was the `<div>` fence
-  rule letting Vue collapse newlines (now `<pre v-pre>` + escaped); also stripped
-  `<br>`/entities from all diagram labels. Added the visual prompt system
-  (`VISUAL-PROMPT-STANDARD.md`, `IMAGERY-PLAN.md`, `visual-specs/showcase-prompts.md`)
-  modeled on the sibling repos, violet-adapted, with Wave 1 specs ready
-  (four-layer-map, rag-two-loops, hub-and-spoke).
-- **Phase 2 in progress:** Lab 01 (First LLM App, PR #8) + Lab 02 (Production RAG)
-  built. Both **provider-agnostic** (`provider.py`, `.env`, `labs/model-backends.md`)
-  — local Ollama OR hosted free tier; embeddings default to Ollama (Groq is chat-only).
-  Labs use the devops lab anatomy + three-layer reading model. **Both labs
-  smoke-tested end-to-end against real local Ollama** (chat+tools; ingest → hybrid
-  retrieve + RRF + fastembed rerank + grounded answer + eval loop). Note: a 3B model
-  makes a noisy LLM-judge — Lab 04 covers judge calibration. Lab 02 uses embedded
-  Qdrant (no Docker).
-- **Lab 03 (Agent System) done + smoke-tested:** hub-and-spoke LangGraph
-  (orchestrator + ToolNode, conditional edges) with a real **MCP** tool
-  (`mcp_server.py` via `langchain-mcp-adapters`). Verified end-to-end on local Ollama
-  — the orchestrator routed to the MCP `lookup_order` tool and answered. All
-  pure-Python deps.
-- **Phase 2 complete:** apps-agents lessons shipped (`lessons/index.md` +
-  `lessons/apps-agents/`: rag-patterns, agent-architectures, context-engineering,
-  mcp-and-a2a — Tier A, emoji skeleton). Phase 2 = Labs 01–03 + backends page + these
-  lessons, all live.
-- **Phase 3 started (Lab 04 only, per user):** Lab 04 (Eval Harness) done +
-  smoke-tested — LLM-as-judge (rubric + structured verdict, optional stronger judge
-  model), pass-rate gate that exits non-zero, sample CI workflow (`eval-ci.example.yml`).
-  The real run caught a prompt injection + an incomplete answer and failed the gate as
-  designed. **Paused here per user.** Remaining Phase 3: "good enough?" frame, Lab 05
-  (serving/cost) + "cost at scale?" frame.
+- **Phase 0 done (2026-06-27):** scaffold (VitePress, violet theme, Node-20
+  dead-link CI, mermaid fence fix), `START-HERE.md`, all four `foundations/`
+  pages, `DEPTH-STANDARD.md`/`CANONICAL-CAST.md`/`CONTRIBUTING.md`. Pushed to
+  `main` (scaffold exception); `origin` connected via authenticated `gh`.
+- **Phase 1 done:** SE/SA spine — POC playbook, 3 decision frames
+  (`managed-vs-self-host`, `rag-tco`, `do-we-need-an-agent`), talk track, four-layer
+  visual, ADR 001. Merged PR #3. Visuals system + mermaid `<pre v-pre>` fix on a
+  follow-up branch, with the visual prompt system (`VISUAL-PROMPT-STANDARD.md`,
+  `IMAGERY-PLAN.md`).
+- **Phase 2 complete:** Labs 01–03 (First LLM App, Production RAG, Agent System —
+  hub-and-spoke LangGraph + one real MCP tool) + apps-agents lessons. All
+  **provider-agnostic** (`provider.py`, local Ollama or hosted fallback) and
+  smoke-tested end-to-end against real local Ollama.
+- **Phase 3 built out (2026-07-03):** all four deliverables done.
+  - Lab 04 (Eval Harness) — LLM-as-judge + pass-rate gate that exits non-zero;
+    real run caught a prompt injection and failed the gate as designed. Merged PR #14.
+  - `frame-good-enough.md` — "how do we know it's good enough?" Merged PR #16.
+  - Lab 05 (Serving & Cost) — same Ollama model at two quantization levels
+    (`llama3.2:3b` q4_K_M vs fp16); smoke-tested CPU-only: quantization ~4.7x
+    faster, single-stream self-host ~200x pricier per token than the cheapest
+    hosted tier (the honest worst-case number — batching is what makes self-host
+    competitive). PR #18, open.
+  - `frame-cost-at-scale.md` — hosted-linear vs self-host-staircase cost shape.
+    References Lab 05 as plain text (not a link) since #18 hadn't merged yet —
+    convert to real links once it does. PR #19, open.
+  - **Phase 3 complete once PRs #18 and #19 merge**, plus that link-fix follow-up.
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:
