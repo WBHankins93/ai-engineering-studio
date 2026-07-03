@@ -34,6 +34,7 @@ const decisionFrames = [
   { text: 'Managed API vs Self-Host', link: '/decision-frames/managed-vs-self-host' },
   { text: 'The Real Cost of a RAG System', link: '/decision-frames/rag-tco' },
   { text: 'Do We Even Need an Agent?', link: '/decision-frames/do-we-need-an-agent' },
+  { text: 'How Do We Know It Is Good Enough?', link: '/decision-frames/frame-good-enough' },
 ]
 
 const talkTracks = [
