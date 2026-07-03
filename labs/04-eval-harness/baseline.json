@@ -1,0 +1,4 @@
+{
+  "pass_rate_threshold": 0.8,
+  "_note": "The agreed 'good enough' bar for this eval set. Set it WITH the customer (see the POC playbook). A run below this fails the gate; in CI that blocks the merge. Illustrative value — pick the bar based on the cost of a wrong answer."
+}
