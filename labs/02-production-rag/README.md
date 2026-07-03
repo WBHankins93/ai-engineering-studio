@@ -65,6 +65,8 @@ embeddings via local Ollama, generation via your chosen backend.
 
 ## Quick Start
 
+> First time in the labs? Do the [one-time setup](/labs/#before-you-start) — a Python virtualenv, and picking a model backend — then come back here.
+
 ```bash
 cd labs/02-production-rag
 make setup        # install deps (openai, qdrant-client, rank-bm25, fastembed, dotenv)

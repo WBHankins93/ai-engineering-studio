@@ -55,11 +55,13 @@ hub-and-spoke pattern.
 
 ## Prerequisites
 
-- **Python 3.10+** and `pip`.
+- **Python 3.10+** — required by the MCP adapter (`langchain-mcp-adapters`). macOS's built-in `python3` is often 3.9; see [Before you start](/labs/#before-you-start) to get a 3.10+ venv.
 - A **chat backend** — see [Choosing a Model Backend](/labs/model-backends). Prefer a capable model (`llama3.1:8b` local, or a hosted tier). Function calling must work (Llama 3.1+, Qwen 2.5, any Groq/OpenAI model).
 - [Lab 01](/labs/01-first-llm-app/) (function calling) recommended first.
 
 ## Quick Start
+
+> First time in the labs? Do the [one-time setup](/labs/#before-you-start) — a Python virtualenv, and picking a model backend — then come back here.
 
 ```bash
 cd labs/03-agent-system

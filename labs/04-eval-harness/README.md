@@ -53,6 +53,8 @@ flowchart LR
 
 ## Quick Start
 
+> First time in the labs? Do the [one-time setup](/labs/#before-you-start) — a Python virtualenv, and picking a model backend — then come back here.
+
 ```bash
 cd labs/04-eval-harness
 make setup        # install deps (openai, dotenv)
