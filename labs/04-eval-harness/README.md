@@ -168,4 +168,4 @@ is optional and improves grading reliability.
 
 - [Scoping an AI POC](/poc-playbooks/scoping-an-ai-poc) — where the test set and bar get agreed
 - [Explaining a Hallucination](/talk-tracks/explaining-a-hallucination) — the failures evals catch
-- **Lab 05 · Serving & Cost** (Phase 3) — measure latency and cost tradeoffs
+- [Lab 05 · Serving & Cost](/labs/05-serving-and-cost/) — measure latency and cost tradeoffs
