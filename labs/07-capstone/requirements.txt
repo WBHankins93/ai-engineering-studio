@@ -1,0 +1,10 @@
+openai
+python-dotenv
+qdrant-client
+rank-bm25
+fastembed
+langgraph
+langchain-openai
+langchain-mcp-adapters
+mcp
+langfuse
