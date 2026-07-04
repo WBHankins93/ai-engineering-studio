@@ -25,8 +25,8 @@ context boxes for SE relevance, go-deeper anchors for the engineering detail, an
 | [03 · Agent System](/labs/03-agent-system/) | Hub-and-spoke orchestrator-worker + one MCP tool | LangGraph, MCP | ~2–3 h | Intermediate |
 | [04 · Eval Harness](/labs/04-eval-harness/) | LLM-as-judge + a regression gate in CI | openai-compatible | ~2 h | Intermediate |
 | [05 · Serving & Cost](/labs/05-serving-and-cost/) | Quantization tradeoffs, measured latency/cost | Ollama | ~1.5 h | Advanced |
-| 06 · Observability *(Phase 5)* | Tracing + cost dashboards | Langfuse | ~1–2 h | Intermediate |
-| [07 · Capstone](/labs/07-capstone/) | End-to-end RAG-agent app; $0 local **or** optional cloud | full stack | ~4 h | Advanced |
+| [06 · Observability](/labs/06-observability/) | Tracing + cost/latency, live in a dashboard | Langfuse | ~1 h | Intermediate |
+| 07 · Capstone *(Phase 5)* | End-to-end RAG-agent app; $0 local **or** optional cloud | full stack | ~4 h | Advanced |
 
 ## Before you start
 

@@ -58,7 +58,7 @@ const labs = [
   { text: '03 · Agent System', link: '/labs/03-agent-system/' },
   { text: '04 · Eval Harness', link: '/labs/04-eval-harness/' },
   { text: '05 · Serving & Cost', link: '/labs/05-serving-and-cost/' },
-  { text: '07 · Capstone', link: '/labs/07-capstone/' },
+  { text: '06 · Observability', link: '/labs/06-observability/' },
 ]
 
 const lessons = [
@@ -83,6 +83,55 @@ export default defineConfig({
 
   // Served under a repo subpath on GitHub Pages.
   base: '/ai-engineering-studio/',
+
+  sitemap: {
+    hostname: 'https://wbhankins93.github.io/ai-engineering-studio/',
+  },
+
+  // Social preview (Open Graph / Twitter) — see public/og-image.png.
+  head: [
+    ['meta', { name: 'theme-color', content: '#6d4aff' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'AI Engineering Studio' }],
+    ['meta', { property: 'og:title', content: 'AI Engineering Studio' }],
+    [
+      'meta',
+      {
+        property: 'og:description',
+        content:
+          'The AI engineering ecosystem, made legible — a Solutions Engineer / Architect lens on LLM apps, infrastructure, MLOps, and governance.',
+      },
+    ],
+    ['meta', { property: 'og:url', content: 'https://wbhankins93.github.io/ai-engineering-studio/' }],
+    [
+      'meta',
+      { property: 'og:image', content: 'https://wbhankins93.github.io/ai-engineering-studio/og-image.png' },
+    ],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+    [
+      'meta',
+      {
+        property: 'og:image:alt',
+        content:
+          'AI Engineering Studio — the AI engineering ecosystem, made legible for Solutions Engineers and Architects',
+      },
+    ],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'AI Engineering Studio' }],
+    [
+      'meta',
+      {
+        name: 'twitter:description',
+        content:
+          'The AI engineering ecosystem, made legible — a Solutions Engineer / Architect lens on LLM apps, infrastructure, MLOps, and governance.',
+      },
+    ],
+    [
+      'meta',
+      { name: 'twitter:image', content: 'https://wbhankins93.github.io/ai-engineering-studio/og-image.png' },
+    ],
+  ],
 
   // Labs keep a GitHub-friendly README.md as the file, but VitePress (this
   // version) doesn't auto-map README -> directory index. Rewrite each lab's
