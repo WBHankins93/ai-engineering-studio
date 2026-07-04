@@ -108,19 +108,18 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   hub-and-spoke LangGraph + one real MCP tool) + apps-agents lessons. All
   **provider-agnostic** (`provider.py`, local Ollama or hosted fallback) and
   smoke-tested end-to-end against real local Ollama.
-- **Phase 3 built out (2026-07-03):** all four deliverables done.
-  - Lab 04 (Eval Harness) — LLM-as-judge + pass-rate gate that exits non-zero;
-    real run caught a prompt injection and failed the gate as designed. Merged PR #14.
-  - `frame-good-enough.md` — "how do we know it's good enough?" Merged PR #16.
-  - Lab 05 (Serving & Cost) — same Ollama model at two quantization levels
-    (`llama3.2:3b` q4_K_M vs fp16); smoke-tested CPU-only: quantization ~4.7x
-    faster, single-stream self-host ~200x pricier per token than the cheapest
-    hosted tier (the honest worst-case number — batching is what makes self-host
-    competitive). PR #18, open.
-  - `frame-cost-at-scale.md` — hosted-linear vs self-host-staircase cost shape.
-    References Lab 05 as plain text (not a link) since #18 hadn't merged yet —
-    convert to real links once it does. PR #19, open.
-  - **Phase 3 complete once PRs #18 and #19 merge**, plus that link-fix follow-up.
+- **Phase 3 complete (2026-07-03):** Lab 04 (Eval Harness, PR #14), `frame-good-enough.md`
+  (PR #16), Lab 05 Serving & Cost (PR #18 — smoke-tested CPU-only: quantization
+  ~4.7x faster, single-stream self-host ~200x pricier per token than the cheapest
+  hosted tier, the honest worst-case number), `frame-cost-at-scale.md` (PR #19).
+  All merged; cross-links between Lab 05 and the cost-at-scale frame wired for
+  real (PR #21); `product/BUILD-PLAN.md` checkboxes updated.
+- **Phase 4 started (2026-07-03):** `lessons/architecture-governance/reference-architectures.md`
+  — three reference-architecture tiers (pilot RAG-only, agentic feature, enterprise
+  platform), with the full-platform mermaid diagram queued for a showcase-image
+  promotion (spec handed to user in chat, not yet in `visual-specs/showcase-prompts.md`
+  pending their review). Remaining Phase 4: guardrails/governance lesson,
+  MLOps↔LLMOps bridge lesson, governance visuals.
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:

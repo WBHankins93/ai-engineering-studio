@@ -201,6 +201,153 @@ The orchestrator's task decomposition is the #1 reliability decision.
 
 ---
 
+## Wave 4 (Phase 4 — generated, done)
+
+### 4. Three Reference Architecture Tiers  → `assets/diagrams/reference-architecture-tiers.png`
+
+```text
+TITLE: Three Reference Architecture Tiers
+SUBTITLE: Match the architecture to the stage, not the ambition.
+CANVAS: landscape 16:9.
+
+Layout: three vertically stacked horizontal bands, top to bottom, each a rounded
+rectangle boundary container labeled by tier. Each band shows a simplified
+left-to-right mini-flow of just its own systems. A thin downward arrow labeled
+"grows into" connects each band to the one below it.
+
+Band 1 (top) — boundary label: "Pilot — RAG-Only"
+  Mini-flow: "User" -- "asks" --> "Retrieval + LLM" -- "answer" --> "User"
+  Small caption under the band: "Proving one use case"
+
+Band 2 (middle) — boundary label: "Feature — Agentic"
+  Mini-flow: "User" -- "asks" --> "Orchestrator" -- "routes" --> "RAG + Tools" -- "result" --> "User"
+  Small caption under the band: "The feature that acts, not just answers"
+
+Band 3 (bottom) — boundary label: "Platform — Enterprise AI Platform"
+  Mini-flow: "Many Teams" -- "calls" --> "Gateway + Guardrails" -- "routes" --> "Orchestrator + Models" -- "governed answer" --> "Many Teams"
+  Small caption under the band: "Shared infra across many use cases"
+
+Arrows between bands (indigo, dashed):
+- Pilot band -- "grows into" --> Feature band
+- Feature band -- "grows into" --> Platform band
+
+Color: violet for each band's primary mini-flow arrows; indigo dashed for the
+"grows into" arrows between bands. Keep fills very light per tier (slightly
+darker tint as tiers increase, top to bottom) to suggest increasing weight/scale.
+
+LEGEND: violet = primary flow within a tier; indigo dashed = growth path between tiers.
+
+EXACT LABEL LIST:
+Three Reference Architecture Tiers
+Match the architecture to the stage, not the ambition.
+Pilot — RAG-Only
+User
+Retrieval + LLM
+asks
+answer
+Proving one use case
+Feature — Agentic
+Orchestrator
+RAG + Tools
+routes
+result
+The feature that acts, not just answers
+Platform — Enterprise AI Platform
+Many Teams
+Gateway + Guardrails
+Orchestrator + Models
+calls
+governed answer
+Shared infra across many use cases
+grows into
+```
+
+Used on: [`lessons/architecture-governance/reference-architectures.md`](../lessons/architecture-governance/reference-architectures.md). Generated and shipped 2026-07-03; passed self-review on first pass.
+
+---
+
+### 5. The Enterprise AI Platform Reference Architecture  → `assets/diagrams/enterprise-ai-platform.png`
+
+```text
+TITLE: The Enterprise AI Platform Reference Architecture
+SUBTITLE: The ceiling, not the floor — most engagements scope down from this.
+CANVAS: landscape 16:9.
+
+Layout: left-to-right pipeline with one boundary container grouping the
+governance layer, and a small side branch down to observability.
+
+Systems, left to right:
+- "User / App" (rounded rectangle, start)
+- "Gateway (LiteLLM)" (rounded rectangle)
+- "Guardrails" (rounded rectangle) — group "Gateway (LiteLLM)" and "Guardrails"
+  together inside a labeled boundary container: "Governance Layer"
+- "Orchestrator" (rounded rectangle, violet, prominent — this is the primary path hub)
+- "RAG Tool" (rounded rectangle, below-right of Orchestrator)
+- "Other Tools (MCP)" (rounded rectangle, below-right of Orchestrator, next to RAG Tool)
+- "Vector DB" (cylinder, connected only from RAG Tool)
+- "Model Layer (Hosted + Self-Hosted)" (rounded rectangle, right of Orchestrator)
+- "Eval Gate" (diamond/decision shape, right of Model Layer)
+- "Ship" (small rounded rectangle, success green, right of Eval Gate)
+- "Block" (small rounded rectangle, failure red, below Eval Gate)
+- "Observability (Langfuse)" (rounded rectangle, below Model Layer, connected by a
+  thin indigo line — this is a side branch, not the main left-to-right path)
+
+Flow (ordered, primary path in violet):
+- User / App -- "request" --> Gateway (LiteLLM)
+- Gateway (LiteLLM) -- "checked" --> Guardrails
+- Guardrails -- "cleared" --> Orchestrator
+- Orchestrator -- "needs context" --> RAG Tool
+- Orchestrator -- "needs an action" --> Other Tools (MCP)
+- RAG Tool -- "search" --> Vector DB
+- Orchestrator -- "generate" --> Model Layer (Hosted + Self-Hosted)
+- Model Layer (Hosted + Self-Hosted) -- "candidate answer" --> Eval Gate
+
+Error / alt path (dashed):
+- Eval Gate -- "pass" --> Ship
+- Eval Gate -- "fail" --> Block
+
+Side branch (thin indigo line, not part of primary flow):
+- Model Layer (Hosted + Self-Hosted) -- "traced" --> Observability (Langfuse)
+
+ANNOTATION (small callout, not a box): "Every layer here is a lab on this site, assembled." (verified)
+
+LEGEND: violet = primary request path; indigo = governance/control and
+observability; green = pass/ship; red = fail/block.
+
+EXACT LABEL LIST:
+The Enterprise AI Platform Reference Architecture
+The ceiling, not the floor — most engagements scope down from this.
+User / App
+Gateway (LiteLLM)
+Guardrails
+Governance Layer
+Orchestrator
+RAG Tool
+Other Tools (MCP)
+Vector DB
+Model Layer (Hosted + Self-Hosted)
+Eval Gate
+Ship
+Block
+Observability (Langfuse)
+request
+checked
+cleared
+needs context
+needs an action
+search
+generate
+candidate answer
+pass
+fail
+traced
+Every layer here is a lab on this site, assembled.
+```
+
+Used on: [`lessons/architecture-governance/reference-architectures.md`](../lessons/architecture-governance/reference-architectures.md). Generated and shipped 2026-07-03; dense (21 labels, over the usual 10–18 guideline) as the deliberate flagship "put it all together" shot — passed self-review on first pass, no relabeling needed.
+
+---
+
 ## Waves 2–3
 
 Briefs are in [`IMAGERY-PLAN.md`](../IMAGERY-PLAN.md) (Track A table). Promote each
