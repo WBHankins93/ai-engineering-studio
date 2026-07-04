@@ -51,7 +51,8 @@ gain little as images.
 
 Each needs a filled content spec in `visual-specs/showcase-prompts.md` before
 generation. Build **one end-to-end first** (the four-layer map) to lock the style,
-then batch the rest. Status legend: 🔜 spec ready · 📝 brief only.
+then batch the rest. Status legend: 🔜 spec ready · 📝 brief only · 💡 flagged
+candidate (spotted in passing, not yet briefed) · ✅ done.
 
 | Wave | Name / file slug | Used on | Image brief | Must show | Keep out of image | Status |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -66,10 +67,18 @@ then batch the rest. Status legend: 🔜 spec ready · 📝 brief only.
 | **3** | `capstone-architecture` | Lab 07 (Phase 5) | End-to-end RAG-agent app. | The whole stack: app → agent (LangGraph) → RAG tool + other tools → serving → vector DB → observability; optional cloud-deploy boundary. | Step-by-step build instructions. | 📝 |
 | **4** | `reference-architecture-tiers` | `lessons/architecture-governance/reference-architectures.md` (Phase 4) | Three reference-architecture tiers, stacked, showing growth between them. | Pilot (RAG-only), Feature (agentic), Platform (enterprise) bands; "grows into" arrows between them. | Per-tier build-effort numbers (caption, illustrative). | ✅ done |
 | **4** | `enterprise-ai-platform` | `lessons/architecture-governance/reference-architectures.md` (Phase 4) | The flagship full-platform assembly — every lab's layer in one diagram. | Gateway, guardrails, orchestrator, RAG + tools, model layer, eval gate, observability. | Exact cost/latency figures. | ✅ done |
+| **4** | `context-window-assembly` | `lessons/apps-agents/context-engineering.md` | What actually fills the context window, and what happens when it doesn't fit. | Question, retrieved passages, conversation history, and system instruction all feeding "assemble context"; the fits-the-window check; the compact-and-retry loop (summarize / trim / re-retrieve). | Specific token-count numbers (caption, illustrative). | 💡 |
 
-> **Bounded scope:** ~8 showcase images for the full project (now 10 with the
+> **Bounded scope:** ~8 showcase images for the full project (now 11 with the
 > Phase 4 additions above). Wave 1 (three images) anchors what's live now and in
 > Phase 2. Don't batch ahead of need — generate a wave as its pages come up.
+
+**Why `context-window-assembly` is flagged:** it has a real failure path (context
+overflow → compaction), it's a recurring "why did the agent forget something"
+explanation SEs give in the field, and — per the promotion criteria below — the
+page is meaningfully harder to follow as prose alone. Spotted while auditing
+existing lessons for visualization gaps per the user's standing request
+(2026-07-03); not yet given a full content spec.
 
 ---
 
@@ -83,6 +92,12 @@ teaching/interview artifacts:
 - `rag-tco` — cost-component breakdown
 - `scoping-an-ai-poc` — POC lifecycle strip
 - `how-llms-actually-work` — next-token loop
+- `rag-patterns` — naive → hybrid → GraphRAG → agentic decision tree (Phase 2)
+- `frame-good-enough` — "how costly is a wrong answer" decision flow (Phase 3)
+- `frame-cost-at-scale` — hosted-linear vs self-host-staircase decision flow (Phase 3)
+- `mcp-and-a2a` — agent-to-tool (MCP) vs agent-to-agent (A2A) flow (Phase 2) — small
+  and simple today; overlaps with `hub-and-spoke`'s single-MCP-tool case. Revisit
+  only if it becomes a recurring standalone artifact.
 
 ---
 
