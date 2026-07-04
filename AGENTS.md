@@ -114,16 +114,23 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   hosted tier, the honest worst-case number), `frame-cost-at-scale.md` (PR #19).
   All merged; cross-links between Lab 05 and the cost-at-scale frame wired for
   real (PR #21); `product/BUILD-PLAN.md` checkboxes updated.
-- **Phase 4 in progress (2026-07-03):** `reference-architectures.md` (three tiers
-  — pilot RAG-only, agentic feature, enterprise platform) done, both showcase
-  images generated and shipped (`enterprise-ai-platform`, `reference-architecture-tiers`).
-  `guardrails-and-governance.md` done — NIST AI RMF (voluntary method) / EU AI Act
-  (binding law, risk-tiered) / ISO 42001 (certifiable AIMS) are a method, a law,
-  and a certification, not interchangeable "compliance"; facts checked against
-  official sources 2026-07. Remaining Phase 4: MLOps↔LLMOps bridge lesson,
-  `governance-stack` showcase image (queued, Wave 3 in `IMAGERY-PLAN.md`).
-  Also tracking one flagged (not yet built) visualization gap from an ongoing
-  content audit: `context-window-assembly` for `lessons/apps-agents/context-engineering.md`.
+- **Phase 4 complete (2026-07-04):** `reference-architectures.md` (three tiers —
+  pilot RAG-only, agentic feature, enterprise platform), `guardrails-and-governance.md`
+  (NIST AI RMF / EU AI Act / ISO 42001 as a method/law/certification, not
+  interchangeable "compliance"), `mlops-llmops-bridge.md` (LLMOps extends MLOps,
+  cross-linked to `devops-studio`). Four showcase images shipped: `enterprise-ai-platform`,
+  `reference-architecture-tiers`, `governance-stack` (took two generation
+  attempts — the first got every label right but missed the indigo/violet color
+  differentiation on the enforcement-layer boxes; fixed via a fresh regeneration,
+  since an in-place "edit this image" instruction just reproduced the unfixed
+  version). One unrelated generation ("AI Evaluation & Quality Gate Architecture")
+  drifted far beyond the `enterprise-ai-platform` spec — parked, not in the repo.
+  Found + fixed a merge-conflict casualty from PRs #24/#25 landing close together
+  (lost sidebar entry + BUILD-PLAN checkbox — a missing nav link isn't a dead
+  link, so CI didn't catch it; **lesson: verify merged config.mts arrays by eye,
+  not just green CI, when two PRs touch the same list quickly**).
+  Tracking one flagged (not yet built) visualization gap from an ongoing content
+  audit: `context-window-assembly` for `lessons/apps-agents/context-engineering.md`.
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:
