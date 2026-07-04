@@ -225,4 +225,4 @@ are a *model* of hosted/self-host cost, not a bill.
 
 - [What Will This Cost at Scale?](/decision-frames/frame-cost-at-scale) — turns this lab's numbers into the volume/break-even conversation
 - [Managed API vs Self-Host](/decision-frames/managed-vs-self-host) — the build-vs-buy frame this lab feeds numbers into
-- **Lab 06 · Observability** (Phase 5) — trace and dashboard the cost you just modeled
+- [Lab 06 · Observability](/labs/06-observability/) — trace and dashboard the cost you just modeled
