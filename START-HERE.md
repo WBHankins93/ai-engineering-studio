@@ -57,8 +57,8 @@ content types that each do one job well:
 | **[POC playbooks](/poc-playbooks/scoping-an-ai-poc)** | scoping & de-risking an engagement | ✅ available now |
 | **[Talk tracks](/talk-tracks/explaining-a-hallucination)** | the customer-safe "say it like this" card | ✅ available now |
 | **[Visuals](/visuals/four-layer-map)** | seeing — translation diagrams | ✅ available now |
-| **[Labs](/labs/)** | doing — hands-on, local-first, mostly $0 | ✅ Labs 01–03 live |
-| **[Lessons](/lessons/)** | the concept + the decision behind it | 🚧 apps-agents live |
+| **[Labs](/labs/)** | doing — hands-on, local-first, mostly $0 | ✅ Labs 01–05 live |
+| **[Lessons](/lessons/)** | the concept + the decision behind it | ✅ apps-agents, architecture-governance, mlops-data live |
 
 The build is phased so the SE/SA spine — the differentiators — comes first. See
 `product/BUILD-PLAN.md` for the full plan and `AGENTS.md` for the project's
@@ -80,5 +80,6 @@ they tell a single story.
 
 ---
 
-*This site is under active build. The foundations on-ramp is complete; the SE/SA
-spine and labs are filling in phase by phase.*
+*This site is under active build. The foundations on-ramp, SE/SA spine, and all
+five labs are complete; Phase 4 (architecture & governance) is wrapping up and
+Phase 5 (capstone, observability, trilogy polish) is next.*

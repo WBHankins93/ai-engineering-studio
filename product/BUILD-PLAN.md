@@ -212,8 +212,8 @@ Each lab uses the three-layer reading model; `.ai-explain` close links to a talk
 Mostly lessons + visuals; group small related lessons, split large ones:
 - [x] `phase-4/lesson-reference-architectures` — three tiers (pilot RAG-only, agentic feature, enterprise platform); both showcase images shipped. Merged PR #22.
 - [x] `phase-4/lesson-guardrails-and-governance` — NIST AI RMF (method) / EU AI Act (law) / ISO 42001 (certifiable evidence) in plain English, plus runtime guardrails as the enforcement layer none of the three substitute for.
-- [ ] `phase-4/lesson-mlops-llmops-bridge` — cross-links to `devops-studio`.
-- [ ] `phase-4/visuals-governance` — `governance-stack` (+ any L4 visuals).
+- [x] `phase-4/lesson-mlops-llmops-bridge` — LLMOps extends MLOps, not a replacement; what carries over (CI/CD, registry, tracking) vs what's new (vector DB, LLM eval gate, prompt/context versioning). Cross-links to `devops-studio`. Merged PR #25.
+- [ ] `phase-4/visuals-governance` — `governance-stack` (+ any L4 visuals). Spec handed off in chat; two generation attempts so far, still refining the indigo/violet color differentiation on the enforcement-layer boxes.
 
 ### Phase 5 — Capstone, observability & trilogy polish  (~1–2 wk)
 - [ ] `phase-5/lab-06-observability` — Langfuse tracing + cost.

@@ -68,6 +68,7 @@ const lessons = [
   { text: 'MCP and A2A', link: '/lessons/apps-agents/mcp-and-a2a' },
   { text: 'Reference Architectures', link: '/lessons/architecture-governance/reference-architectures' },
   { text: 'Guardrails and Governance', link: '/lessons/architecture-governance/guardrails-and-governance' },
+  { text: 'The MLOps-LLMOps Bridge', link: '/lessons/mlops-data/mlops-llmops-bridge' },
 ]
 
 export default defineConfig({
