@@ -114,12 +114,15 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   hosted tier, the honest worst-case number), `frame-cost-at-scale.md` (PR #19).
   All merged; cross-links between Lab 05 and the cost-at-scale frame wired for
   real (PR #21); `product/BUILD-PLAN.md` checkboxes updated.
-- **Phase 4 started (2026-07-03):** `lessons/architecture-governance/reference-architectures.md`
-  — three reference-architecture tiers (pilot RAG-only, agentic feature, enterprise
-  platform), with the full-platform mermaid diagram queued for a showcase-image
-  promotion (spec handed to user in chat, not yet in `visual-specs/showcase-prompts.md`
-  pending their review). Remaining Phase 4: guardrails/governance lesson,
-  MLOps↔LLMOps bridge lesson, governance visuals.
+- **Phase 4 in progress (2026-07-03):** `reference-architectures.md` (three tiers,
+  both showcase images shipped), `guardrails-and-governance.md` (NIST AI RMF / EU
+  AI Act / ISO 42001 as a method/law/certification, not interchangeable
+  "compliance"), and `mlops-llmops-bridge.md` (LLMOps extends MLOps — what
+  carries over vs what's new, cross-linked to `devops-studio`) all done.
+  Remaining Phase 4: `governance-stack` showcase image (queued, Wave 3 in
+  `IMAGERY-PLAN.md`). One flagged (not yet built) visualization gap from an
+  ongoing content audit: `context-window-assembly` for
+  `lessons/apps-agents/context-engineering.md`.
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:

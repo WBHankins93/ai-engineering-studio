@@ -21,10 +21,13 @@ The application layer — where most engineering work sits. These pair with Labs
 
 - [Reference Architectures](/lessons/architecture-governance/reference-architectures) — pilot, agentic, and platform tiers, and which one matches a customer's stage
 
+## 🗂️ L3 · Classic MLOps & Data
+
+- [The MLOps↔LLMOps Bridge](/lessons/mlops-data/mlops-llmops-bridge) — LLMOps extends MLOps, it doesn't replace it
+
 ## 🔜 Later layers
 
 - **L2 · LLMOps & infra** — serving, quantization, vector DBs, gateways, observability *(Phase 3+)*
-- **L3 · Classic MLOps & data** — the MLOps↔LLMOps bridge *(Phase 4)*
 - **L4 · Architecture & governance** — guardrails, NIST / EU AI Act / ISO 42001 *(Phase 4, in progress)*
 
 ## 🔗 Links

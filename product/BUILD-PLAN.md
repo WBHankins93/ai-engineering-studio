@@ -212,7 +212,7 @@ Each lab uses the three-layer reading model; `.ai-explain` close links to a talk
 Mostly lessons + visuals; group small related lessons, split large ones:
 - [ ] `phase-4/lesson-reference-architectures`
 - [ ] `phase-4/lesson-guardrails-and-governance` — NIST / EU AI Act / ISO 42001 in plain English.
-- [ ] `phase-4/lesson-mlops-llmops-bridge` — cross-links to `devops-studio`.
+- [x] `phase-4/lesson-mlops-llmops-bridge` — LLMOps extends MLOps, not a replacement; what carries over (CI/CD, registry, tracking) vs what's new (vector DB, LLM eval gate, prompt/context versioning). Cross-links to `devops-studio`.
 - [ ] `phase-4/visuals-governance` — `governance-stack` (+ any L4 visuals).
 
 ### Phase 5 — Capstone, observability & trilogy polish  (~1–2 wk)
