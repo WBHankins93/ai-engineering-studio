@@ -218,7 +218,7 @@ Mostly lessons + visuals; group small related lessons, split large ones:
 ### Phase 5 — Capstone, observability & trilogy polish  (~1–2 wk)
 - [ ] `phase-5/lab-06-observability` — Langfuse tracing + cost.
 - [ ] `phase-5/lab-07-capstone` — end-to-end RAG-agent app; **two tracks: strictly-$0 local AND optional rented-GPU cloud** (never force spend).
-- [ ] `phase-5/learning-paths` — role-based paths + trilogy cross-links.
+- [x] `phase-5/learning-paths` — four role-based paths (SE/SA entering AI, live deal, hands-on, DevOps-to-AI crossover) + trilogy cross-links. `learning-paths.md`, wired into nav and cross-linked from `START-HERE.md`.
 - [ ] `phase-5/qa-pass` — full depth-standard QA + link check. Exit: portfolio-ready, trilogy complete.
 
 ---

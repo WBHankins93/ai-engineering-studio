@@ -170,6 +170,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Start Here', link: '/START-HERE' },
+      { text: 'Learning Paths', link: '/learning-paths' },
       { text: 'Foundations', link: '/foundations/how-llms-actually-work' },
       { text: 'POC Playbooks', link: '/poc-playbooks/scoping-an-ai-poc' },
       { text: 'Decision Frames', link: '/decision-frames/managed-vs-self-host' },

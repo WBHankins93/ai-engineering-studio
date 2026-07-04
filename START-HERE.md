@@ -44,6 +44,10 @@ you fluent fast:
 3. [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — the glossary you wish you'd had.
 4. [LangGraph in 10 Minutes](/foundations/langgraph-how-to) — how agent workflows are wired.
 
+Past the foundations, see [Learning Paths](/learning-paths) for four
+role-based routes through the rest of the site — SE/SA entering AI, live deal,
+hands-on, and DevOps-to-AI crossover.
+
 ## 🗺️ How the Site Is Built
 
 Everything here is organized under the four-layer map (L1 apps & agents → L2
