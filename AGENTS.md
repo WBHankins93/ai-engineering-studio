@@ -95,42 +95,42 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   exception). Supersedes the earlier per-phase and per-deliverable-only decisions.
 
 ## State
-- **Phase 0 done (2026-06-27):** scaffold (VitePress, violet theme, Node-20
-  dead-link CI, mermaid fence fix), `START-HERE.md`, all four `foundations/`
-  pages, `DEPTH-STANDARD.md`/`CANONICAL-CAST.md`/`CONTRIBUTING.md`. Pushed to
-  `main` (scaffold exception); `origin` connected via authenticated `gh`.
-- **Phase 1 done:** SE/SA spine — POC playbook, 3 decision frames
-  (`managed-vs-self-host`, `rag-tco`, `do-we-need-an-agent`), talk track, four-layer
-  visual, ADR 001. Merged PR #3. Visuals system + mermaid `<pre v-pre>` fix on a
-  follow-up branch, with the visual prompt system (`VISUAL-PROMPT-STANDARD.md`,
-  `IMAGERY-PLAN.md`).
-- **Phase 2 complete:** Labs 01–03 (First LLM App, Production RAG, Agent System —
-  hub-and-spoke LangGraph + one real MCP tool) + apps-agents lessons. All
-  **provider-agnostic** (`provider.py`, local Ollama or hosted fallback) and
-  smoke-tested end-to-end against real local Ollama.
-- **Phase 3 complete (2026-07-03):** Lab 04 (Eval Harness, PR #14), `frame-good-enough.md`
+- **Phases 0–2 done:** scaffold + foundations on-ramp (PR direct to `main`,
+  scaffold exception); SE/SA spine — POC playbook, 3 decision frames, talk track,
+  four-layer visual, ADR 001 (PR #3); visuals system + mermaid `<pre v-pre>` fix,
+  visual prompt system (`VISUAL-PROMPT-STANDARD.md`, `IMAGERY-PLAN.md`); Labs
+  01–03 (First LLM App, Production RAG, Agent System — hub-and-spoke LangGraph +
+  one MCP tool) + apps-agents lessons, all provider-agnostic and smoke-tested
+  against real local Ollama.
+- **Phase 3 complete (2026-07-03):** Lab 04 Eval Harness (PR #14), `frame-good-enough.md`
   (PR #16), Lab 05 Serving & Cost (PR #18 — smoke-tested CPU-only: quantization
   ~4.7x faster, single-stream self-host ~200x pricier per token than the cheapest
-  hosted tier, the honest worst-case number), `frame-cost-at-scale.md` (PR #19).
-  All merged; cross-links between Lab 05 and the cost-at-scale frame wired for
-  real (PR #21); `product/BUILD-PLAN.md` checkboxes updated.
-- **Phase 4 complete (2026-07-04):** `reference-architectures.md` (three tiers —
-  pilot RAG-only, agentic feature, enterprise platform), `guardrails-and-governance.md`
-  (NIST AI RMF / EU AI Act / ISO 42001 as a method/law/certification, not
-  interchangeable "compliance"), `mlops-llmops-bridge.md` (LLMOps extends MLOps,
-  cross-linked to `devops-studio`). Four showcase images shipped: `enterprise-ai-platform`,
-  `reference-architecture-tiers`, `governance-stack` (took two generation
-  attempts — the first got every label right but missed the indigo/violet color
-  differentiation on the enforcement-layer boxes; fixed via a fresh regeneration,
-  since an in-place "edit this image" instruction just reproduced the unfixed
-  version). One unrelated generation ("AI Evaluation & Quality Gate Architecture")
-  drifted far beyond the `enterprise-ai-platform` spec — parked, not in the repo.
-  Found + fixed a merge-conflict casualty from PRs #24/#25 landing close together
-  (lost sidebar entry + BUILD-PLAN checkbox — a missing nav link isn't a dead
-  link, so CI didn't catch it; **lesson: verify merged config.mts arrays by eye,
-  not just green CI, when two PRs touch the same list quickly**).
-  Tracking one flagged (not yet built) visualization gap from an ongoing content
-  audit: `context-window-assembly` for `lessons/apps-agents/context-engineering.md`.
+  hosted tier), `frame-cost-at-scale.md` (PR #19). Cross-links wired for real
+  (PR #21); `product/BUILD-PLAN.md` checkboxes updated.
+- **Phase 4 nearly done (2026-07-04):** all three lessons shipped —
+  `reference-architectures.md` (three tiers, both showcase images shipped),
+  `guardrails-and-governance.md` (NIST AI RMF / EU AI Act / ISO 42001 as a
+  method/law/certification, not interchangeable "compliance"), and
+  `mlops-llmops-bridge.md` (LLMOps extends MLOps, cross-linked to
+  `devops-studio`). Only `governance-stack` (the showcase image, Wave 3 in
+  `IMAGERY-PLAN.md`) remains — spec handed to user in chat, two generation
+  attempts so far; content/labels are correct both times but the
+  indigo-vs-violet color differentiation on the enforcement-layer boxes hasn't
+  rendered. Decision pending: ship as-is (content is correct, color contrast is
+  cosmetic) or try once more with the color constraint moved to the top of the
+  prompt. A **second, unrelated generation** ("AI Evaluation & Quality Gate
+  Architecture") was also produced from the `enterprise-ai-platform` prompt but
+  drifted far beyond spec (invented an eval-service/observability subsystem,
+  ~35+ labels) — parked, not in the repo, not currently tied to any page.
+  **Found and fixed a merge-conflict casualty:** PR #24 and #25 (guardrails and
+  mlops-bridge lessons) landed close together and one lost the other's
+  `.vitepress/config.mts` sidebar entry and `product/BUILD-PLAN.md` checkbox —
+  neither was caught by CI since a missing nav link isn't a dead link. Fixed
+  directly on `main` 2026-07-04. **Lesson: when two PRs touch the same array/list
+  in config.mts within a short window, verify the merged result has every entry,
+  don't just trust a green CI run.**
+  Also tracking one flagged (not yet built) visualization gap from an ongoing
+  content audit: `context-window-assembly` for `lessons/apps-agents/context-engineering.md`.
 
 ## Roadmap
 Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:
