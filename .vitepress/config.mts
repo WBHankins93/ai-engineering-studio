@@ -59,6 +59,7 @@ const labs = [
   { text: '04 · Eval Harness', link: '/labs/04-eval-harness/' },
   { text: '05 · Serving & Cost', link: '/labs/05-serving-and-cost/' },
   { text: '06 · Observability', link: '/labs/06-observability/' },
+  { text: '07 · Capstone', link: '/labs/07-capstone/' },
 ]
 
 const lessons = [
