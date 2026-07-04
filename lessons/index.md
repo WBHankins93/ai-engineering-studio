@@ -20,6 +20,7 @@ The application layer — where most engineering work sits. These pair with Labs
 ## 🏛️ L4 · Architecture & Governance
 
 - [Reference Architectures](/lessons/architecture-governance/reference-architectures) — pilot, agentic, and platform tiers, and which one matches a customer's stage
+- [Guardrails and Governance](/lessons/architecture-governance/guardrails-and-governance) — NIST AI RMF, the EU AI Act, and ISO 42001 are a method, a law, and a certification — not the same thing
 
 ## 🗂️ L3 · Classic MLOps & Data
 
@@ -28,7 +29,7 @@ The application layer — where most engineering work sits. These pair with Labs
 ## 🔜 Later layers
 
 - **L2 · LLMOps & infra** — serving, quantization, vector DBs, gateways, observability *(Phase 3+)*
-- **L4 · Architecture & governance** — guardrails, NIST / EU AI Act / ISO 42001 *(Phase 4, in progress)*
+- **L3 · Classic MLOps & data** — the MLOps↔LLMOps bridge *(Phase 4, in progress)*
 
 ## 🔗 Links
 
