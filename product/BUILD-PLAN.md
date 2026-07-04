@@ -208,7 +208,7 @@ Each lab uses the three-layer reading model; `.ai-explain` close links to a talk
 - [x] `phase-3/lab-05-serving-and-cost` — Ollama quantization tradeoffs (q4_K_M vs fp16), measured latency/cost. Smoke-tested on real local Ollama (CPU-only Intel i9): quantization ~4.7x faster; single-stream self-host ~200x pricier per token than the cheapest hosted tier. Merged PR #18.
 - [x] `phase-3/frame-cost-at-scale` — "what will this cost at scale?" decision frame. Merged PR #19.
 
-### Phase 4 — Architecture, governance & the MLOps bridge  (~1–2 wk)
+### Phase 4 — Architecture, governance & the MLOps bridge  (~1–2 wk)  ✅ DONE
 Mostly lessons + visuals; group small related lessons, split large ones:
 - [x] `phase-4/lesson-reference-architectures` — three tiers (pilot RAG-only, agentic feature, enterprise platform); both showcase images shipped. Merged PR #22.
 - [x] `phase-4/lesson-guardrails-and-governance` — NIST AI RMF (method) / EU AI Act (law) / ISO 42001 (certifiable evidence) in plain English, plus runtime guardrails as the enforcement layer none of the three substitute for.

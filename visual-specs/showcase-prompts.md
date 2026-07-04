@@ -348,6 +348,61 @@ Used on: [`lessons/architecture-governance/reference-architectures.md`](../lesso
 
 ---
 
+### 6. The Governance Stack  → `assets/diagrams/governance-stack.png`
+
+```text
+TITLE: The Governance Stack
+SUBTITLE: A method, a law, a certification — and the guardrails that enforce them.
+CANVAS: portrait or landscape 16:9, whichever fits a top-to-bottom flow best.
+
+Layout: a single top-to-bottom flow with one decision diamond partway down.
+
+Systems, top to bottom:
+- "NIST AI RMF" (rounded rectangle, violet, top)
+- "EU Exposure?" (diamond, decision node)
+- "EU AI Act" (rounded rectangle, violet, branch off the diamond's "yes" path)
+- "Org Risk Program" (rounded rectangle, violet — where both paths converge)
+- "ISO 42001 Certified AIMS" (rounded rectangle, violet)
+- "Runtime Guardrails at Gateway" (rounded rectangle, indigo — this is the control/enforcement layer, visually distinct from the violet instruments above it)
+- "Audit Trail" (small rounded rectangle, indigo, bottom)
+
+Flow (ordered):
+- NIST AI RMF -- "informs" --> Org Risk Program
+- EU Exposure? -- "yes" --> EU AI Act
+- EU Exposure? -- "no" --> Org Risk Program
+- EU AI Act -- "binding rules by tier" --> Org Risk Program
+- Org Risk Program -- "certified against" --> ISO 42001 Certified AIMS
+- ISO 42001 Certified AIMS -- "enforced by" --> Runtime Guardrails at Gateway
+- Runtime Guardrails at Gateway -- "logs" --> Audit Trail
+
+ANNOTATION (small callout, not a box): "A method, a law, and a certification are not the same thing." (verified)
+
+LEGEND: violet = risk-management instruments (method, law, certification); indigo = enforcement and audit — the layer that turns policy into something real.
+
+EXACT LABEL LIST:
+The Governance Stack
+A method, a law, a certification — and the guardrails that enforce them.
+NIST AI RMF
+EU Exposure?
+EU AI Act
+Org Risk Program
+ISO 42001 Certified AIMS
+Runtime Guardrails at Gateway
+Audit Trail
+informs
+yes
+no
+binding rules by tier
+certified against
+enforced by
+logs
+A method, a law, and a certification are not the same thing.
+```
+
+Used on: [`lessons/architecture-governance/guardrails-and-governance.md`](../lessons/architecture-governance/guardrails-and-governance.md). Generated and shipped 2026-07-03; took two generation attempts — the first correctly matched every label but rendered the enforcement-layer boxes (`Runtime Guardrails at Gateway`, `Audit Trail`) in the same violet tint as the risk-instrument boxes instead of the specced indigo. Fixed on the second attempt via a fresh generation (an in-place "edit this image" instruction reproduced the same unfixed image rather than actually changing the color).
+
+---
+
 ## Waves 2–3
 
 Briefs are in [`IMAGERY-PLAN.md`](../IMAGERY-PLAN.md) (Track A table). Promote each
@@ -356,6 +411,7 @@ to a full spec here — same format as Wave 1 — when its page is being built:
 - `production-rag-pipeline` (Wave 2)
 - `eval-as-a-gate` (Wave 2)
 - `inference-serving-path` (Wave 3)
-- `governance-stack` (Wave 3)
 - `llm-observability` (Wave 3)
 - `capstone-architecture` (Wave 3)
+
+`governance-stack` (Wave 3) is done — see Wave 4, below.

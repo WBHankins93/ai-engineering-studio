@@ -33,17 +33,7 @@ substitute for: the runtime guardrails that actually stop a bad output.
 
 ## 🧭 Where Each One Lives
 
-```mermaid
-flowchart TD
-  NIST["NIST AI RMF process"] --> ORG["Org Risk Program"]
-  Q{"EU exposure?"}
-  Q -->|yes| ACT["EU AI Act binding rules by tier"]
-  Q -->|no| ORG
-  ACT --> ORG
-  ORG --> ISO["ISO 42001 certified AIMS"]
-  ISO --> GATE["Runtime Guardrails at Gateway"]
-  GATE --> AUDIT["Audit Trail"]
-```
+![The governance stack — NIST AI RMF and, if EU exposure applies, the EU AI Act, both feeding an org risk program that gets certified against ISO 42001 and enforced by runtime guardrails at the gateway, which log an audit trail](../../assets/diagrams/governance-stack.png)
 
 The risk-management process (NIST) and any binding legal requirement (EU AI Act,
 if it applies) both feed the organization's risk program. Getting *certified*
