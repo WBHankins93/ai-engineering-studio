@@ -31,22 +31,11 @@ Each tier is a superset of the one before it — you don't rebuild the RAG pipel
 when you graduate to agentic, and you don't rebuild the orchestrator when you
 graduate to platform. You add the layer the new stage actually needs.
 
+![Three reference architecture tiers — pilot RAG-only, feature agentic, and platform enterprise AI, each growing into the next](../../assets/diagrams/reference-architecture-tiers.png)
+
 ## 🧭 The Enterprise AI Platform (the ceiling, not the floor)
 
-```mermaid
-flowchart LR
-  U["User / App"] --> GW["Gateway LiteLLM"]
-  GW --> GR["Guardrails"]
-  GR --> ORC["Orchestrator"]
-  ORC --> RAG["RAG Tool"]
-  ORC --> TOOLS["Other Tools MCP"]
-  RAG --> VDB["Vector DB"]
-  ORC --> MODELS["Model Layer hosted + self-hosted"]
-  ORC --> EVAL{"Eval Gate"}
-  EVAL -->|pass| SHIP["Ship"]
-  EVAL -->|fail| BLOCK["Block"]
-  MODELS --> OBS["Observability Langfuse"]
-```
+![The Enterprise AI Platform reference architecture — gateway, guardrails, orchestrator, RAG and tools, model layer, eval gate, and observability](../../assets/diagrams/enterprise-ai-platform.png)
 
 This is every layer this site's labs build individually — RAG ([Lab 02](/labs/02-production-rag/)),
 an agent + tool ([Lab 03](/labs/03-agent-system/)), an eval gate

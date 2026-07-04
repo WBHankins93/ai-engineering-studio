@@ -64,10 +64,12 @@ then batch the rest. Status legend: 🔜 spec ready · 📝 brief only.
 | **3** | `governance-stack` | L4 governance lesson (Phase 4) | The three-instrument governance stack + runtime guardrails. | NIST AI RMF (method), EU AI Act (law), ISO 42001 (certifiable evidence); guardrails enforced at the gateway; audit trail. | Clause-level detail; per-framework checklists. | 📝 |
 | **3** | `llm-observability` | Lab 06 (Phase 5) | Tracing and cost across an LLM pipeline. | Instrumented calls → trace store (Langfuse) → latency/cost/quality dashboards; the boundary between retrieval and generation. | Dashboard screenshots; exact cost numbers. | 📝 |
 | **3** | `capstone-architecture` | Lab 07 (Phase 5) | End-to-end RAG-agent app. | The whole stack: app → agent (LangGraph) → RAG tool + other tools → serving → vector DB → observability; optional cloud-deploy boundary. | Step-by-step build instructions. | 📝 |
+| **4** | `reference-architecture-tiers` | `lessons/architecture-governance/reference-architectures.md` (Phase 4) | Three reference-architecture tiers, stacked, showing growth between them. | Pilot (RAG-only), Feature (agentic), Platform (enterprise) bands; "grows into" arrows between them. | Per-tier build-effort numbers (caption, illustrative). | ✅ done |
+| **4** | `enterprise-ai-platform` | `lessons/architecture-governance/reference-architectures.md` (Phase 4) | The flagship full-platform assembly — every lab's layer in one diagram. | Gateway, guardrails, orchestrator, RAG + tools, model layer, eval gate, observability. | Exact cost/latency figures. | ✅ done |
 
-> **Bounded scope:** ~8 showcase images for the full project. Wave 1 (three
-> images) anchors what's live now and in Phase 2. Don't batch ahead of need —
-> generate a wave as its pages come up.
+> **Bounded scope:** ~8 showcase images for the full project (now 10 with the
+> Phase 4 additions above). Wave 1 (three images) anchors what's live now and in
+> Phase 2. Don't batch ahead of need — generate a wave as its pages come up.
 
 ---
 
