@@ -135,7 +135,8 @@ so you can see where the crossover actually sits.
   <p>"A single unbatched stream is the worst case for self-hosting — real production
   serving batches many requests onto the same GPU, which is what makes self-host
   economics work at volume. This number is a floor, not a forecast. The full
-  answer is the cost-at-scale decision frame (Phase 3, coming next)."</p>
+  answer is the <a href="/decision-frames/frame-cost-at-scale">cost-at-scale
+  decision frame</a>."</p>
 </div>
 
 ## What a real run shows
@@ -173,8 +174,8 @@ might suggest for "running it yourself." That's not an argument against
 self-hosting; it's the lab doing its job: a single-stream local benchmark is the
 worst case for self-host economics, and the honest number says so. Real production
 self-hosting wins by batching many concurrent requests onto the same hardware —
-the cost-at-scale decision frame (Phase 3, coming next) covers why that changes
-the picture, and by how much.
+see [What Will This Cost at Scale?](/decision-frames/frame-cost-at-scale) for why
+that changes the picture, and by how much.
 
 ## Project Structure
 
@@ -222,6 +223,6 @@ are a *model* of hosted/self-host cost, not a bill.
 
 ## Next steps
 
-- **What Will This Cost at Scale?** (Phase 3, coming next) — turns this lab's numbers into the volume/break-even conversation
+- [What Will This Cost at Scale?](/decision-frames/frame-cost-at-scale) — turns this lab's numbers into the volume/break-even conversation
 - [Managed API vs Self-Host](/decision-frames/managed-vs-self-host) — the build-vs-buy frame this lab feeds numbers into
 - **Lab 06 · Observability** (Phase 5) — trace and dashboard the cost you just modeled
