@@ -178,4 +178,4 @@ times over.
 
 - [Lab 04 · Eval Harness](/labs/04-eval-harness/) — the pre-merge counterpart to this lab's live-traffic view
 - [Lab 05 · Serving & Cost](/labs/05-serving-and-cost/) — the cost model this lab's `cost_details` reuses
-- **Lab 07 · Capstone** (Phase 5) — the full RAG-agent app this lab's tracing pattern extends to
+- [Lab 07 · Capstone](/labs/07-capstone/) — the full RAG-agent app this lab's tracing pattern extends to
