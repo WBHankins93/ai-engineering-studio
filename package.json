@@ -1,6 +1,7 @@
 {
   "name": "ai-engineering-studio-docs",
   "version": "1.0.0",
+  "author": "Ben Hankins",
   "private": true,
   "type": "module",
   "scripts": {
