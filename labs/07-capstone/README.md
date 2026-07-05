@@ -11,7 +11,7 @@ Every earlier lab built one layer. This one assembles them into a single support
 assistant: a hub-and-spoke agent ([Lab 03](/labs/03-agent-system/)) that can search
 product docs with hybrid retrieval + rerank ([Lab 02](/labs/02-production-rag/)) or
 look up an order over MCP, with the whole run traced in
-**Langfuse** (Phase 5). One coherent scenario — a returns/shipping support bot —
+[Langfuse](/labs/06-observability/). One coherent scenario — a returns/shipping support bot —
 instead of four disconnected demos.
 
 > **Three-layer reading model.** Steps are the main track; **context** boxes add SE
@@ -108,12 +108,12 @@ together.
 ### Step 3 · One trace per question
 
 The whole `agent.ainvoke()` call is wrapped in a single Langfuse trace (`capstone-ask`),
-the same non-blocking pattern as **Lab 06** (Phase 5) — no Langfuse keys, no
-crash, just no dashboard link.
+the same non-blocking pattern as [Lab 06](/labs/06-observability/) — no
+Langfuse keys, no crash, just no dashboard link.
 
 <div class="ai-deeper">
   <span class="ai-label">Go deeper</span>
-  This lab traces at the whole-agent level for simplicity. Lab 06 shows the
+  This lab traces at the whole-agent level for simplicity. [Lab 06](/labs/06-observability/) shows the
   finer-grained version — separate spans per retrieval and generation step — and
   that pattern extends here too: wrap the RAG tool's retrieve/rerank and the
   orchestrator's LLM call in their own nested spans if you need to debug which
