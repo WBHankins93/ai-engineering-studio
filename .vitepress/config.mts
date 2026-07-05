@@ -92,6 +92,9 @@ export default defineConfig({
   // Social preview (Open Graph / Twitter) — see public/og-image.png.
   head: [
     ['meta', { name: 'theme-color', content: '#6d4aff' }],
+    ['meta', { name: 'author', content: 'Ben Hankins' }],
+    ['meta', { property: 'article:author', content: 'Ben Hankins' }],
+    ['meta', { property: 'article:published_time', content: '2026-06-27' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'AI Engineering Studio' }],
     ['meta', { property: 'og:title', content: 'AI Engineering Studio' }],
