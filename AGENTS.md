@@ -107,38 +107,26 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   ~4.7x faster, single-stream self-host ~200x pricier per token than the cheapest
   hosted tier), `frame-cost-at-scale.md` (PR #19). Cross-links wired for real
   (PR #21); `product/BUILD-PLAN.md` checkboxes updated.
-- **Phase 4 nearly done (2026-07-04):** all three lessons shipped —
-  `reference-architectures.md` (three tiers, both showcase images shipped),
-  `guardrails-and-governance.md` (NIST AI RMF / EU AI Act / ISO 42001 as a
-  method/law/certification, not interchangeable "compliance"), and
-  `mlops-llmops-bridge.md` (LLMOps extends MLOps, cross-linked to
-  `devops-studio`). Only `governance-stack` (the showcase image, Wave 3 in
-  `IMAGERY-PLAN.md`) remains — spec handed to user in chat, two generation
-  attempts so far; content/labels are correct both times but the
-  indigo-vs-violet color differentiation on the enforcement-layer boxes hasn't
-  rendered. Decision pending: ship as-is (content is correct, color contrast is
-  cosmetic) or try once more with the color constraint moved to the top of the
-  prompt. A **second, unrelated generation** ("AI Evaluation & Quality Gate
-  Architecture") was also produced from the `enterprise-ai-platform` prompt but
-  drifted far beyond spec (invented an eval-service/observability subsystem,
-  ~35+ labels) — parked, not in the repo, not currently tied to any page.
-  **Found and fixed a merge-conflict casualty:** PR #24 and #25 (guardrails and
-  mlops-bridge lessons) landed close together and one lost the other's
-  `.vitepress/config.mts` sidebar entry and `product/BUILD-PLAN.md` checkbox —
-  neither was caught by CI since a missing nav link isn't a dead link. Fixed
-  directly on `main` 2026-07-04. **Lesson: when two PRs touch the same array/list
-  in config.mts within a short window, verify the merged result has every entry,
-  don't just trust a green CI run.**
-  Also tracking one flagged (not yet built) visualization gap from an ongoing
-  content audit: `context-window-assembly` for `lessons/apps-agents/context-engineering.md`.
+- **Phase 4 complete (2026-07-04):** reference architectures (three tiers, two
+  showcase images), guardrails/governance (NIST AI RMF / EU AI Act / ISO 42001
+  positioned correctly), MLOps-LLMOps bridge, and the `governance-stack` showcase
+  image all shipped (through PR #27). Watch for sidebar/list merge-conflict
+  casualties when two PRs touch `.vitepress/config.mts`; CI catches dead links,
+  not missing nav entries. Still tracking one optional visualization gap:
+  `context-window-assembly` for `lessons/apps-agents/context-engineering.md`.
+- **Phase 5 nearly complete (2026-07-04):** Lab 06 Observability (PR #28), OG
+  social preview (PR #29), Lab 07 Capstone (PR #30), and Learning Paths (PR #31)
+  are built and merged. Current cleanup branch adds site author/published meta
+  and restores Lab 07's lost sidebar entry plus real Lab 06↔07 cross-links. Main
+  remaining milestone is `phase-5/qa-pass`: full build/link verification,
+  depth-standard QA, and project-state cleanup.
 
 ## Roadmap
-Next milestone — **Phase 0 closeout + Phase 1 (SE/SA spine)**. Definition of done:
-foundations on-ramp (4 pages incl. LangGraph how-to), first POC playbook, 2–3
-decision frames, first talk-track card, four-layer translation visual, ADR 001,
-START-HERE.md — all building green. Then Phase 2 (labs 01–03), Phase 3
-(evals + cost), Phase 4 (architecture + governance + MLOps bridge), Phase 5
-(capstone + learning paths + trilogy cross-links). Full detail: `product/BUILD-PLAN.md`.
+Next milestone — **Phase 5 QA pass / portfolio-ready closeout**. Definition of
+done: `npm run docs:build` is green, sidebar/nav contains every shipped page,
+Lab 06↔07 and learning-path cross-links are real, project-state docs are current,
+and any final depth-standard issues are either fixed or explicitly deferred. Full
+detail: `product/BUILD-PLAN.md`.
 
 ## Non-goals
 - Do not build this as AI-Engineer-depth content competing on tooling mastery.
@@ -164,8 +152,8 @@ START-HERE.md — all building green. Then Phase 2 (labs 01–03), Phase 3
   Node 24 anyway) — unrelated to our pinned build Node 20; no action needed.
 
 ## Open questions
-- Cloud-capstone-vs-strictly-$0 for Lab 07 still open (per BUILD-PLAN §7) — decide
-  before Phase 5.
+- Whether to build the optional `context-window-assembly` visual before closeout
+  or leave it as a post-launch polish item.
 
 ## Maintaining this file
 You (the agent) update this file when state changes: decisions made, milestones

@@ -203,4 +203,4 @@ default, and never runs without you explicitly provisioning and paying for it.
 
 - [Reference Architectures](/lessons/architecture-governance/reference-architectures) — where this capstone sits on the pilot → platform spectrum
 - [Lab 04 · Eval Harness](/labs/04-eval-harness/) — add a pass-rate gate on top of this agent before it ships
-- **Learning Paths** (Phase 5) — role-based routes through the whole site, this lab included
+- [Learning Paths](/learning-paths) — role-based routes through the whole site, this lab included
