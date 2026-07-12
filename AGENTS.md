@@ -114,19 +114,21 @@ substituted. Full plan in `product/BUILD-PLAN.md` — read it before building co
   casualties when two PRs touch `.vitepress/config.mts`; CI catches dead links,
   not missing nav entries. Still tracking one optional visualization gap:
   `context-window-assembly` for `lessons/apps-agents/context-engineering.md`.
-- **Phase 5 nearly complete (2026-07-04):** Lab 06 Observability (PR #28), OG
-  social preview (PR #29), Lab 07 Capstone (PR #30), and Learning Paths (PR #31)
-  are built and merged. Current cleanup branch adds site author/published meta
-  and restores Lab 07's lost sidebar entry plus real Lab 06↔07 cross-links. Main
-  remaining milestone is `phase-5/qa-pass`: full build/link verification,
-  depth-standard QA, and project-state cleanup.
+- **Phase 5 complete on the closeout branch (2026-07-12):** Lab 06 Observability
+  (PR #28), OG social preview (PR #29), Lab 07 Capstone (PR #30), and Learning
+  Paths (PR #31) are built and merged. The closeout branch adds site
+  author/published meta, restores Lab 07's lost sidebar entry, wires real
+  Lab 06↔07 cross-links, updates project state, and completes `phase-5/qa-pass`
+  with docs build, preview route checks, lab Python syntax checks, stale-status
+  sweep, lab reading-model marker sweep, and Mermaid strict-mode hazard scan.
 
 ## Roadmap
-Next milestone — **Phase 5 QA pass / portfolio-ready closeout**. Definition of
-done: `npm run docs:build` is green, sidebar/nav contains every shipped page,
-Lab 06↔07 and learning-path cross-links are real, project-state docs are current,
-and any final depth-standard issues are either fixed or explicitly deferred. Full
-detail: `product/BUILD-PLAN.md`.
+Next milestone — **merge/publish the closeout branch**, then optional post-launch
+polish. Definition of done for closeout is satisfied locally: `npm run
+docs:build` is green, sidebar/nav contains every shipped page, Lab 06↔07 and
+learning-path cross-links are real, project-state docs are current, and
+depth-standard issues found by the QA sweep are fixed or explicitly deferred.
+Full detail: `product/BUILD-PLAN.md`.
 
 ## Non-goals
 - Do not build this as AI-Engineer-depth content competing on tooling mastery.
@@ -152,8 +154,8 @@ detail: `product/BUILD-PLAN.md`.
   Node 24 anyway) — unrelated to our pinned build Node 20; no action needed.
 
 ## Open questions
-- Whether to build the optional `context-window-assembly` visual before closeout
-  or leave it as a post-launch polish item.
+- None blocking. Optional post-launch polish: build `context-window-assembly` for
+  `lessons/apps-agents/context-engineering.md`.
 
 ## Maintaining this file
 You (the agent) update this file when state changes: decisions made, milestones

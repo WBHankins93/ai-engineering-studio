@@ -219,7 +219,7 @@ Mostly lessons + visuals; group small related lessons, split large ones:
 - [x] `phase-5/lab-06-observability` — Langfuse tracing + cost. Merged PR #28.
 - [x] `phase-5/lab-07-capstone` — end-to-end RAG-agent app; **two tracks: strictly-$0 local AND optional rented-GPU cloud** (never force spend). Merged PR #30.
 - [x] `phase-5/learning-paths` — four role-based paths (SE/SA entering AI, live deal, hands-on, DevOps-to-AI crossover) + trilogy cross-links. `learning-paths.md`, wired into nav and cross-linked from `START-HERE.md`.
-- [ ] `phase-5/qa-pass` — full depth-standard QA + link check. Exit: portfolio-ready, trilogy complete.
+- [x] `phase-5/qa-pass` — full depth-standard QA + link check. Completed on the closeout branch: `npm run docs:build`, preview route checks, lab Python syntax checks, stale-status sweep, lab reading-model marker sweep, and Mermaid strict-mode hazard scan. Exit: portfolio-ready, trilogy complete.
 
 ---
 

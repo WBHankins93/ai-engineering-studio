@@ -49,7 +49,7 @@ do one job:
 - ✅ **Phase 2** — hands-on labs (first LLM app, production RAG, agent system) + apps-agents lessons.
 - ✅ **Phase 3** — evals + cost made legible (Lab 04 eval harness, Lab 05 serving & cost, the "good enough?" and "cost at scale?" decision frames).
 - ✅ **Phase 4** — architecture, governance & the MLOps bridge, including the `governance-stack` showcase image.
-- 🚧 **Phase 5** — observability, capstone, and learning paths are built. Remaining: final QA pass, link/build verification, and project-state cleanup.
+- ✅ **Phase 5** — observability, capstone, learning paths, and final QA are complete on the closeout branch.
 
 Full sequence and per-deliverable breakdown: [`product/BUILD-PLAN.md`](./product/BUILD-PLAN.md).
 
