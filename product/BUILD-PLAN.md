@@ -213,13 +213,13 @@ Mostly lessons + visuals; group small related lessons, split large ones:
 - [x] `phase-4/lesson-reference-architectures` — three tiers (pilot RAG-only, agentic feature, enterprise platform); both showcase images shipped. Merged PR #22.
 - [x] `phase-4/lesson-guardrails-and-governance` — NIST AI RMF (method) / EU AI Act (law) / ISO 42001 (certifiable evidence) in plain English, plus runtime guardrails as the enforcement layer none of the three substitute for.
 - [x] `phase-4/lesson-mlops-llmops-bridge` — LLMOps extends MLOps, not a replacement; what carries over (CI/CD, registry, tracking) vs what's new (vector DB, LLM eval gate, prompt/context versioning). Cross-links to `devops-studio`. Merged PR #25.
-- [ ] `phase-4/visuals-governance` — `governance-stack` (+ any L4 visuals). Spec handed off in chat; two generation attempts so far, still refining the indigo/violet color differentiation on the enforcement-layer boxes.
+- [x] `phase-4/visuals-governance` — `governance-stack` showcase image. Merged PR #27. **Phase 4 complete.**
 
 ### Phase 5 — Capstone, observability & trilogy polish  (~1–2 wk)
-- [ ] `phase-5/lab-06-observability` — Langfuse tracing + cost.
-- [ ] `phase-5/lab-07-capstone` — end-to-end RAG-agent app; **two tracks: strictly-$0 local AND optional rented-GPU cloud** (never force spend).
+- [x] `phase-5/lab-06-observability` — Langfuse tracing + cost. Merged PR #28.
+- [x] `phase-5/lab-07-capstone` — end-to-end RAG-agent app; **two tracks: strictly-$0 local AND optional rented-GPU cloud** (never force spend). Merged PR #30.
 - [x] `phase-5/learning-paths` — four role-based paths (SE/SA entering AI, live deal, hands-on, DevOps-to-AI crossover) + trilogy cross-links. `learning-paths.md`, wired into nav and cross-linked from `START-HERE.md`.
-- [ ] `phase-5/qa-pass` — full depth-standard QA + link check. Exit: portfolio-ready, trilogy complete.
+- [x] `phase-5/qa-pass` — full depth-standard QA + link check. Completed on the closeout branch: `npm run docs:build`, preview route checks, lab Python syntax checks, stale-status sweep, lab reading-model marker sweep, and Mermaid strict-mode hazard scan. Exit: portfolio-ready, trilogy complete.
 
 ---
 

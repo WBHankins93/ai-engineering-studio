@@ -39,7 +39,7 @@ do one job:
 | [POC playbooks](./poc-playbooks/scoping-an-ai-poc.md) | scoping & de-risking an engagement | ✅ available |
 | [Talk tracks](./talk-tracks/explaining-a-hallucination.md) | the customer-safe "say it like this" card | ✅ available |
 | [Visuals](./visuals/four-layer-map.md) | seeing — translation diagrams | ✅ available |
-| [Labs](./labs/) | doing — hands-on, local-first, mostly $0 | ✅ Labs 01–05 live |
+| [Labs](./labs/) | doing — hands-on, local-first, mostly $0 | ✅ Labs 01–07 live |
 | [Lessons](./lessons/) | the concept + the decision behind it | ✅ apps-agents, architecture-governance, mlops-data live |
 
 ## Status
@@ -48,8 +48,8 @@ do one job:
 - ✅ **Phase 1** — the SE/SA spine (POC playbook, decision frames, talk track, four-layer visual, ADR 001).
 - ✅ **Phase 2** — hands-on labs (first LLM app, production RAG, agent system) + apps-agents lessons.
 - ✅ **Phase 3** — evals + cost made legible (Lab 04 eval harness, Lab 05 serving & cost, the "good enough?" and "cost at scale?" decision frames).
-- 🚧 **Phase 4** — architecture, governance & the MLOps bridge. Done: reference architectures, guardrails & governance, and the MLOps↔LLMOps bridge lessons (with two showcase images shipped). In progress: the `governance-stack` showcase image.
-- 🔜 **Phase 5** — capstone, observability & trilogy polish.
+- ✅ **Phase 4** — architecture, governance & the MLOps bridge, including the `governance-stack` showcase image.
+- ✅ **Phase 5** — observability, capstone, learning paths, and final QA are complete on the closeout branch.
 
 Full sequence and per-deliverable breakdown: [`product/BUILD-PLAN.md`](./product/BUILD-PLAN.md).
 
