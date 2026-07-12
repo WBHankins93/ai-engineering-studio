@@ -67,18 +67,17 @@ candidate (spotted in passing, not yet briefed) · ✅ done.
 | **3** | `capstone-architecture` | Lab 07 (Phase 5) | End-to-end RAG-agent app. | The whole stack: app → agent (LangGraph) → RAG tool + other tools → serving → vector DB → observability; optional cloud-deploy boundary. | Step-by-step build instructions. | 📝 |
 | **4** | `reference-architecture-tiers` | `lessons/architecture-governance/reference-architectures.md` (Phase 4) | Three reference-architecture tiers, stacked, showing growth between them. | Pilot (RAG-only), Feature (agentic), Platform (enterprise) bands; "grows into" arrows between them. | Per-tier build-effort numbers (caption, illustrative). | ✅ done |
 | **4** | `enterprise-ai-platform` | `lessons/architecture-governance/reference-architectures.md` (Phase 4) | The flagship full-platform assembly — every lab's layer in one diagram. | Gateway, guardrails, orchestrator, RAG + tools, model layer, eval gate, observability. | Exact cost/latency figures. | ✅ done |
-| **4** | `context-window-assembly` | `lessons/apps-agents/context-engineering.md` | What actually fills the context window, and what happens when it doesn't fit. | Question, retrieved passages, conversation history, and system instruction all feeding "assemble context"; the fits-the-window check; the compact-and-retry loop (summarize / trim / re-retrieve). | Specific token-count numbers (caption, illustrative). | 💡 |
+| **4** | `context-window-assembly` | `lessons/apps-agents/context-engineering.md` | What actually fills the context window, and what happens when it doesn't fit. | Question, retrieved passages, conversation history, and system instruction all feeding "assemble context"; the fits-the-window check; the compact-and-retry loop (summarize / trim / re-retrieve). | Specific token-count numbers (caption, illustrative). | ✅ done |
 
 > **Bounded scope:** ~8 showcase images for the full project (now 11 with the
 > Phase 4 additions above). Wave 1 (three images) anchors what's live now and in
 > Phase 2. Don't batch ahead of need — generate a wave as its pages come up.
 
-**Why `context-window-assembly` is flagged:** it has a real failure path (context
+**Why `context-window-assembly` shipped:** it has a real failure path (context
 overflow → compaction), it's a recurring "why did the agent forget something"
 explanation SEs give in the field, and — per the promotion criteria below — the
-page is meaningfully harder to follow as prose alone. Spotted while auditing
-existing lessons for visualization gaps per the user's standing request
-(2026-07-03); not yet given a full content spec.
+page is meaningfully harder to follow as prose alone. Shipped as a deterministic
+SVG-to-PNG asset so every label stays exact.
 
 ---
 
