@@ -30,17 +30,11 @@ briefing," because that's where most real quality lives.
 
 ## 🧭 The Window Is Finite
 
-```mermaid
-flowchart LR
-  Q["question"] --> A["assemble context"]
-  R["retrieved passages"] --> A
-  H["conversation history"] --> A
-  S["system instruction"] --> A
-  A --> W{"fits the context window?"}
-  W -->|yes| M["model answers"]
-  W -->|no| C["compact: summarize / trim / re-retrieve"]
-  C --> A
-```
+![Context window assembly — system instruction, question, retrieved passages, and conversation history feeding an assemble-context step; if the briefing fits the window, the model answers, and if it does not, the app compacts and retries](../../assets/diagrams/context-window-assembly.png)
+
+The token-count numbers you hear in the field are always model- and workload-specific.
+The durable rule is the loop above: assemble the briefing, check whether it fits,
+and compact or re-retrieve when it does not.
 
 <div class="ai-context">
   <div class="ai-label">What an SE says about this</div>

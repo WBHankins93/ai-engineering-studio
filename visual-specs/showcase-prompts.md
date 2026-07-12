@@ -415,3 +415,79 @@ to a full spec here — same format as Wave 1 — when its page is being built:
 - `capstone-architecture` (Wave 3)
 
 `governance-stack` (Wave 3) is done — see Wave 4, below.
+
+---
+
+## Wave 4 (Phase 5 polish — generated as deterministic SVG, done)
+
+### 7. Context Window Assembly  → `assets/diagrams/context-window-assembly.png`
+
+```text
+TITLE: Context Window Assembly
+SUBTITLE: The model answers from the briefing you assemble for this call.
+CANVAS: landscape 16:9.
+
+Layout: three left-to-right boundary containers:
+- "INPUTS"
+- "ASSEMBLY"
+- "DECISION AND RECOVERY"
+
+Inputs boundary, stacked top to bottom:
+- "System Instruction" (indigo control box)
+- "Question" (violet input box)
+- "Retrieved Passages" (violet input box)
+- "Conversation History" (violet input box)
+
+Assembly boundary:
+- "Assemble Context" (violet primary box)
+- small subtitle inside the box: "order and fit the briefing"
+
+Decision and recovery boundary:
+- "Fits Window?" (amber decision diamond)
+- small subtitle inside the diamond: "finite context check"
+- "Model Answers" (green success box, above the diamond)
+- "Compact and Retry" (amber recovery box, below the diamond)
+
+Flow:
+- System Instruction -- input arrow --> Assemble Context
+- Question -- input arrow --> Assemble Context
+- Retrieved Passages -- input arrow --> Assemble Context
+- Conversation History -- input arrow --> Assemble Context
+- Assemble Context -- "assembled prompt" --> Fits Window?
+- Fits Window? -- "yes" --> Model Answers
+- Fits Window? -- "no" --> Compact and Retry
+- Compact and Retry -- "summarize / trim / re-retrieve" --> Assemble Context
+
+LEGEND:
+violet = context ingredients and primary path
+indigo = instruction/control
+green = answer path
+amber = overflow recovery loop
+
+EXACT LABEL LIST:
+Context Window Assembly
+The model answers from the briefing you assemble for this call.
+INPUTS
+ASSEMBLY
+DECISION AND RECOVERY
+System Instruction
+Question
+Retrieved Passages
+Conversation History
+Assemble Context
+order and fit the briefing
+Fits Window?
+finite context check
+Model Answers
+Compact and Retry
+assembled prompt
+yes
+no
+summarize / trim / re-retrieve
+violet = context ingredients and primary path
+indigo = instruction/control
+green = answer path
+amber = overflow recovery loop
+```
+
+Used on: [`lessons/apps-agents/context-engineering.md`](../lessons/apps-agents/context-engineering.md). Shipped as a deterministic SVG-to-PNG asset rather than an image-model generation because the diagram's value depends on exact labels and clean arrow direction. Source retained at `assets/diagrams/context-window-assembly.svg`; PNG rendered at 1672×941 to match the other landscape showcase images.
