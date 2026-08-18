@@ -6,8 +6,7 @@ CTO and an engineer can follow the same conversation.
 
 🔗 **Live site:** https://wbhankins93.github.io/ai-engineering-studio/
 
-> ℹ️ This README is an interim placeholder — enough context to orient a visitor. A
-> full overhaul comes later. For the complete picture see
+> ℹ️ For build history, phase-by-phase deliverables, and contributor conventions, see
 > [`AGENTS.md`](./AGENTS.md) (source of truth) and
 > [`product/BUILD-PLAN.md`](./product/BUILD-PLAN.md) (the build plan).
 
