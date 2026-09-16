@@ -84,6 +84,6 @@ they tell a single story.
 
 ---
 
-*This site is under active build. The foundations on-ramp, SE/SA spine, and all
-five labs are complete; Phase 4 (architecture & governance) is wrapping up and
-Phase 5 (capstone, observability, trilogy polish) is next.*
+*The foundations on-ramp, the SE/SA spine, all seven labs, the architecture and
+governance track, and the role-based learning paths are published. Build history
+and per-deliverable detail live in `AGENTS.md` and `product/BUILD-PLAN.md`.*
