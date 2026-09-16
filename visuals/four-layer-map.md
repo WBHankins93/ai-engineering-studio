@@ -11,8 +11,8 @@ tags:
 The whiteboard diagram you actually draw in a kickoff — the signature, dual-labeled
 version of the [foundations on-ramp](/foundations/the-four-layer-map), drawn for a
 room that contains both engineers and executives. The foundations page *explains* the
-model; this page is for **drawing it live**: the diagram dual-labeled (technical term
-+ plain-English gloss), a "who sees what" lens, and the exact words to say at each
+model; this page is for **drawing it live**: the diagram dual-labeled (technical term +
+plain-English gloss), a "who sees what" lens, and the exact words to say at each
 layer. Screenshot it before a kickoff, or redraw it from memory on their whiteboard —
 the redraw is the flex.
 
