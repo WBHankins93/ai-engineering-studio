@@ -1,8 +1,8 @@
 # AI Engineering Studio
 
-**The AI engineering ecosystem, made legible — through a Solutions Engineer /
-Architect lens.** LLM apps, infrastructure, MLOps, and governance, explained so a
-CTO and an engineer can follow the same conversation.
+**The AI engineering ecosystem, made legible through a customer-facing engineer's
+lens.** LLM apps, infrastructure, MLOps, and governance, explained so a CTO and
+an engineer can follow the same conversation.
 
 🔗 **Live site:** https://wbhankins93.github.io/ai-engineering-studio/
 
@@ -20,10 +20,11 @@ how do I explain it.* The labs still build the real thing (RAG, agents, evals,
 local-first on Ollama); the translation layer is added on top, never substituted
 for rigor.
 
-It's the third repo in a trilogy with one through-line — *a Solutions Architect who
-makes hard technical domains understandable*: **solutions-playbook** (how I run
-engagements) → **devops-studio** (the infra I can speak to) → **ai-engineering-studio**
-(making the newest, least-understood domain legible).
+It's the third repo in a trilogy with one through-line: *a customer-facing engineer
+who makes hard technical domains understandable and turns them into decisions,
+prototypes, and production plans.* **solutions-playbook** covers how I run
+engagements, **devops-studio** covers the infrastructure I can speak to, and
+**ai-engineering-studio** makes the newest, least-understood domain legible.
 
 ## How it's organized
 

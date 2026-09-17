@@ -1,18 +1,19 @@
 # AI Engineering Studio
 
 A VitePress documentation site teaching the AI engineering ecosystem through a
-Solutions Engineer / Architect lens — making LLM apps, infrastructure, MLOps,
-and governance legible to technical *and* non-technical audiences. Third repo in
-the author's trilogy (siblings: `solutions-playbook`, `devops-studio`).
-Last verified: 2026-06-28
+customer-facing engineer's lens, making LLM apps, infrastructure, MLOps, and
+governance legible to technical *and* non-technical audiences. Third repo in the
+author's trilogy (siblings: `solutions-playbook`, `devops-studio`).
+Last verified: 2026-09-11
 
 ## Reader & positioning (do not drift from this)
-The author is an SE/SA, **not** a deep AI engineer, and that is the deliberate
-edge. Every page answers: *what decision does this serve, who is in the room,
-how do I explain it.* Depth is in service of translation, never depth for its
-own sake. Failure mode to avoid: content that reads as "AI for people avoiding
-AI." Defense: labs still build the real thing; translation is added, not
-substituted. Full plan in `product/BUILD-PLAN.md` — read it before building content.
+The author is a customer-facing engineer, **not** a model-training researcher,
+and that is the deliberate edge. Every page answers: *what decision does this
+serve, who is in the room, how do I explain it.* Depth is in service of
+translation, never depth for its own sake. Failure mode to avoid: content that
+reads as "AI for people avoiding AI." Defense: labs still build the real thing;
+translation is added, not substituted. Full plan in `product/BUILD-PLAN.md` —
+read it before building content.
 
 ## Commands
 - Install: `npm ci` (or `npm install` first time) — Node 20.
