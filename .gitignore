@@ -23,3 +23,6 @@ venv/
 
 # Lab local data (embedded Qdrant index, etc.)
 **/.qdrant/
+
+# Local agent handoff briefs (VitePress would publish any root .md as a page)
+CLAUDE_CODE_HANDOFF.md
