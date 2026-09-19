@@ -13,7 +13,7 @@ import { defineConfig } from 'vitepress'
 const foundations = [
   { text: 'How LLMs Actually Work (no math)', link: '/foundations/how-llms-actually-work' },
   { text: 'The Four-Layer Map', link: '/foundations/the-four-layer-map' },
-  { text: 'AI Vocabulary for SAs', link: '/foundations/ai-vocabulary-for-sas' },
+  { text: 'AI Vocabulary for Customer Conversations', link: '/foundations/ai-vocabulary-for-sas' },
   { text: 'LangGraph in 10 Minutes', link: '/foundations/langgraph-how-to' },
 ]
 

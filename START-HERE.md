@@ -32,7 +32,7 @@ Jump straight to what you need:
 - **Scoping a POC or a demo?** → [Scoping an AI POC](/poc-playbooks/scoping-an-ai-poc) — criteria and recovery that survive a live model.
 - **"Should we build or buy / what'll it cost / do we need an agent?"** → the [Decision Frames](/decision-frames/managed-vs-self-host) — [managed vs self-host](/decision-frames/managed-vs-self-host), [RAG cost](/decision-frames/rag-tco), [agent or not](/decision-frames/do-we-need-an-agent).
 - **Need to place a vague customer ask?** → [The Four-Layer Map](/visuals/four-layer-map) — the whiteboard you draw in a kickoff.
-- **Blanking on a term mid-call?** → [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — `Ctrl+F` it before you dial in.
+- **Blanking on a term mid-call?** → [AI Vocabulary for Customer Conversations](/foundations/ai-vocabulary-for-sas) — `Ctrl+F` it before you dial in.
 
 ## 🧭 If You're Orienting for the First Time
 
@@ -41,7 +41,7 @@ you fluent fast:
 
 1. [How LLMs Actually Work (no math)](/foundations/how-llms-actually-work) — the one idea everything hangs on, plus why models hallucinate.
 2. [The Four-Layer Map](/foundations/the-four-layer-map) — the mental model the whole site is organized around.
-3. [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — the glossary you wish you'd had.
+3. [AI Vocabulary for Customer Conversations](/foundations/ai-vocabulary-for-sas) — the glossary you wish you'd had.
 4. [LangGraph in 10 Minutes](/foundations/langgraph-how-to) — how agent workflows are wired.
 
 Past the foundations, see [Learning Paths](/learning-paths) for four

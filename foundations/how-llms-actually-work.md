@@ -104,5 +104,5 @@ room goes quiet.
 ## 🔗 Links
 
 - [The Four-Layer Map](/foundations/the-four-layer-map) — where this sits and what depends on it
-- [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — the terms above, defined
+- [AI Vocabulary for Customer Conversations](/foundations/ai-vocabulary-for-sas) — the terms above, defined
 - [Explaining a Hallucination](/talk-tracks/explaining-a-hallucination) — the recovery script

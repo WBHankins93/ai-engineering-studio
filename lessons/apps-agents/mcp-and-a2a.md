@@ -100,4 +100,4 @@ of a reusable MCP server.
 
 - [Lab 03 · Agent System](/labs/03-agent-system/) — build a real MCP tool the agent calls
 - [Agent Architectures](/lessons/apps-agents/agent-architectures) — the systems these protocols connect
-- [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — MCP/A2A in one line each
+- [AI Vocabulary for Customer Conversations](/foundations/ai-vocabulary-for-sas) — MCP/A2A in one line each

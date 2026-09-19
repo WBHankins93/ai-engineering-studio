@@ -93,5 +93,5 @@ one is responsive. The exec hears evasion; the deal cools.
 
 - [The Four-Layer Map (foundations)](/foundations/the-four-layer-map) — the explainer this visual is drawn from
 - [The Real Cost of a RAG System](/decision-frames/rag-tco) — the L2 cost box, worked
-- [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — the L4 governance terms
+- [AI Vocabulary for Customer Conversations](/foundations/ai-vocabulary-for-sas) — the L4 governance terms
 - `IMAGERY-PLAN.md` — the polished image slated to replace the placeholder

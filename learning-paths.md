@@ -13,7 +13,7 @@ For someone like the author: a customer-facing engineer building AI fluency from
 the ground up,
 in the order that gets you fluent fastest.
 
-1. [How LLMs Actually Work (no math)](/foundations/how-llms-actually-work) → [The Four-Layer Map](/foundations/the-four-layer-map) → [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) → [LangGraph in 10 Minutes](/foundations/langgraph-how-to)
+1. [How LLMs Actually Work (no math)](/foundations/how-llms-actually-work) → [The Four-Layer Map](/foundations/the-four-layer-map) → [AI Vocabulary for Customer Conversations](/foundations/ai-vocabulary-for-sas) → [LangGraph in 10 Minutes](/foundations/langgraph-how-to)
 2. [Managed API vs Self-Host](/decision-frames/managed-vs-self-host) → [Do We Even Need an Agent?](/decision-frames/do-we-need-an-agent) — the two build-vs-buy calls that come up first
 3. [Scoping an AI POC](/poc-playbooks/scoping-an-ai-poc) — how an engagement actually gets scoped
 4. [Lab 01 · First LLM App](/labs/01-first-llm-app/) → [Lab 02 · Production RAG](/labs/02-production-rag/) — the first real, hands-on proof
