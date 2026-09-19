@@ -7,9 +7,10 @@ tags:
 Four ways through this site, depending on why you're here. Pick the one that
 matches your situation — none of them require reading everything in order.
 
-## 🎯 SE/SA Entering AI (the flagship path)
+## 🎯 Customer-Facing Engineers Entering AI (the flagship path)
 
-For someone like the author: an SE/SA building AI fluency from the ground up,
+For someone like the author: a customer-facing engineer building AI fluency from
+the ground up,
 in the order that gets you fluent fastest.
 
 1. [How LLMs Actually Work (no math)](/foundations/how-llms-actually-work) → [The Four-Layer Map](/foundations/the-four-layer-map) → [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) → [LangGraph in 10 Minutes](/foundations/langgraph-how-to)
@@ -53,12 +54,13 @@ the AI-specific layer on top, not a rebuild from scratch.
 
 ## 🔗 The Trilogy
 
-This site is the third of three, one through-line — *a Solutions Architect who
-makes hard technical domains understandable*:
+This site is the third of three, one through-line — *a customer-facing engineer who
+makes hard technical domains understandable and turns them into decisions,
+prototypes, and production plans*:
 
 - [Solutions Playbook](https://wbhankins93.github.io/solutions-playbook/) — how engagements actually run
 - [DevOps Studio](https://wbhankins93.github.io/devops-studio/) — the infrastructure layer
 - **AI Engineering Studio** — this site, the newest and least-understood domain
 
-Each stands alone; read together, they cover the ground a Solutions Architect
+Each stands alone; read together, they cover the ground a customer-facing engineer
 is expected to hold.

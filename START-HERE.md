@@ -5,16 +5,16 @@ tags:
 # Start Here
 
 Welcome. This is a working reference for **making AI engineering legible** — built
-by and for Solutions Engineers and Architects who have to stand between a CTO and
-an engineer and make sure they're solving the same problem.
+by and for customer-facing engineers — the solutions engineers and architects who
+have to stand between a CTO and an engineer and make sure they're solving the same problem.
 
 ## 📝 What This Is (and What It Isn't)
 
 This is **not** another deep-RAG tutorial competing on tooling mastery. The
 internet has a glut of those. The scarce skill in 2026 is translation: scoping an
 AI POC that won't embarrass anyone, framing build-vs-buy in dollars, explaining
-why the demo hallucinated without losing the room. That's the SE/SA job, and
-almost nobody publishes it well.
+why the demo hallucinated without losing the room. That's the customer-facing
+engineer's job, and almost nobody publishes it well.
 
 > The thesis, in one line: *"I can't out-engineer a Staff ML Engineer. But I can
 > stand in front of your exec team and your engineers in the same meeting and make
@@ -45,7 +45,8 @@ you fluent fast:
 4. [LangGraph in 10 Minutes](/foundations/langgraph-how-to) — how agent workflows are wired.
 
 Past the foundations, see [Learning Paths](/learning-paths) for four
-role-based routes through the rest of the site — SE/SA entering AI, live deal,
+role-based routes through the rest of the site — customer-facing engineers
+entering AI, live deal,
 hands-on, and DevOps-to-AI crossover.
 
 ## 🗺️ How the Site Is Built
@@ -64,7 +65,8 @@ content types that each do one job well:
 | **[Labs](/labs/)** | doing — hands-on, local-first, mostly $0 | ✅ Labs 01–07 live |
 | **[Lessons](/lessons/)** | the concept + the decision behind it | ✅ apps-agents, architecture-governance, mlops-data live |
 
-The build is phased so the SE/SA spine — the differentiators — comes first. See
+The build is phased so the translation spine — the decision frames, POC playbook,
+and talk tracks — comes first. See
 `product/BUILD-PLAN.md` for the full plan and `AGENTS.md` for the project's
 source of truth.
 
@@ -76,14 +78,14 @@ source of truth.
 
 ## 🔗 The Trilogy
 
-This is the third repo in a set with one through-line — *a Solutions Architect who
-makes hard technical domains understandable.* `solutions-playbook` (how I run
-engagements) → `devops-studio` (the infra I can speak to) → **ai-engineering-studio**
+This is the third repo in a set with one through-line — *a customer-facing engineer
+who makes hard technical domains understandable and turns them into decisions,
+prototypes, and production plans.* `solutions-playbook` (how I run engagements) → `devops-studio` (the infra I can speak to) → **ai-engineering-studio**
 (making the newest, least-understood domain legible). Each stands alone; together
 they tell a single story.
 
 ---
 
-*The foundations on-ramp, the SE/SA spine, all seven labs, the architecture and
+*The foundations on-ramp, the translation spine, all seven labs, the architecture and
 governance track, and the role-based learning paths are published. Build history
 and per-deliverable detail live in `AGENTS.md` and `product/BUILD-PLAN.md`.*
