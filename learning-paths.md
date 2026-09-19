@@ -40,8 +40,8 @@ $0 and local-first.
 3. [Lab 04 · Eval Harness](/labs/04-eval-harness/) — evals early, on purpose, before agents
 4. [Lab 03 · Agent System](/labs/03-agent-system/) — hub-and-spoke + one MCP tool
 5. [Lab 05 · Serving & Cost](/labs/05-serving-and-cost/) — measure instead of guess
-6. **Lab 06 · Observability** (Phase 5) — trace what you built
-7. **Lab 07 · Capstone** (Phase 5) — assemble everything above into one agent
+6. [Lab 06 · Observability](/labs/06-observability/) — trace what you built
+7. [Lab 07 · Capstone](/labs/07-capstone/) — assemble everything above into one agent
 
 ## 🔀 From DevOps to AI (the crossover)
 
