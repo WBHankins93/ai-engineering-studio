@@ -7,9 +7,11 @@ this file is the exhaustive marching orders. Read both before building content.
 
 ## 0. What this repo is, and the one rule that governs everything
 
-A VitePress site teaching the AI engineering ecosystem **through a Solutions
-Engineer / Solutions Architect lens.** The author is an SE/SA, not a deep AI
-engineer — and that is the deliberate, defensible edge. The scarce skill in 2026
+A VitePress site teaching the AI engineering ecosystem **through a customer-facing
+engineer's lens.** The author is a customer-facing engineer, not a model-training
+researcher — and that is the deliberate, defensible edge. The differentiator is
+translating LLM applications, infrastructure, evaluation, cost, and governance
+into decisions, demos, and production plans. The scarce skill in 2026
 is the person who makes AI legible to a CTO and an engineer in the same meeting,
 not the 500th deep-RAG tutorial.
 
@@ -21,7 +23,7 @@ bothered to learn AI." **The defense:** labs still build the real thing (you run
 the RAG pipeline, write the eval, measure the latency); the translation layer is
 *added on top*, never *substituted* for rigor.
 
-Three reader goals, all in play: (1) share with SE/SA peers, (2) use at the
+Three reader goals, all in play: (1) share with customer-facing peers, (2) use at the
 author's actual job, (3) portfolio showcase.
 
 ---
@@ -227,7 +229,7 @@ Mostly lessons + visuals; group small related lessons, split large ones:
 
 | Path | For | Sequence |
 | --- | --- | --- |
-| SE/SA entering AI (flagship) | People like the author | foundations → decision-frames → POC playbook → Labs 01–02 → talk tracks |
+| Customer-facing engineers entering AI (flagship) | People like the author | foundations → decision-frames → POC playbook → Labs 01–02 → talk tracks |
 | In a live AI deal | Work, right now | START-HERE → talk track → matching decision frame → demo script |
 | Get hands dirty | Build credibility | Labs 01 → 02 → 04 → 03, anchors followed as desired |
 | From DevOps to AI | The crossover | MLOps↔LLMOps bridge → infra lessons → governance (links to devops-studio) |
