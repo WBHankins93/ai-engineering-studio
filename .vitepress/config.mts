@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 // ---------------------------------------------------------------------------
-// Sidebar groups — mirror the repo's SE/SA structure. Each array is one
+// Sidebar groups — mirror the repo's content-type structure. Each array is one
 // collapsible section. Links are root-relative and must resolve, or the build
 // fails (ignoreDeadLinks: false below). Add a page here when you add the file.
 //
@@ -76,7 +76,7 @@ const lessons = [
 export default defineConfig({
   title: 'AI Engineering Studio',
   description:
-    'The AI engineering ecosystem, made legible — a Solutions Engineer / Architect lens on LLM apps, infrastructure, MLOps, and governance.',
+    "The AI engineering ecosystem, made legible — a customer-facing engineer's lens on LLM apps, infrastructure, MLOps, and governance.",
   lang: 'en-US',
 
   // The gate. A broken internal link fails the build, which fails CI.
@@ -89,7 +89,8 @@ export default defineConfig({
     hostname: 'https://wbhankins93.github.io/ai-engineering-studio/',
   },
 
-  // Social preview (Open Graph / Twitter) — see public/og-image.png.
+  // Social preview (Open Graph / Twitter) — see public/og-image.png, rendered from
+  // visual-specs/og-image.html.
   head: [
     ['meta', { name: 'theme-color', content: '#6d4aff' }],
     ['meta', { name: 'author', content: 'Ben Hankins' }],
@@ -103,7 +104,7 @@ export default defineConfig({
       {
         property: 'og:description',
         content:
-          'The AI engineering ecosystem, made legible — a Solutions Engineer / Architect lens on LLM apps, infrastructure, MLOps, and governance.',
+          "The AI engineering ecosystem, made legible — a customer-facing engineer's lens on LLM apps, infrastructure, MLOps, and governance.",
       },
     ],
     ['meta', { property: 'og:url', content: 'https://wbhankins93.github.io/ai-engineering-studio/' }],
@@ -118,7 +119,7 @@ export default defineConfig({
       {
         property: 'og:image:alt',
         content:
-          'AI Engineering Studio — the AI engineering ecosystem, made legible for Solutions Engineers and Architects',
+          "AI Engineering Studio — the AI engineering ecosystem, made legible through a customer-facing engineer's lens",
       },
     ],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
@@ -128,7 +129,7 @@ export default defineConfig({
       {
         name: 'twitter:description',
         content:
-          'The AI engineering ecosystem, made legible — a Solutions Engineer / Architect lens on LLM apps, infrastructure, MLOps, and governance.',
+          "The AI engineering ecosystem, made legible — a customer-facing engineer's lens on LLM apps, infrastructure, MLOps, and governance.",
       },
     ],
     [
