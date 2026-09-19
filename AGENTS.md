@@ -4,74 +4,66 @@ A VitePress documentation site teaching the AI engineering ecosystem through a
 customer-facing engineer's lens, making LLM apps, infrastructure, MLOps, and
 governance legible to technical *and* non-technical audiences. Third repo in the
 author's trilogy (siblings: `solutions-playbook`, `devops-studio`).
-Last verified: 2026-09-11
+Last verified: 2026-09-17
 
 ## Reader & positioning (do not drift from this)
-The author is a customer-facing engineer, **not** a model-training researcher,
-and that is the deliberate edge. Every page answers: *what decision does this
-serve, who is in the room, how do I explain it.* Depth is in service of
-translation, never depth for its own sake. Failure mode to avoid: content that
-reads as "AI for people avoiding AI." Defense: labs still build the real thing;
-translation is added, not substituted. Full plan in `product/BUILD-PLAN.md` —
-read it before building content.
+The author is a customer-facing engineer, **not** a model-training researcher, and
+that is the deliberate edge. Every page answers: *what decision does this serve,
+who is in the room, how do I explain it.* Depth serves translation, never itself.
+Failure mode to avoid: content that reads as "AI for people avoiding AI." Defense:
+labs still build the real thing; translation is added, not substituted. Full plan
+in `product/BUILD-PLAN.md` — read it before building content.
 
 ## Commands
-- Install: `npm ci` (or `npm install` first time) — Node 20.
-- Dev: `npm run docs:dev` (hot reload, host 0.0.0.0).
+- Install `npm ci` (Node 20) · dev `npm run docs:dev` · preview `npm run docs:preview`.
 - Build / gate: `npm run docs:build` — compiles every page, **fails on dead
   internal links** (`ignoreDeadLinks: false`). This is the CI gate.
-- Preview built site: `npm run docs:preview`.
 
 ## Architecture
-- `.vitepress/config.mts` — site config + sidebar/nav. **Add a page's link here
-  when you create the file**, or it won't appear; a link to a missing file fails
-  the build. `base: '/ai-engineering-studio/'` (GitHub Pages subpath).
-- `.vitepress/theme/` — `index.ts` (layout + mermaid in `securityLevel: 'strict'`),
-  `custom.css` (violet brand + `.sp-*` and `.ai-*` component classes).
-- `index.md` — VitePress home (hero + features).
-- Content folders (created as built): `foundations/`, `decision-frames/`,
-  `poc-playbooks/`, `talk-tracks/`, `lessons/` (l1–l4 subfolders),
-  `labs/` (01–07), `visuals/`, `decisions/` (ADRs).
+- `.vitepress/config.mts` — site config + sidebar/nav + social meta. **Add a
+  page's link here when you create the file**, or it won't appear; a link to a
+  missing file fails the build. `base: '/ai-engineering-studio/'` (Pages subpath).
+- `.vitepress/theme/` — `index.ts` (layout + mermaid `securityLevel: 'strict'`),
+  `custom.css` (violet brand + `.sp-*`/`.ai-*` classes).
+- `index.md` home · `foundations/` `decision-frames/` `poc-playbooks/`
+  `talk-tracks/` `lessons/` `labs/` (01–07) `visuals/` `decisions/` (ADRs).
 - `product/BUILD-PLAN.md` — the full phase-by-phase implementation spec.
 
 ## Conventions
 - **Depth Standard** governs every content page — see `product/BUILD-PLAN.md`:
-  worked scenario + drawn mermaid flow, real-or-illustrative numbers (never
-  invent a number and present it as authoritative), failure path, talk track,
-  audience lens.
-- **Three-layer lab reading model** (the defining lab convention): a main track
-  a generalist completes without prior AI knowledge; inline `.ai-context` boxes
-  for customer relevance; `.ai-deeper` anchors to appendices/lessons for the
-  engineering detail; an `.ai-explain` "explain it to a customer" close.
+  worked scenario + drawn mermaid flow, real-or-illustrative numbers (never invent
+  one and present it as authoritative), failure path, talk track, audience lens.
+- **Three-layer lab reading model** (the defining lab convention): a main track a
+  generalist completes without prior AI knowledge; inline `.ai-context` boxes for
+  customer relevance; `.ai-deeper` anchors to appendices/lessons for engineering
+  detail; an `.ai-explain` "explain it to a customer" close.
 - **Component classes** (in `custom.css`, never hardcode hex): `.sp-say` (talk
   track), `.sp-band`/`.sp-step` (scenario steps), `.sp-pill` (status tags,
   `ok`/`warn`/`bad`); `.ai-context`, `.ai-deeper`, `.ai-explain`.
 - **Mermaid** runs in `strict` mode: no HTML in node labels, no `<br>`, no HTML
-  entities (`&amp;`/`&gt;`), no bare `&`, short single-line labels. Fence with
-  ` ```mermaid `. **Renderer gotcha:** the `config.mts` fence rule must emit
+  entities, no bare `&`, short single-line labels. Fence with ` ```mermaid `.
+  **Renderer gotcha:** the `config.mts` fence rule must emit
   `<pre class="mermaid" v-pre>` with HTML-escaped content — a plain `<div>` lets
   Vue's template compiler condense the diagram's newlines to spaces, which mermaid
   rejects as a syntax error. Don't "simplify" that rule.
 - **Showcase visuals** are polished PNGs (flat-vector, violet brand) in
   `assets/diagrams/`, promoted from mermaid only when flagship — see
-  `IMAGERY-PLAN.md` (what + priority), `VISUAL-PROMPT-STANDARD.md` (how), and
-  `visual-specs/showcase-prompts.md` (ready-to-paste specs). Spec first, image
-  second. Decision trees / simple flows stay mermaid.
+  `IMAGERY-PLAN.md` (what), `VISUAL-PROMPT-STANDARD.md` (how),
+  `visual-specs/showcase-prompts.md` (specs), `visual-specs/og-image.html` (the
+  social card's source). Spec first, image second; simple flows stay mermaid.
 - **Tables** in markdown by default (dark-mode safe). Custom HTML only for the
   `.sp-*`/`.ai-*` classes above.
-- **Canonical cast** (reuse so it reads authored): local serving `Ollama` +
-  Llama 3.x 8B, embeddings `bge`/`nomic-embed`, vector DB `Qdrant`, tracing
-  `Langfuse`, eval `promptfoo`/`DeepEval`, orchestration **LangGraph**, gateway
-  `LiteLLM`. Vendor-neutral as categories, concrete as examples.
-- **Labs are local-first / $0** on Ollama. Lab 07 has two tracks: a strictly-$0
-  local path AND an optional rented-GPU cloud capstone — never force spend.
+- **Canonical cast** (reuse so it reads authored): `Ollama` + Llama 3.x 8B,
+  embeddings `bge`/`nomic-embed`, `Qdrant`, `Langfuse`, `promptfoo`/`DeepEval`,
+  **LangGraph**, `LiteLLM`. Vendor-neutral categories, concrete examples.
+- **Labs are local-first / $0** on Ollama. Lab 07 has two tracks: strictly-$0
+  local, plus an optional rented-GPU cloud capstone — never force spend.
 - **Git: plain single-author commits.** A `commit-msg` hook rejects
   `Co-Authored-By` / `Generated with` trailers. Imperative subject, no period,
   body only when the "why" isn't obvious.
-- **Commit meaningfully and often.** Every logical unit of work — one page, one
-  fix, one config change — is its own commit, made as soon as it builds green.
-  Never batch a whole phase into one commit, and never leave finished work sitting
-  uncommitted. If a change is done and the build passes, commit it before moving on.
+- **Commit meaningfully and often.** Every logical unit — one page, one fix, one
+  config change — is its own commit, made as soon as it builds green. Never batch a
+  phase into one commit, and never leave finished work uncommitted.
 
 ## Decisions
 - 2026-06 — LangGraph is the orchestration standard for all labs — most
@@ -94,43 +86,45 @@ read it before building content.
   (one logical unit each), preserve commits on merge (no squashing a deliverable),
   dead-link CI required, keep every commit green. Phase 0 → `main` (scaffold
   exception). Supersedes the earlier per-phase and per-deliverable-only decisions.
+- 2026-09 — Positioning is a **customer-facing engineer's** lens, not an SE/SA
+  one and not a model-training researcher's (user decision, published PR #38 +
+  the site-wide reframe). The differentiator is translating LLM applications,
+  infrastructure, evaluation, cost, and governance into decisions, demos, and
+  production plans. Public studios teach the reasoning; the paid Pre-Sales Field
+  Kit packages the editable tools — do not hide the studio to protect it. Keep
+  "SE/SA spine" only where it names build history (phase labels, done lists).
 
 ## State
-- **Phases 0–2 done:** scaffold + foundations on-ramp (PR direct to `main`,
-  scaffold exception); SE/SA spine — POC playbook, 3 decision frames, talk track,
-  four-layer visual, ADR 001 (PR #3); visuals system + mermaid `<pre v-pre>` fix,
-  visual prompt system (`VISUAL-PROMPT-STANDARD.md`, `IMAGERY-PLAN.md`); Labs
-  01–03 (First LLM App, Production RAG, Agent System — hub-and-spoke LangGraph +
-  one MCP tool) + apps-agents lessons, all provider-agnostic and smoke-tested
-  against real local Ollama.
-- **Phase 3 complete (2026-07-03):** Lab 04 Eval Harness (PR #14), `frame-good-enough.md`
-  (PR #16), Lab 05 Serving & Cost (PR #18 — smoke-tested CPU-only: quantization
-  ~4.7x faster, single-stream self-host ~200x pricier per token than the cheapest
-  hosted tier), `frame-cost-at-scale.md` (PR #19). Cross-links wired for real
-  (PR #21); `product/BUILD-PLAN.md` checkboxes updated.
+- **Phases 0–2 done:** scaffold + foundations on-ramp (direct to `main`, scaffold
+  exception); SE/SA spine — POC playbook, 3 decision frames, talk track, four-layer
+  visual, ADR 001 (PR #3); visuals system + mermaid `<pre v-pre>` fix + visual
+  prompt system; Labs 01–03 + apps-agents lessons, provider-agnostic and
+  smoke-tested against local Ollama.
+- **Phase 3 complete (2026-07-03):** Lab 04 Eval Harness (PR #14),
+  `frame-good-enough.md` (PR #16), Lab 05 Serving & Cost (PR #18 — smoke-tested
+  CPU-only: quantization ~4.7x faster, single-stream self-host ~200x pricier per
+  token than the cheapest hosted tier), `frame-cost-at-scale.md` (PR #19).
 - **Phase 4 complete (2026-07-04):** reference architectures (three tiers, two
-  showcase images), guardrails/governance (NIST AI RMF / EU AI Act / ISO 42001
-  positioned correctly), MLOps-LLMOps bridge, and the `governance-stack` showcase
-  image all shipped (through PR #27). Watch for sidebar/list merge-conflict
-  casualties when two PRs touch `.vitepress/config.mts`; CI catches dead links,
-  not missing nav entries. The optional `context-window-assembly` visual for
-  `lessons/apps-agents/context-engineering.md` has also been completed as
-  post-launch polish.
-- **Phase 5 complete on the closeout branch (2026-07-12):** Lab 06 Observability
-  (PR #28), OG social preview (PR #29), Lab 07 Capstone (PR #30), and Learning
-  Paths (PR #31) are built and merged. The closeout branch adds site
-  author/published meta, restores Lab 07's lost sidebar entry, wires real
-  Lab 06↔07 cross-links, updates project state, and completes `phase-5/qa-pass`
-  with docs build, preview route checks, lab Python syntax checks, stale-status
-  sweep, lab reading-model marker sweep, and Mermaid strict-mode hazard scan.
+  showcase images), guardrails/governance (NIST AI RMF / EU AI Act / ISO 42001),
+  MLOps-LLMOps bridge, `governance-stack` image — through PR #27. Watch for
+  sidebar/list merge-conflict casualties when two PRs touch
+  `.vitepress/config.mts`; CI catches dead links, not missing nav entries.
+- **Phase 5 complete and merged (closeout PR #34, 2026-07-12):** Lab 06
+  Observability (PR #28), OG social preview (PR #29), Lab 07 Capstone (PR #30),
+  Learning Paths (PR #31), plus site author/published meta, Lab 07's restored
+  sidebar entry, real Lab 06↔07 cross-links, and the `phase-5/qa-pass` sweep.
+- **Published and post-launch (2026-08 → 2026-09):** `context-window-assembly`
+  visual (PR #35), README interim note dropped (PR #36), MIT licence (PR #37),
+  customer-facing positioning in `README.md`/`AGENTS.md` (PR #38), then the
+  site-wide reframe — home hero, site/OG/Twitter meta, regenerated `og-image.png`
+  (source now committed at `visual-specs/og-image.html`), `START-HERE.md`,
+  `learning-paths.md`, `product/BUILD-PLAN.md` §0. All deployed to Pages.
 
 ## Roadmap
-Next milestone — **merge/publish the closeout branch**, then optional post-launch
-polish. Definition of done for closeout is satisfied locally: `npm run
-docs:build` is green, sidebar/nav contains every shipped page, Lab 06↔07 and
-learning-path cross-links are real, project-state docs are current, and
-depth-standard issues found by the QA sweep are fixed or explicitly deferred.
-Full detail: `product/BUILD-PLAN.md`.
+No open milestone — Phases 0–5 are merged and live. Remaining work is optional
+post-launch polish, tracked in `IMAGERY-PLAN.md`: the flagship `four-layer-map`
+showcase image still has to replace the placeholder mermaid on
+`visuals/four-layer-map.md`. Full detail: `product/BUILD-PLAN.md`.
 
 ## Non-goals
 - Do not build this as AI-Engineer-depth content competing on tooling mastery.
@@ -143,17 +137,15 @@ Full detail: `product/BUILD-PLAN.md`.
 - Do not add co-authoring/generation trailers to commits.
 
 ## CI/CD
-- **CI** (`.github/workflows/ci.yml`) — `Build docs` job runs on every PR and push
-  to `main`; the dead-link build is the gate.
-- **CD** (`.github/workflows/deploy.yml`) — on push to `main`, rebuilds and
-  publishes to GitHub Pages (Actions build source). Live:
-  https://wbhankins93.github.io/ai-engineering-studio/ (matches `base`).
+- **CI** (`ci.yml`) — `Build docs` on every PR and push to `main`; the dead-link
+  build is the gate. **CD** (`deploy.yml`) — push to `main` rebuilds and publishes
+  to Pages. Live: https://wbhankins93.github.io/ai-engineering-studio/.
 - **`main` is protected**: required status check `Build docs` (strict/up-to-date),
   no force-push/delete. Reviews are *not* required (solo maintainer can't
   self-approve) — agent may self-review and merge once CI is green (user-authorized
   2026-06-27). `enforce_admins` off so the owner is never locked out.
-- Non-fatal annotation: GitHub is deprecating Node-20 action *wrappers* (runs on
-  Node 24 anyway) — unrelated to our pinned build Node 20; no action needed.
+- Non-fatal annotation: GitHub is deprecating Node-20 action *wrappers* —
+  unrelated to our pinned build Node 20; no action needed.
 
 ## Open questions
 - None blocking.
