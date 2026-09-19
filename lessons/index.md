@@ -4,7 +4,7 @@ tags:
 ---
 # Lessons
 
-Concept pages that answer the SE/SA question — *when do I choose this, what does it
+Concept pages that answer the customer-facing question — *when do I choose this, what does it
 cost, and how do I explain it?* — organized by the [four-layer map](/foundations/the-four-layer-map).
 Where the [labs](/labs/) teach by doing, lessons teach by deciding.
 

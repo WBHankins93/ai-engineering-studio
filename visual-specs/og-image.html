@@ -1,0 +1,37 @@
+<!doctype html>
+<!--
+  Source for public/og-image.png (1200x630 social preview).
+  Render with headless Chrome from the repo root:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu \
+      --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 \
+      --screenshot=public/og-image.png "file://$PWD/visual-specs/og-image.html"
+  Keep the tagline in sync with the site description in .vitepress/config.mts.
+-->
+<html><head><meta charset="utf-8"><style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;background:#0b1220;position:relative;-webkit-font-smoothing:antialiased}
+.glow1{position:absolute;width:760px;height:760px;right:-280px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(109,74,255,.34) 0%,rgba(109,74,255,.12) 40%,rgba(109,74,255,0) 70%)}
+.glow2{position:absolute;width:700px;height:700px;left:-380px;bottom:-400px;border-radius:50%;background:radial-gradient(circle,rgba(109,74,255,.30) 0%,rgba(109,74,255,.10) 40%,rgba(109,74,255,0) 70%)}
+.wrap{position:absolute;inset:0;padding:76px 76px 0 76px}
+.top{display:flex;align-items:center;gap:18px}
+.badge{width:54px;height:54px;border-radius:12px;background:linear-gradient(145deg,#8b6cff,#6d4aff);box-shadow:0 0 28px rgba(109,74,255,.55);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:26px;color:#0b1220}
+.eyebrow{font-size:18px;font-weight:600;letter-spacing:4.4px;color:#a78bfa}
+h1{margin-top:14px;font-size:96px;font-weight:800;line-height:.98;letter-spacing:-2px;background:linear-gradient(90deg,#ffffff 0%,#ede9fe 45%,#b39dff 100%);-webkit-background-clip:text;color:transparent;width:max-content}
+.tag{margin-top:32px;font-size:29px;line-height:42px;font-weight:500;color:#b8c2d0;max-width:960px}
+.chips{margin-top:18px;display:flex;gap:14px}
+.chip{height:48px;padding:0 25px;border-radius:999px;border:1.5px solid rgba(139,108,255,.55);background:rgba(109,74,255,.16);color:#ddd6fe;font-size:21px;font-weight:600;display:flex;align-items:center}
+.foot{position:absolute;left:76px;right:76px;top:524px;display:flex;justify-content:space-between;align-items:center}
+.url{font-size:24px;font-weight:600;color:#8b6cff}
+.note{font-size:21px;font-weight:500;color:#7c8798}
+</style></head><body>
+<div class="glow1"></div><div class="glow2"></div>
+<div class="wrap">
+<div class="top"><div class="badge">A</div><div class="eyebrow">THE AI ENGINEERING TRILOGY</div></div>
+<h1>AI Engineering<br>Studio</h1>
+<p class="tag">The AI engineering ecosystem, made legible — a customer-facing engineer's lens on LLM apps, infrastructure, MLOps, and governance.</p>
+<div class="chips"><span class="chip">Foundations</span><span class="chip">Labs</span><span class="chip">Decision Frames</span></div>
+</div>
+<div class="foot"><span class="url">wbhankins93.github.io/ai-engineering-studio</span><span class="note">Local-First · $0 Labs</span></div>
+</body></html>

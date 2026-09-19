@@ -116,5 +116,5 @@ the first box in the flow; ask it first.
 ## 🔗 Links
 
 - [The Real Cost of a RAG System](/decision-frames/rag-tco) — total cost beyond the model call
-- [AI Vocabulary for SAs](/foundations/ai-vocabulary-for-sas) — the governance/data-handling terms
+- [AI Vocabulary for Customer Conversations](/foundations/ai-vocabulary-for-sas) — the governance/data-handling terms
 - [The Four-Layer Map](/visuals/four-layer-map) — where this sits (L2 infra, L4 governance)
